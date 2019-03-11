@@ -126,8 +126,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="MaterialSkin">
-      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    <Reference Include="MaterialWinforms">
+      <HintPath>MaterialWinforms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -135,9 +135,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="form.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
@@ -149,15 +146,18 @@
     <ResourceCompile Include="Travel Emulator.rc" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="form.resx">
-      <DependentUpon>form.h</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="form.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="form.resx">
+      <DependentUpon>form.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
