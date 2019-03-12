@@ -149,6 +149,7 @@
     <ResourceCompile Include="Travel Emulator.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\db.db" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
