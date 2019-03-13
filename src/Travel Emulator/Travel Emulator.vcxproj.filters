@@ -84,7 +84,7 @@
       <Filter>Source Files\utils</Filter>
     </ClCompile>
     <ClCompile Include="sql.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
