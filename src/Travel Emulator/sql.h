@@ -3,14 +3,13 @@
 #include <iostream>
 using namespace System::Data::SQLite;
 using namespace System;
-namespace TravelEmulator {
-	ref class SqlManager
-	{
-	public:
-		SqlManager();
-		SQLiteDataReader^ excuteCommand(String ^command);
-	private:
-		SQLiteConnection^ dbConnection;
-	};
-}
+ref class SqlManager {
+public:
+	SqlManager();
+	SQLiteDataReader^ excuteCommand(String^ command);
+	void addCity(String^ name);
+private:
+	SQLiteConnection^ dbConnection;
+};
+
 

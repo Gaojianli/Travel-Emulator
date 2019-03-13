@@ -1,6 +1,6 @@
 //Utils functions
 #include "utils.h"
-List<String^>^ initializeCityData(TravelEmulator::SqlManager^ sql) {
+List<String^>^ initializeCityData(SqlManager^ sql) {
 	auto importSqlText = gcnew String("select * from cities;");
 	auto result = sql->excuteCommand(importSqlText);
 	auto cityData = gcnew List<String^>();
@@ -10,4 +10,7 @@ List<String^>^ initializeCityData(TravelEmulator::SqlManager^ sql) {
 		}
 	}
 	return cityData;
+}
+String^ convertToUtf8(String^ toConvert) {
+	return System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(toConvert));
 }

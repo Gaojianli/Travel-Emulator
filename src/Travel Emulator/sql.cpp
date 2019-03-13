@@ -1,13 +1,18 @@
 #include "sql.h"
+#include "utils.h"
 
-TravelEmulator::SqlManager::SqlManager() {
+SqlManager::SqlManager() {
 	dbConnection=gcnew SQLiteConnection("Data Source=db.db;Version=3;");
 	dbConnection->Open();
 }
 
-SQLiteDataReader^ TravelEmulator::SqlManager::excuteCommand(String ^command)
+SQLiteDataReader^ SqlManager::excuteCommand(String ^command)
 {
 	auto sqlcommand = dbConnection->CreateCommand();
 	sqlcommand->CommandText = command;
 	return sqlcommand->ExecuteReader();
+}
+
+void SqlManager::addCity(String^ name) {
+	auto result=this->excuteCommand("insert into cities (name) values(\"" + name + "\");");
 }
