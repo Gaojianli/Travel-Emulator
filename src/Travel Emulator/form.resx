@@ -117,4 +117,298 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="materialFlatButton1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialTabSelector1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="materialTabPage2.Text" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="materialTabPageMgnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="materialTabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 568</value>
+  </data>
+  <data name="&gt;&gt;materialFlatButton1.Parent" xml:space="preserve">
+    <value>materialTabPage2</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.Name" xml:space="preserve">
+    <value>materialLabel1</value>
+  </data>
+  <data name="&gt;&gt;materialTabControlLog.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabControl, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="depaturePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="&gt;&gt;materialTabControlLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;materialFlatButton1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialFlatButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialTabPageMgnt.Parent" xml:space="preserve">
+    <value>materialTabControlLog</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="logOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage2.Parent" xml:space="preserve">
+    <value>materialTabControlLog</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.Parent" xml:space="preserve">
+    <value>materialTabPage1</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;logOutput.Name" xml:space="preserve">
+    <value>logOutput</value>
+  </data>
+  <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="logOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="materialTabPage1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 20</value>
+  </data>
+  <data name="materialTabPageMgnt.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1192, 35</value>
+  </data>
+  <data name="materialFlatButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 8, 4, 8</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialTabControlLog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt</value>
+  </data>
+  <data name="materialTabControlLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="&gt;&gt;materialTabControlLog.Name" xml:space="preserve">
+    <value>materialTabControlLog</value>
+  </data>
+  <data name="materialTabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="materialFlatButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="depaturePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="materialTabSelector1.Text" xml:space="preserve">
+    <value>materialTabSelector1</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialTabSelector1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="materialTabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.Name" xml:space="preserve">
+    <value>depaturePicker</value>
+  </data>
+  <data name="materialTabPage2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt</value>
+  </data>
+  <data name="materialTabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="materialFlatButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 36</value>
+  </data>
+  <data name="&gt;&gt;materialTabPageMgnt.Name" xml:space="preserve">
+    <value>materialTabPageMgnt</value>
+  </data>
+  <data name="materialTabPageMgnt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 33</value>
+  </data>
+  <data name="&gt;&gt;materialFlatButton1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;materialTabPageMgnt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="materialLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 144</value>
+  </data>
+  <data name="materialTabPageMgnt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 556</value>
+  </data>
+  <data name="&gt;&gt;logOutput.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTextBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage2.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialTabControlLog.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="materialLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11pt</value>
+  </data>
+  <data name="materialLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 30</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;logOutput.Parent" xml:space="preserve">
+    <value>materialTabPage2</value>
+  </data>
+  <data name="materialFlatButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1022, 465</value>
+  </data>
+  <data name="materialFlatButton1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="materialFlatButton1.Text" xml:space="preserve">
+    <value>保存日志</value>
+  </data>
+  <data name="materialFlatButton1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>11, 13, 11, 13</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage1.Name" xml:space="preserve">
+    <value>materialTabPage1</value>
+  </data>
+  <data name="materialTabPage1.Text" xml:space="preserve">
+    <value>查询路线</value>
+  </data>
+  <data name="materialLabel1.Text" xml:space="preserve">
+    <value>请选择出发地</value>
+  </data>
+  <data name="materialTabPageMgnt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt</value>
+  </data>
+  <data name="materialTabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 556</value>
+  </data>
+  <data name="&gt;&gt;materialTabPageMgnt.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.Parent" xml:space="preserve">
+    <value>materialTabPage1</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage1.Parent" xml:space="preserve">
+    <value>materialTabControlLog</value>
+  </data>
+  <data name="materialTabControlLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1192, 605</value>
+  </data>
+  <data name="materialTabPageMgnt.Text" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>form</value>
+  </data>
+  <data name="&gt;&gt;materialFlatButton1.Name" xml:space="preserve">
+    <value>materialFlatButton1</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>form</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="materialTabPage2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="logOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 427</value>
+  </data>
+  <data name="materialTabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="&gt;&gt;logOutput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="materialTabControlLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 67</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 32, 0, 0</value>
+  </data>
+  <data name="materialTabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabSelector, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage2.Name" xml:space="preserve">
+    <value>materialTabPage2</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Name" xml:space="preserve">
+    <value>materialTabSelector1</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1192, 672</value>
+  </data>
+  <data name="depaturePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 28</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialForm, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="depaturePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 145</value>
+  </data>
+  <data name="materialLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="materialTabControlLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;materialTabControlLog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;materialTabPage2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>zh</value>
+  </metadata>
 </root>
