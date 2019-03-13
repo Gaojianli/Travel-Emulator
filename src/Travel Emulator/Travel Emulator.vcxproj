@@ -103,7 +103,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -145,6 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cities.h" />
+    <ClInclude Include="cityAdd.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -168,12 +172,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cities.cpp" />
+    <ClCompile Include="cityAdd.cpp" />
     <ClCompile Include="form.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="sql.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="cityAdd.resx">
+      <DependentUpon>cityAdd.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cityAdd.zh.resx">
+      <DependentUpon>cityAdd.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form.resx">
       <DependentUpon>form.h</DependentUpon>
     </EmbeddedResource>

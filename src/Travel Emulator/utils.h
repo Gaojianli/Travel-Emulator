@@ -5,4 +5,5 @@
 using namespace System;
 using namespace System::Collections;
 using namespace System::Collections::Generic;
-List<String^>^ initializeCityData(TravelEmulator::SqlManager^ sql);
+List<String^>^ initializeCityData(SqlManager^ sql);
+String^ convertToUtf8(String^ toConvert);
