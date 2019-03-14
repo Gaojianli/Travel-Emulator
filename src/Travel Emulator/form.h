@@ -1,6 +1,7 @@
 #pragma once
 #include "utils.h"
 #include "cityAdd.h"
+#include "removeCity.h"
 namespace TravelEmulator {
 
 	using namespace System;
@@ -34,10 +35,10 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ addCity;
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ delCity;
 	public:
-
 		SqlManager^ sql;
 		List<cities^>^ cityData;
-
+		BindingList<String^>^ departureData;
+		BindingList<String^>^ destinationData;
 	public:
 		form(void) {
 			InitializeComponent();
@@ -51,12 +52,11 @@ namespace TravelEmulator {
 			log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
 			//----------Binding data--------
 			cityData = initializeCityData(this->sql);
-			List<String^>^ departureData = gcnew List<String^>();
-			List<String^>^ destinationData;
+			departureData = gcnew BindingList<String^>();
 			for (int i = 0; i < cityData->Count; i++) {
 				departureData->Add(gcnew String(cityData[i]->name));
 			}
-			destinationData = gcnew List<String^>(departureData);
+			destinationData = gcnew BindingList<String^>(departureData);
 			depaturePicker->DataSource = departureData;
 			destinationPicker->DataSource = destinationData;
 			log->writeLog("数据导入成功，共导入" + cityData->Count + "个城市", logLevel::Info);
@@ -165,7 +165,7 @@ namespace TravelEmulator {
 			this->materialTabControlLog->Depth = 0;
 			this->materialTabControlLog->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->materialTabControlLog->Name = L"materialTabControlLog";
-			this->materialTabControlLog->SelectedIndex = 0;
+			this->materialTabControlLog->SelectedIndex = 1;
 			this->materialTabControlLog->TabsAreClosable = true;
 			// 
 			// materialTabPage1
@@ -253,6 +253,7 @@ namespace TravelEmulator {
 			graphicsPath1->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
 			this->delCity->ShadowBorder = graphicsPath1;
 			this->delCity->UseVisualStyleBackColor = false;
+			this->delCity->Click += gcnew System::EventHandler(this, &form::DelCity_Click);
 			// 
 			// addCity
 			// 
@@ -390,5 +391,14 @@ namespace TravelEmulator {
 	private: bool getCityByName_depature(cities ^ obj) {
 		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
 	}
-	};
+	private: System::Void DelCity_Click(System::Object^ sender, System::EventArgs^ e) {
+		auto control = gcnew removeCity();
+		control->addSql(sql);//add the sql object to the dialog
+		control->getCityData(cityData, departureData, destinationData);
+		UserControl^ t = gcnew UserControl();
+		t->Size = control->Size;
+		t->Controls->Add(control);
+		MaterialDialog::Show(convertToUtf8(L"删除城市"), t, MaterialDialog::Buttons::OK);
+	}
+};
 }  // namespace TravelEmulator

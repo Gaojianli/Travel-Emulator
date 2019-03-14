@@ -13,6 +13,11 @@ SQLiteDataReader^ SqlManager::excuteCommand(String ^command)
 	return sqlcommand->ExecuteReader();
 }
 
+void SqlManager::removeCityByID(int id)
+{
+	excuteCommand("delete from Cities where id like " + id);
+}
+
 void SqlManager::addCity(String^ name) {
 	auto result=this->excuteCommand("insert into cities (name) values(\"" + name + "\");");
 }
