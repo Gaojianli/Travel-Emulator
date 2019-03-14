@@ -28,15 +28,17 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialFlatButton^ addCityButton;
 
 	private: MaterialWinforms::Controls::MaterialFlatButton^ deleteCityButton;
-
-
-			 List<cities^>^ cityList;
+	private: List<cities^>^ cityList;
+			 BindingList<String^>^ departureData;
+			 BindingList<String^>^ destinationData;
 	public:
 		void addSql(SqlManager^ parentSql) {
 			sql = parentSql;
 		}
-	public: void getCityData(List<cities^>^ list) {
+	public: void getCityData(List<cities^>^ list, BindingList<String^>^ departurePickerData, BindingList<String^>^ destinationPickerData) {
 		cityList = list;
+		departureData = departurePickerData;
+		destinationData = destinationPickerData;
 		cityListView->BeginUpdate();
 		for each (auto item in cityList) {
 			ListViewItem^ ltv = gcnew ListViewItem();
@@ -176,6 +178,8 @@ namespace TravelEmulator {
 		cityListView->SelectedItems->Clear();
 		cityListView->Items->RemoveAt(idToRemove - 1);
 		cityListView->Update();
+		destinationData->RemoveAt(idToRemove - 1);
+		departureData->RemoveAt(idToRemove - 1);
 		((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
 	}
 	};

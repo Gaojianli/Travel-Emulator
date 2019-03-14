@@ -35,10 +35,10 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ addCity;
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ delCity;
 	public:
-
 		SqlManager^ sql;
 		List<cities^>^ cityData;
-
+		BindingList<String^>^ departureData;
+		BindingList<String^>^ destinationData;
 	public:
 		form(void) {
 			InitializeComponent();
@@ -52,12 +52,11 @@ namespace TravelEmulator {
 			log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
 			//----------Binding data--------
 			cityData = initializeCityData(this->sql);
-			List<String^>^ departureData = gcnew List<String^>();
-			List<String^>^ destinationData;
+			departureData = gcnew BindingList<String^>();
 			for (int i = 0; i < cityData->Count; i++) {
 				departureData->Add(gcnew String(cityData[i]->name));
 			}
-			destinationData = gcnew List<String^>(departureData);
+			destinationData = gcnew BindingList<String^>(departureData);
 			depaturePicker->DataSource = departureData;
 			destinationPicker->DataSource = destinationData;
 			log->writeLog("数据导入成功，共导入" + cityData->Count + "个城市", logLevel::Info);
@@ -395,7 +394,7 @@ namespace TravelEmulator {
 	private: System::Void DelCity_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto control = gcnew removeCity();
 		control->addSql(sql);//add the sql object to the dialog
-		control->getCityData(cityData);
+		control->getCityData(cityData, departureData, destinationData);
 		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);
