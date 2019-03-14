@@ -15,7 +15,7 @@ SQLiteDataReader^ SqlManager::excuteCommand(String ^command)
 
 void SqlManager::removeCityByID(int id)
 {
-	System::Windows::Forms::MessageBox::Show(id.ToString());
+	excuteCommand("delete from Cities where id like " + id);
 }
 
 void SqlManager::addCity(String^ name) {
