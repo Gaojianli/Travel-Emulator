@@ -7,6 +7,7 @@ ref class SqlManager {
 public:
 	SqlManager();
 	SQLiteDataReader^ excuteCommand(String^ command);
+	void removeCityByID(int id);
 	void addCity(String^ name);
 private:
 	SQLiteConnection^ dbConnection;

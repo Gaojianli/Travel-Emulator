@@ -54,6 +54,9 @@
     <ClInclude Include="cityAdd.h">
       <Filter>Header Files\dialogs</Filter>
     </ClInclude>
+    <ClInclude Include="removeCity.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Travel Emulator.rc">
@@ -61,7 +64,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="MaterialWinforms.dll">
       <Filter>Library</Filter>
     </None>
@@ -93,6 +95,9 @@
       <Filter>Source Files\utils</Filter>
     </ClCompile>
     <ClCompile Include="cityAdd.cpp">
+      <Filter>Header Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="removeCity.cpp">
       <Filter>Header Files\dialogs</Filter>
     </ClCompile>
   </ItemGroup>

@@ -153,6 +153,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="logger.h" />
+    <ClInclude Include="removeCity.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="sql.h" />
     <ClInclude Include="utils.h" />
@@ -163,7 +166,6 @@
   <ItemGroup>
     <None Include="db.db" />
     <None Include="MaterialWinforms.dll" />
-    <None Include="packages.config" />
     <None Include="SQLite.Interop.dll" />
     <None Include="System.Data.SQLite.dll" />
   </ItemGroup>
@@ -175,6 +177,7 @@
     <ClCompile Include="cityAdd.cpp" />
     <ClCompile Include="form.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="removeCity.cpp" />
     <ClCompile Include="sql.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
@@ -190,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form.zh.resx">
       <DependentUpon>form.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removeCity.resx">
+      <DependentUpon>removeCity.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
