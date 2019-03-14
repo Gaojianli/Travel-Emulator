@@ -11,6 +11,3 @@ List<cities^>^ initializeCityData(SqlManager^ sql) {
 	}
 	return cityData;
 }
-String^ convertToUtf8(String^ toConvert) {
-	return System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(toConvert));
-}

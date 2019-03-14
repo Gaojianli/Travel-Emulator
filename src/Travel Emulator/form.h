@@ -35,8 +35,8 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ delCity;
 	public:
 
-			 SqlManager^ sql;
-			List<cities^>^ cityData;
+		SqlManager^ sql;
+		List<cities^>^ cityData;
 
 	public:
 		form(void) {
@@ -51,7 +51,7 @@ namespace TravelEmulator {
 			log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
 			//----------Binding data--------
 			cityData = initializeCityData(this->sql);
-			List<String^>^ departureData= gcnew List<String^>();
+			List<String^>^ departureData = gcnew List<String^>();
 			List<String^>^ destinationData;
 			for (int i = 0; i < cityData->Count; i++) {
 				departureData->Add(gcnew String(cityData[i]->name));
@@ -342,17 +342,19 @@ namespace TravelEmulator {
 		System::Void MaterialFlatButton1_Click(System::Object ^ sender,
 			System::EventArgs ^ e) {
 			auto dialog = gcnew SaveFileDialog();
-			dialog->Title = "请选择要保存的文件";
-			dialog->Filter = "日志文件(*.log)|*.log";
+			dialog->Title = convertToUtf8("请选择要保存的文件");
+			dialog->Filter = convertToUtf8("日志文件(*.log)|*.log");
 			if (dialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 				auto file = dialog->FileName;
 				auto sw = gcnew StreamWriter(file, false);
-				sw->WriteLine(logOutput->Text);
-				sw->Close();
-				showHeadupMessage(L"成功", L"日志保存成功");
-			}
-			else {
-				showHeadupMessage(L"错误","打开文件失败，请重试");
+				if (sw) {
+					sw->WriteLine(logOutput->Text);
+					sw->Close();
+					showHeadupMessage(convertToUtf8(L"成功"), convertToUtf8(L"日志保存成功"));
+				}
+				else {
+					showHeadupMessage(convertToUtf8(L"错误"), convertToUtf8("打开文件失败，请重试"));
+				}
 			}
 		}
 	private:
@@ -367,27 +369,26 @@ namespace TravelEmulator {
 			headupmsg->Buttons->Add(headUpButton);
 			headupmsg->Show();
 		}
-		System::Void headUpButton_Click(System::Object^ sender,
-			System::EventArgs^ e) {
+		System::Void headUpButton_Click(System::Object ^ sender,
+			System::EventArgs ^ e) {
 			((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
 		}
-	private: System::Void AddCity_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void AddCity_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
 		control->getCityData(cityData);
 		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);
-		MaterialDialog::Show(convertToUtf8(L"添加城市"), t,MaterialDialog::Buttons::OK);
+		MaterialDialog::Show(convertToUtf8(L"添加城市"), t, MaterialDialog::Buttons::OK);
 	}
-private: System::Void DepaturePicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	auto findFun = gcnew Predicate<cities^>(this,&form::getCityByName_depature);
-	auto select = cityData->Find(findFun);
-	log->writeLog(select->ToString(),logLevel::Info);
-}
-private: bool getCityByName_depature(cities^ obj){
-	return obj->name->Equals(depaturePicker->SelectedItem->ToString());
-}
-};
-
+	private: System::Void DepaturePicker_TextChanged(System::Object ^ sender, System::EventArgs ^ e) {
+		auto findFun = gcnew Predicate<cities^>(this, &form::getCityByName_depature);
+		auto select = cityData->Find(findFun);
+		log->writeLog(select->ToString(), logLevel::Info);
+	}
+	private: bool getCityByName_depature(cities ^ obj) {
+		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
+	}
+	};
 }  // namespace TravelEmulator

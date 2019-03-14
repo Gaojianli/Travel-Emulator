@@ -7,4 +7,4 @@ using namespace System;
 using namespace System::Collections;
 using namespace System::Collections::Generic;
 List<cities^>^ initializeCityData(SqlManager^ sql);
-String^ convertToUtf8(String^ toConvert);
+#define convertToUtf8(toConvert) System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(toConvert))
