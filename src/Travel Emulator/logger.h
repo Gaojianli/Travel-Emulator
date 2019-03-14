@@ -1,5 +1,4 @@
 #pragma once
-#include <functional>
 using namespace System::IO;
 using namespace System;
 namespace logger {
