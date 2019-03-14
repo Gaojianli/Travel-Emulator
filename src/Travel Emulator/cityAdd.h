@@ -26,6 +26,7 @@ namespace TravelEmulator {
 		}
 	private:
 		SqlManager^ sql;
+		List<cities^>^ cityList;
 	public:
 		void addSql(SqlManager^ parentSql){
 			sql = parentSql;
@@ -139,10 +140,13 @@ namespace TravelEmulator {
 				headupmsg->Buttons->Add(headUpButton);
 				headupmsg->Show();
 			}
-			
+	public: void getCityData(List<cities^>^ list) {
+		cityList = list;
+	}
 	private: System::Void SaveButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (sql) {
 			sql->addCity(nameInput->Text);
+			cityList->Add(gcnew cities(nameInput->Text));
 			nameInput->Text = "";
 			showHeadupMessage(L"", L"添加成功!");
 		}

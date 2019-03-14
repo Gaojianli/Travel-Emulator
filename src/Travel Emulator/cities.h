@@ -1,15 +1,13 @@
 //cities.h The city class
 #pragma once
-#include<string>
-#include <iostream>
-using namespace std;
-class cities
+using namespace System;
+ref class cities
 {
 public:
 	int id;
-	std::string name;
-	cities(string name);
+	String^ name;
+	cities(String^ name);
 private:
-	static int count;
+	static int count=0;
 };
 

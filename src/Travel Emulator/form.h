@@ -33,9 +33,10 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialCard^ cityManageCard;
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ addCity;
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ delCity;
-
+	public:
 
 			 SqlManager^ sql;
+			List<cities^>^ cityData;
 
 	public:
 		form(void) {
@@ -44,17 +45,18 @@ namespace TravelEmulator {
 			formManager->AddFormToManage(this);
 			formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
 			cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"城市管理"));
-			List<String^>^ cityData;
-			List<String^>^ departureData;
-			List<String^>^ destinationData;
 			log = gcnew Logger(logOutput);  //initialize log output
 			log->writeLog("程序启动成功", logLevel::Info);
 			sql = gcnew SqlManager();// initialize sql manager
 			log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
 			//----------Binding data--------
-			departureData = initializeCityData(this->sql);
-			destinationData = initializeCityData(this->sql);
 			cityData = initializeCityData(this->sql);
+			List<String^>^ departureData= gcnew List<String^>();
+			List<String^>^ destinationData;
+			for (int i = 0; i < cityData->Count; i++) {
+				departureData->Add(gcnew String(cityData[i]->name));
+			}
+			destinationData = gcnew List<String^>(departureData);
 			depaturePicker->DataSource = departureData;
 			destinationPicker->DataSource = destinationData;
 			log->writeLog("数据导入成功，共导入" + cityData->Count + "个城市", logLevel::Info);
@@ -163,7 +165,7 @@ namespace TravelEmulator {
 			this->materialTabControlLog->Depth = 0;
 			this->materialTabControlLog->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->materialTabControlLog->Name = L"materialTabControlLog";
-			this->materialTabControlLog->SelectedIndex = 2;
+			this->materialTabControlLog->SelectedIndex = 0;
 			this->materialTabControlLog->TabsAreClosable = true;
 			// 
 			// materialTabPage1
@@ -215,6 +217,7 @@ namespace TravelEmulator {
 			this->depaturePicker->FormattingEnabled = true;
 			this->depaturePicker->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->depaturePicker->Name = L"depaturePicker";
+			this->depaturePicker->TextChanged += gcnew System::EventHandler(this, &form::DepaturePicker_TextChanged);
 			// 
 			// materialTabPageMgnt
 			// 
@@ -371,11 +374,20 @@ namespace TravelEmulator {
 	private: System::Void AddCity_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
+		control->getCityData(cityData);
 		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);
 		MaterialDialog::Show(convertToUtf8(L"添加城市"), t,MaterialDialog::Buttons::OK);
 	}
+private: System::Void DepaturePicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	auto findFun = gcnew Predicate<cities^>(this,&form::getCityByName_depature);
+	auto select = cityData->Find(findFun);
+	log->writeLog(select->ToString(),logLevel::Info);
+}
+private: bool getCityByName_depature(cities^ obj){
+	return obj->name->Equals(depaturePicker->SelectedItem->ToString());
+}
 };
 
 }  // namespace TravelEmulator

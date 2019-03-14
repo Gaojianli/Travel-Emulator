@@ -1,8 +1,7 @@
 #include "cities.h"
 
 
-cities::cities(string name):name(name){
+cities::cities(String^ name):name(name){
 	count++;
 	this->id = count;
 }
-int cities::count = 0;

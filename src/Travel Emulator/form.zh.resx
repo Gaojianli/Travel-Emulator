@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="destinationPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>800, 661</value>
+    <value>457, 336</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="destinationPicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>9, 8, 9, 8</value>
   </data>
-  <data name="destinationPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 28</value>
+  <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 11pt</value>
   </data>
   <data name="materialLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -136,6 +136,9 @@
   </data>
   <data name="materialLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>9, 0, 9, 0</value>
+  </data>
+  <data name="materialLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 11pt</value>
   </data>
   <data name="materialLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>145, 203</value>
