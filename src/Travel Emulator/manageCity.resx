@@ -128,9 +128,6 @@
   <data name="addCityButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 36</value>
   </data>
-  <data name="deleteCityButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 557</value>
-  </data>
   <data name="&gt;&gt;addCityButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -163,7 +160,7 @@
     <value>MaterialWinforms.Controls.MaterialUserControl, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>removeCity</value>
+    <value>manageCity</value>
   </data>
   <data name="&gt;&gt;deleteCityButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -174,8 +171,14 @@
   <data name="cityListView.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 24pt</value>
   </data>
+  <data name="cityListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>507, 429</value>
+  </data>
   <data name="deleteCityButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 36</value>
+  </data>
+  <data name="addCityButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 557</value>
   </data>
   <data name="id.Text" xml:space="preserve">
     <value>id</value>
@@ -201,14 +204,14 @@
   <data name="&gt;&gt;id.Name" xml:space="preserve">
     <value>id</value>
   </data>
+  <data name="&gt;&gt;cityListView.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="addCityButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
   <data name="addCityButton.Text" xml:space="preserve">
     <value>添加城市</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 4, 5, 4</value>
   </data>
   <data name="deleteCityButton.Text" xml:space="preserve">
     <value>删除选定城市</value>
@@ -225,8 +228,8 @@
   <data name="addCityButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>14, 29</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
   </data>
   <data name="deleteCityButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
@@ -240,17 +243,14 @@
   <data name="&gt;&gt;deleteCityButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="addCityButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 557</value>
-  </data>
   <data name="&gt;&gt;addCityButton.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialFlatButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cityName.Name" xml:space="preserve">
     <value>cityName</value>
   </data>
-  <data name="cityListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 429</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>14, 29</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>967, 782</value>
@@ -258,8 +258,8 @@
   <data name="deleteCityButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="&gt;&gt;cityListView.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="deleteCityButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>441, 557</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

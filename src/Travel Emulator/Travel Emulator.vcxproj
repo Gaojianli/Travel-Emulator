@@ -153,7 +153,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="logger.h" />
-    <ClInclude Include="removeCity.h">
+    <ClInclude Include="manageCity.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
@@ -177,7 +177,7 @@
     <ClCompile Include="cityAdd.cpp" />
     <ClCompile Include="form.cpp" />
     <ClCompile Include="logger.cpp" />
-    <ClCompile Include="removeCity.cpp" />
+    <ClCompile Include="manageCity.cpp" />
     <ClCompile Include="sql.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
@@ -194,8 +194,11 @@
     <EmbeddedResource Include="form.zh.resx">
       <DependentUpon>form.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="removeCity.resx">
-      <DependentUpon>removeCity.h</DependentUpon>
+    <EmbeddedResource Include="manageCity.resx">
+      <DependentUpon>manageCity.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manageCity.zh.resx">
+      <DependentUpon>manageCity.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
