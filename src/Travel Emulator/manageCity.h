@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "utils.h"
-
+#include "cityAdd.h"
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -12,12 +12,12 @@ using namespace MaterialWinforms::Controls;
 namespace TravelEmulator {
 
 	/// <summary>
-	/// Summary for removeCity
+	/// Summary for manageCity
 	/// </summary>
-	public ref class removeCity : public MaterialUserControl
+	public ref class manageCity : public MaterialUserControl
 	{
 	public:
-		removeCity(void)
+		manageCity(void)
 		{
 			InitializeComponent();
 		}
@@ -52,7 +52,7 @@ namespace TravelEmulator {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~removeCity()
+		~manageCity()
 		{
 			if (components)
 			{
@@ -75,7 +75,7 @@ namespace TravelEmulator {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(removeCity::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(manageCity::typeid));
 			this->cityListView = (gcnew MaterialWinforms::Controls::MaterialListView());
 			this->id = (gcnew System::Windows::Forms::ColumnHeader());
 			this->cityName = (gcnew System::Windows::Forms::ColumnHeader());
@@ -101,7 +101,7 @@ namespace TravelEmulator {
 			this->cityListView->OwnerDraw = true;
 			this->cityListView->UseCompatibleStateImageBehavior = false;
 			this->cityListView->View = System::Windows::Forms::View::Details;
-			this->cityListView->SelectedIndexChanged += gcnew System::EventHandler(this, &removeCity::CityListView_SelectedIndexChanged);
+			this->cityListView->SelectedIndexChanged += gcnew System::EventHandler(this, &manageCity::CityListView_SelectedIndexChanged);
 			// 
 			// id
 			// 
@@ -124,6 +124,7 @@ namespace TravelEmulator {
 			this->addCityButton->Primary = false;
 			this->addCityButton->Selected = false;
 			this->addCityButton->UseVisualStyleBackColor = true;
+			this->addCityButton->Click += gcnew System::EventHandler(this, &manageCity::AddCityButton_Click);
 			// 
 			// deleteCityButton
 			// 
@@ -137,17 +138,17 @@ namespace TravelEmulator {
 			this->deleteCityButton->Primary = false;
 			this->deleteCityButton->Selected = false;
 			this->deleteCityButton->UseVisualStyleBackColor = true;
-			this->deleteCityButton->Click += gcnew System::EventHandler(this, &removeCity::DeleteCityButton_Click);
+			this->deleteCityButton->Click += gcnew System::EventHandler(this, &manageCity::DeleteCityButton_Click);
 			// 
-			// removeCity
+			// manageCity
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->deleteCityButton);
 			this->Controls->Add(this->addCityButton);
 			this->Controls->Add(this->cityListView);
-			this->Name = L"removeCity";
-			this->Load += gcnew System::EventHandler(this, &removeCity::RemoveCity_Load);
+			this->Name = L"manageCity";
+			this->Load += gcnew System::EventHandler(this, &manageCity::RemoveCity_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -167,7 +168,7 @@ namespace TravelEmulator {
 		MaterialFlatButton^ headUpButton = gcnew MaterialFlatButton();
 		headUpButton->Tag = headupmsg;
 		headUpButton->Text = L"是";
-		headUpButton->Click += gcnew System::EventHandler(this, &removeCity::headUpButton_Click);;
+		headUpButton->Click += gcnew System::EventHandler(this, &manageCity::headUpButton_Click);;
 		headupmsg->Buttons->Add(headUpButton);
 		headupmsg->Show();
 	}
@@ -182,5 +183,24 @@ namespace TravelEmulator {
 		departureData->RemoveAt(idToRemove - 1);
 		((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
 	}
-	};
+	private: System::Void AddCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		auto control = gcnew cityAdd();
+		control->addSql(sql);//add the sql object to the dialog
+		control->getCityData(cityList);
+		UserControl^ t = gcnew UserControl();
+		t->Size = control->Size;
+		t->Controls->Add(control);
+		MaterialDialog::Show(L"添加城市", t, MaterialDialog::Buttons::OK);
+		//update view
+		cityListView->BeginUpdate();
+		cityListView->Items->Clear();
+		for each (auto item in cityList) {
+			ListViewItem^ ltv = gcnew ListViewItem();
+			ltv->Text = item->id.ToString();
+			ltv->SubItems->Add(item->name);
+			cityListView->Items->Add(ltv);
+		}
+		cityListView->EndUpdate();
+	}
+};
 }

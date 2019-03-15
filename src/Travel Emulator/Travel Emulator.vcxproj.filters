@@ -54,7 +54,7 @@
     <ClInclude Include="cityAdd.h">
       <Filter>Header Files\dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="removeCity.h">
+    <ClInclude Include="manageCity.h">
       <Filter>Header Files\dialogs</Filter>
     </ClInclude>
   </ItemGroup>
@@ -97,7 +97,7 @@
     <ClCompile Include="cityAdd.cpp">
       <Filter>Header Files\dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="removeCity.cpp">
+    <ClCompile Include="manageCity.cpp">
       <Filter>Header Files\dialogs</Filter>
     </ClCompile>
   </ItemGroup>
