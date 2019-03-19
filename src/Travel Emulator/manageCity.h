@@ -14,12 +14,15 @@ namespace TravelEmulator {
 	/// <summary>
 	/// Summary for manageCity
 	/// </summary>
-	public ref class manageCity : public MaterialUserControl
-	{
+	public ref class manageCity : public MaterialWinforms::Controls::MaterialForm{
 	public:
 		manageCity(void)
 		{
 			InitializeComponent();
+			auto formManager = MaterialWinforms::MaterialSkinManager::Instance;
+			formManager->AddFormToManage(this);
+			formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
+			this->Text = L"城市管理";
 		}
 	private:
 		SqlManager^ sql;
@@ -137,7 +140,7 @@ namespace TravelEmulator {
 			this->deleteCityButton->Name = L"deleteCityButton";
 			this->deleteCityButton->Primary = false;
 			this->deleteCityButton->Selected = false;
-			this->deleteCityButton->UseVisualStyleBackColor = true;
+			this->deleteCityButton->UseVisualStyleBackColor = false;
 			this->deleteCityButton->Click += gcnew System::EventHandler(this, &manageCity::DeleteCityButton_Click);
 			// 
 			// manageCity
@@ -147,6 +150,8 @@ namespace TravelEmulator {
 			this->Controls->Add(this->deleteCityButton);
 			this->Controls->Add(this->addCityButton);
 			this->Controls->Add(this->cityListView);
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"manageCity";
 			this->Load += gcnew System::EventHandler(this, &manageCity::RemoveCity_Load);
 			this->ResumeLayout(false);
@@ -163,6 +168,7 @@ namespace TravelEmulator {
 	}
 	private: System::Void DeleteCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		HeadsUp^ headupmsg = gcnew HeadsUp();
+		deleteCityButton->Tag = this;
 		headupmsg->Titel = L"警告";
 		headupmsg->Text = L"将删除城市“" + cityListView->SelectedItems[0]->SubItems[1]->Text + L"”，此操作不可撤销，是否继续？";
 		MaterialFlatButton^ headUpButton = gcnew MaterialFlatButton();
@@ -172,6 +178,7 @@ namespace TravelEmulator {
 		headupmsg->Buttons->Add(headUpButton);
 		headupmsg->Show();
 	}
+	
 	private:System::Void headUpButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto idToRemove = System::Int16::Parse(cityListView->SelectedItems[0]->Text);
 		cityList->RemoveAt(idToRemove - 1);
@@ -181,6 +188,7 @@ namespace TravelEmulator {
 		cityListView->Update();
 		destinationData->RemoveAt(idToRemove - 1);
 		departureData->RemoveAt(idToRemove - 1);
+		_sleep(300);//sleep for 300ms or it will error
 		((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
 	}
 	private: System::Void AddCityButton_Click(System::Object^ sender, System::EventArgs^ e) {

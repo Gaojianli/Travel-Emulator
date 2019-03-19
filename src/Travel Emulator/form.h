@@ -378,13 +378,10 @@ namespace TravelEmulator {
 		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
 	}
 	private: System::Void manageCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto control = gcnew manageCity();
-		control->addSql(sql);//add the sql object to the dialog
-		control->getCityData(cityData, departureData, destinationData);
-		UserControl^ t = gcnew UserControl();
-		t->Size = control->Size;
-		t->Controls->Add(control);
-		MaterialDialog::Show(convertToUtf8(L"城市管理"), t, MaterialDialog::Buttons::OK);
+		auto manageForm = gcnew manageCity();
+		manageForm->addSql(sql);//add the sql object to the dialog
+		manageForm->getCityData(cityData, departureData, destinationData);
+		manageForm->Show();
 	}
 };
 }  // namespace TravelEmulator
