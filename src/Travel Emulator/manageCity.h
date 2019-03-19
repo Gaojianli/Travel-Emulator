@@ -168,7 +168,6 @@ namespace TravelEmulator {
 	}
 	private: System::Void DeleteCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		HeadsUp^ headupmsg = gcnew HeadsUp();
-		deleteCityButton->Tag = this;
 		headupmsg->Titel = L"警告";
 		headupmsg->Text = L"将删除城市“" + cityListView->SelectedItems[0]->SubItems[1]->Text + L"”，此操作不可撤销，是否继续？";
 		MaterialFlatButton^ headUpButton = gcnew MaterialFlatButton();
