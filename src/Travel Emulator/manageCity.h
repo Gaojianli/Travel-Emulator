@@ -14,7 +14,7 @@ namespace TravelEmulator {
 	/// <summary>
 	/// Summary for manageCity
 	/// </summary>
-	public ref class manageCity : public MaterialWinforms::Controls::MaterialForm{
+	public ref class manageCity : public MaterialWinforms::Controls::MaterialForm {
 	public:
 		manageCity(void)
 		{
@@ -61,6 +61,7 @@ namespace TravelEmulator {
 			{
 				delete components;
 			}
+			GC::Collect();
 		}
 	private: MaterialWinforms::Controls::MaterialListView^ cityListView;
 	protected:
@@ -177,7 +178,7 @@ namespace TravelEmulator {
 		headupmsg->Buttons->Add(headUpButton);
 		headupmsg->Show();
 	}
-	
+
 	private:System::Void headUpButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto idToRemove = System::Int16::Parse(cityListView->SelectedItems[0]->Text);
 		cityList->RemoveAt(idToRemove - 1);
@@ -190,7 +191,7 @@ namespace TravelEmulator {
 		_sleep(300);//sleep for 300ms or it will error
 		((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
 	}
-	private: System::Void AddCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void AddCityButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
 		control->getCityData(cityList);
@@ -209,5 +210,5 @@ namespace TravelEmulator {
 		}
 		cityListView->EndUpdate();
 	}
-};
+	};
 }

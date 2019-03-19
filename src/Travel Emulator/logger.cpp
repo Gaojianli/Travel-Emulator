@@ -20,7 +20,7 @@ void logger::Logger::writeLog(String^ log, logLevel level) {
 	if (writerBox) {
 		auto time = DateTime::Now.ToString("yyyy-MM-dd HH:mm::ss");
 		auto temp = System::Text::Encoding::Default->GetBytes(time + "\t" + "[" + logLevelString +
-				"]\t" + log + "\n");//convert to utf8
+			"]\t" + log + "\n");//convert to utf8
 		writerBox->Text = writerBox->Text + System::Text::Encoding::UTF8->GetString(temp);
 	}
 }

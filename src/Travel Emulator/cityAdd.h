@@ -28,7 +28,7 @@ namespace TravelEmulator {
 		SqlManager^ sql;
 		List<cities^>^ cityList;
 	public:
-		void addSql(SqlManager^ parentSql){
+		void addSql(SqlManager^ parentSql) {
 			sql = parentSql;
 		}
 	protected:
@@ -41,6 +41,7 @@ namespace TravelEmulator {
 			{
 				delete components;
 			}
+			GC::Collect();
 		}
 	private: MaterialWinforms::Controls::MaterialSingleLineTextField^ nameInput;
 	protected:
@@ -56,7 +57,7 @@ namespace TravelEmulator {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -124,22 +125,22 @@ namespace TravelEmulator {
 
 		}
 #pragma endregion
-		private:
-			System::Void headUpButton_Click(System::Object^ sender,
-				System::EventArgs^ e) {
-				((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
-			}
-			void showHeadupMessage(String^ title, String^ info) {
-				HeadsUp^ headupmsg = gcnew HeadsUp();
-				headupmsg->Titel = title;
-				headupmsg->Text = info;
-				MaterialFlatButton^ headUpButton = gcnew MaterialFlatButton();
-				headUpButton->Tag = headupmsg;
-				headUpButton->Text = "OK";
-				headUpButton->Click += gcnew System::EventHandler(this,&cityAdd::headUpButton_Click);
-				headupmsg->Buttons->Add(headUpButton);
-				headupmsg->Show();
-			}
+	private:
+		System::Void headUpButton_Click(System::Object^ sender,
+			System::EventArgs^ e) {
+			((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
+		}
+		void showHeadupMessage(String^ title, String^ info) {
+			HeadsUp^ headupmsg = gcnew HeadsUp();
+			headupmsg->Titel = title;
+			headupmsg->Text = info;
+			MaterialFlatButton^ headUpButton = gcnew MaterialFlatButton();
+			headUpButton->Tag = headupmsg;
+			headUpButton->Text = "OK";
+			headUpButton->Click += gcnew System::EventHandler(this, &cityAdd::headUpButton_Click);
+			headupmsg->Buttons->Add(headUpButton);
+			headupmsg->Show();
+		}
 	public: void getCityData(List<cities^>^ list) {
 		cityList = list;
 	}
@@ -151,5 +152,5 @@ namespace TravelEmulator {
 			showHeadupMessage(L"", L"添加成功!");
 		}
 	}
-};
+	};
 }
