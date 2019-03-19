@@ -43,6 +43,7 @@ namespace TravelEmulator {
 	public:
 		form(void) {
 			InitializeComponent();
+			SetGCTimer();
 			auto formManager = MaterialWinforms::MaterialSkinManager::Instance;
 			formManager->AddFormToManage(this);
 			formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
@@ -63,7 +64,20 @@ namespace TravelEmulator {
 			log->writeLog("数据导入成功，共导入" + cityData->Count + "个城市", logLevel::Info);
 			//-----------End----------------
 		}
-
+		//timer to collection garbage
+	private: void SetGCTimer()
+	{
+		System::Timers::Timer^ aTimer = gcnew System::Timers::Timer();
+		aTimer->Interval = 6000;
+		aTimer->Elapsed += gcnew System::Timers::ElapsedEventHandler(this, &form::OnTimedEvent);
+		aTimer->AutoReset = true;
+		aTimer->Enabled = true;
+	}
+	private: void OnTimedEvent(Object^ source, System::Timers::ElapsedEventArgs^ e)
+	{
+		GC::Collect();
+		GC::WaitForPendingFinalizers();
+	}
 	protected:
 		/// <summary>
 		/// 清理所有正在使用的资源。
@@ -377,11 +391,11 @@ namespace TravelEmulator {
 	private: bool getCityByName_depature(cities ^ obj) {
 		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
 	}
-	private: System::Void manageCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void manageCityButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		auto manageForm = gcnew manageCity();
 		manageForm->addSql(sql);//add the sql object to the dialog
 		manageForm->getCityData(cityData, departureData, destinationData);
 		manageForm->Show();
 	}
-};
+	};
 }  // namespace TravelEmulator
