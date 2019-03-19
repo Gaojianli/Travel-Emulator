@@ -121,4 +121,10 @@
   <data name="cityListView.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 24pt</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>967, 782</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>城市管理</value>
+  </data>
 </root>
