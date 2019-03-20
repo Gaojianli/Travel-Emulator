@@ -128,8 +128,8 @@
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>9, 12, 9, 12</value>
   </data>
-  <data name="&gt;&gt;manageCity.Name" xml:space="preserve">
-    <value>manageCity</value>
+  <data name="materialTabSelector1.Text" xml:space="preserve">
+    <value>materialTabSelector1</value>
   </data>
   <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -143,14 +143,18 @@
   <data name="materialTabPage1.Text" xml:space="preserve">
     <value>查询路线</value>
   </data>
-  <data name="materialTabSelector1.Text" xml:space="preserve">
-    <value>materialTabSelector1</value>
+  <data name="&gt;&gt;materialTabControlLog.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;materialTabPage2.Parent" xml:space="preserve">
     <value>materialTabControlLog</value>
   </data>
   <data name="materialLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TabPageLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
   </data>
   <data name="materialTabPageMgnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 6, 5, 6</value>
@@ -164,7 +168,6 @@
   <data name="materialTabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 6, 5, 6</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="logOutput.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -174,14 +177,14 @@
   <data name="&gt;&gt;cityManageCard.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;delCity.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
+    <value>materialTabControlLog</value>
   </data>
   <data name="&gt;&gt;delCity.Name" xml:space="preserve">
     <value>delCity</value>
   </data>
-  <data name="&gt;&gt;materialTabControlLog.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;manageCity.Name" xml:space="preserve">
+    <value>manageCity</value>
   </data>
   <data name="&gt;&gt;materialTabPage2.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -204,8 +207,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>旅行模拟系统</value>
   </data>
-  <data name="saveLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>18, 19, 18, 19</value>
+  <data name="&gt;&gt;TabPageMgnt.Name" xml:space="preserve">
+    <value>TabPageMgnt</value>
   </data>
   <data name="&gt;&gt;manageCityButton.Name" xml:space="preserve">
     <value>manageCityButton</value>
@@ -213,11 +216,14 @@
   <data name="materialTabPage1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
+  <data name="TabPageMgnt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
   <data name="materialTabSelector1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 10</value>
   </data>
   <data name="&gt;&gt;saveLog.Parent" xml:space="preserve">
-    <value>materialTabPage2</value>
+    <value>TabPageLog</value>
   </data>
   <data name="materialTabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -243,14 +249,23 @@
   <data name="manageCityButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 46</value>
+  </data>
   <data name="&gt;&gt;materialLabel2.Name" xml:space="preserve">
     <value>materialLabel2</value>
   </data>
   <data name="&gt;&gt;depaturePicker.Parent" xml:space="preserve">
-    <value>materialTabPage1</value>
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="materialLabel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 11pt</value>
+  </data>
+  <data name="materialTabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 53</value>
   </data>
   <data name="destinationPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 28</value>
@@ -273,8 +288,11 @@
   <data name="delCity.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 106</value>
   </data>
-  <data name="&gt;&gt;materialLabel1.Parent" xml:space="preserve">
-    <value>materialTabPage1</value>
+  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
+    <value>TabPage1</value>
+  </data>
+  <data name="&gt;&gt;TabPageMgnt.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cityManageCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 25, 5, 5</value>
@@ -291,20 +309,23 @@
   <data name="materialTabPage2.Text" xml:space="preserve">
     <value>日志</value>
   </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>14, 29</value>
+  </data>
   <data name="manageCity.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 106</value>
   </data>
   <data name="&gt;&gt;delCity.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialRaisedButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="materialLabel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="logOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>1521, 619</value>
   </data>
-  <data name="materialTabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 53</value>
+  <data name="delCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;delCity.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>form</value>
@@ -318,17 +339,23 @@
   <data name="&gt;&gt;materialLabel2.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="&gt;&gt;TabPageLog.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="materialTabPageMgnt.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="depaturePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 6, 5, 6</value>
   </data>
-  <data name="materialTabControlLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+  <data name="materialLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="saveLog.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="logOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 6, 5, 6</value>
@@ -360,6 +387,9 @@
   <data name="delCity.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 62</value>
   </data>
+  <data name="depaturePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>457, 211</value>
+  </data>
   <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 11pt</value>
   </data>
@@ -375,8 +405,8 @@
   <data name="saveLog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="delCity.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;materialLabel1.Parent" xml:space="preserve">
+    <value>TabPage1</value>
   </data>
   <data name="saveLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 36</value>
@@ -393,14 +423,26 @@
   <data name="&gt;&gt;materialTabControlLog.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialTabControl, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="&gt;&gt;TabPageMgnt.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="TabPageMgnt.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;destinationPicker.Parent" xml:space="preserve">
-    <value>materialTabPage1</value>
+    <value>TabPage1</value>
   </data>
   <data name="&gt;&gt;destinationPicker.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;TabPageLog.Name" xml:space="preserve">
+    <value>TabPageLog</value>
+  </data>
   <data name="&gt;&gt;logOutput.Name" xml:space="preserve">
     <value>logOutput</value>
+  </data>
+  <data name="&gt;&gt;TabPageLog.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;destinationPicker.Name" xml:space="preserve">
     <value>destinationPicker</value>
@@ -413,6 +455,9 @@
   </data>
   <data name="cityManageCard.Location" type="System.Drawing.Point, System.Drawing">
     <value>107, 99</value>
+  </data>
+  <data name="TabPageLog.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;manageCityButton.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -444,8 +489,11 @@
   <data name="materialTabControlLog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="depaturePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>457, 211</value>
+  <data name="saveLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>18, 19, 18, 19</value>
+  </data>
+  <data name="&gt;&gt;TabPageMgnt.Parent" xml:space="preserve">
+    <value>materialTabControlLog</value>
   </data>
   <data name="delCity.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -462,8 +510,8 @@
   <data name="&gt;&gt;saveLog.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>14, 29</value>
+  <data name="materialTabControlLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 6, 5, 6</value>
   </data>
   <data name="&gt;&gt;cityManageCard.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialCard, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -475,6 +523,9 @@
     <value>1501, 752</value>
   </data>
   <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;logOutput.ZOrder" xml:space="preserve">
@@ -489,20 +540,17 @@
   <data name="&gt;&gt;depaturePicker.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;materialTabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;materialTabPage1.Parent" xml:space="preserve">
     <value>materialTabControlLog</value>
   </data>
   <data name="&gt;&gt;materialLabel2.Parent" xml:space="preserve">
-    <value>materialTabPage1</value>
+    <value>TabPage1</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1521, 896</value>
   </data>
   <data name="&gt;&gt;logOutput.Parent" xml:space="preserve">
-    <value>materialTabPage2</value>
+    <value>TabPageLog</value>
   </data>
   <data name="&gt;&gt;saveLog.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialFlatButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -526,16 +574,19 @@
     <value>depaturePicker</value>
   </data>
   <data name="&gt;&gt;cityManageCard.Parent" xml:space="preserve">
-    <value>materialTabPageMgnt</value>
+    <value>TabPageMgnt</value>
   </data>
   <data name="saveLog.Text" xml:space="preserve">
     <value>保存日志</value>
   </data>
-  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 46</value>
+  <data name="&gt;&gt;materialTabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="materialTabPageMgnt.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
   </data>
   <data name="materialTabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1501, 752</value>
@@ -546,16 +597,19 @@
   <data name="&gt;&gt;manageCity.Parent" xml:space="preserve">
     <value>cityManageCard</value>
   </data>
+  <data name="&gt;&gt;TabPageLog.Parent" xml:space="preserve">
+    <value>materialTabControlLog</value>
+  </data>
   <data name="&gt;&gt;materialTabControlLog.Name" xml:space="preserve">
     <value>materialTabControlLog</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialTabSelector1.Locked" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>zh</value>
-  </data>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="materialTabSelector1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -18,6 +18,10 @@ void SqlManager::removeCityByID(int id)
 	excuteCommand("delete from Cities where id like " + id);
 }
 
+void SqlManager::removeCityByName(String ^ name) {
+	excuteCommand("delete from Cities where name like \"" + name + "\"");
+}
+
 void SqlManager::addCity(String ^ name) {
 	auto result = this->excuteCommand("insert into cities (name) values(\"" + name + "\");");
 }

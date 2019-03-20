@@ -61,7 +61,7 @@ namespace TravelEmulator {
 			destinationData = gcnew BindingList<String^>(departureData);
 			depaturePicker->DataSource = departureData;
 			destinationPicker->DataSource = destinationData;
-			log->writeLog("数据导入成功，共导入" + cityData->Count + "个城市", logLevel::Info);
+			log->writeLog("数据导入成功，导入城市数量：" + cityData->Count.ToString(), logLevel::Info);
 			//-----------End----------------
 		}
 		//timer to collection garbage
@@ -93,16 +93,19 @@ namespace TravelEmulator {
 
 	private:
 		MaterialWinforms::Controls::MaterialTabControl^ materialTabControlLog;
+	private: MaterialWinforms::Controls::MaterialTabPage^ TabPage1;
 
 	protected:
 	private:
-		MaterialWinforms::Controls::MaterialTabPage^ materialTabPage1;
+
+	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageLog;
 
 	private:
-		MaterialWinforms::Controls::MaterialTabPage^ materialTabPage2;
+
+	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageMgnt;
 
 	private:
-		MaterialWinforms::Controls::MaterialTabPage^ materialTabPageMgnt;
+
 
 	private:
 		MaterialWinforms::Controls::MaterialComboBox^ depaturePicker;
@@ -137,22 +140,22 @@ namespace TravelEmulator {
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath1 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			this->materialTabSelector1 = (gcnew MaterialWinforms::Controls::MaterialTabSelector());
 			this->materialTabControlLog = (gcnew MaterialWinforms::Controls::MaterialTabControl());
-			this->materialTabPage1 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
+			this->TabPage1 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->destinationPicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
 			this->materialLabel2 = (gcnew MaterialWinforms::Controls::MaterialLabel());
 			this->materialLabel1 = (gcnew MaterialWinforms::Controls::MaterialLabel());
 			this->depaturePicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
-			this->materialTabPageMgnt = (gcnew MaterialWinforms::Controls::MaterialTabPage());
+			this->TabPageMgnt = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->cityManageCard = (gcnew MaterialWinforms::Controls::MaterialCard());
 			this->manageCityButton = (gcnew MaterialWinforms::Controls::MaterialRaisedButton());
-			this->materialTabPage2 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
+			this->TabPageLog = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->saveLog = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->logOutput = (gcnew MaterialWinforms::Controls::MaterialTextBox());
 			this->materialTabControlLog->SuspendLayout();
-			this->materialTabPage1->SuspendLayout();
-			this->materialTabPageMgnt->SuspendLayout();
+			this->TabPage1->SuspendLayout();
+			this->TabPageMgnt->SuspendLayout();
 			this->cityManageCard->SuspendLayout();
-			this->materialTabPage2->SuspendLayout();
+			this->TabPageLog->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// materialTabSelector1
@@ -172,26 +175,26 @@ namespace TravelEmulator {
 			// materialTabControlLog
 			// 
 			resources->ApplyResources(this->materialTabControlLog, L"materialTabControlLog");
-			this->materialTabControlLog->Controls->Add(this->materialTabPage1);
-			this->materialTabControlLog->Controls->Add(this->materialTabPageMgnt);
-			this->materialTabControlLog->Controls->Add(this->materialTabPage2);
+			this->materialTabControlLog->Controls->Add(this->TabPage1);
+			this->materialTabControlLog->Controls->Add(this->TabPageMgnt);
+			this->materialTabControlLog->Controls->Add(this->TabPageLog);
 			this->materialTabControlLog->Depth = 0;
 			this->materialTabControlLog->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->materialTabControlLog->Name = L"materialTabControlLog";
-			this->materialTabControlLog->SelectedIndex = 1;
+			this->materialTabControlLog->SelectedIndex = 0;
 			this->materialTabControlLog->TabsAreClosable = true;
 			// 
-			// materialTabPage1
+			// TabPage1
 			// 
-			resources->ApplyResources(this->materialTabPage1, L"materialTabPage1");
-			this->materialTabPage1->Closable = false;
-			this->materialTabPage1->Controls->Add(this->destinationPicker);
-			this->materialTabPage1->Controls->Add(this->materialLabel2);
-			this->materialTabPage1->Controls->Add(this->materialLabel1);
-			this->materialTabPage1->Controls->Add(this->depaturePicker);
-			this->materialTabPage1->Depth = 0;
-			this->materialTabPage1->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialTabPage1->Name = L"materialTabPage1";
+			resources->ApplyResources(this->TabPage1, L"TabPage1");
+			this->TabPage1->Closable = false;
+			this->TabPage1->Controls->Add(this->destinationPicker);
+			this->TabPage1->Controls->Add(this->materialLabel2);
+			this->TabPage1->Controls->Add(this->materialLabel1);
+			this->TabPage1->Controls->Add(this->depaturePicker);
+			this->TabPage1->Depth = 0;
+			this->TabPage1->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->TabPage1->Name = L"TabPage1";
 			// 
 			// destinationPicker
 			// 
@@ -232,14 +235,14 @@ namespace TravelEmulator {
 			this->depaturePicker->Name = L"depaturePicker";
 			this->depaturePicker->TextChanged += gcnew System::EventHandler(this, &form::DepaturePicker_TextChanged);
 			// 
-			// materialTabPageMgnt
+			// TabPageMgnt
 			// 
-			resources->ApplyResources(this->materialTabPageMgnt, L"materialTabPageMgnt");
-			this->materialTabPageMgnt->Closable = false;
-			this->materialTabPageMgnt->Controls->Add(this->cityManageCard);
-			this->materialTabPageMgnt->Depth = 0;
-			this->materialTabPageMgnt->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialTabPageMgnt->Name = L"materialTabPageMgnt";
+			resources->ApplyResources(this->TabPageMgnt, L"TabPageMgnt");
+			this->TabPageMgnt->Closable = false;
+			this->TabPageMgnt->Controls->Add(this->cityManageCard);
+			this->TabPageMgnt->Depth = 0;
+			this->TabPageMgnt->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->TabPageMgnt->Name = L"TabPageMgnt";
 			// 
 			// cityManageCard
 			// 
@@ -258,7 +261,6 @@ namespace TravelEmulator {
 			// 
 			resources->ApplyResources(this->manageCityButton, L"manageCityButton");
 			this->manageCityButton->Depth = 0;
-			this->Text = L"城市管理";
 			this->manageCityButton->Elevation = 5;
 			this->manageCityButton->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->manageCityButton->Name = L"manageCityButton";
@@ -268,15 +270,15 @@ namespace TravelEmulator {
 			this->manageCityButton->UseVisualStyleBackColor = false;
 			this->manageCityButton->Click += gcnew System::EventHandler(this, &form::manageCityButton_Click);
 			// 
-			// materialTabPage2
+			// TabPageLog
 			// 
-			resources->ApplyResources(this->materialTabPage2, L"materialTabPage2");
-			this->materialTabPage2->Closable = false;
-			this->materialTabPage2->Controls->Add(this->saveLog);
-			this->materialTabPage2->Controls->Add(this->logOutput);
-			this->materialTabPage2->Depth = 0;
-			this->materialTabPage2->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialTabPage2->Name = L"materialTabPage2";
+			resources->ApplyResources(this->TabPageLog, L"TabPageLog");
+			this->TabPageLog->Closable = false;
+			this->TabPageLog->Controls->Add(this->saveLog);
+			this->TabPageLog->Controls->Add(this->logOutput);
+			this->TabPageLog->Depth = 0;
+			this->TabPageLog->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->TabPageLog->Name = L"TabPageLog";
 			// 
 			// saveLog
 			// 
@@ -317,12 +319,12 @@ namespace TravelEmulator {
 			this->Load += gcnew System::EventHandler(this, &form::Form_Load);
 			this->TextChanged += gcnew System::EventHandler(this, &form::MaterialComboBox1_TextChanged);
 			this->materialTabControlLog->ResumeLayout(false);
-			this->materialTabPage1->ResumeLayout(false);
-			this->materialTabPage1->PerformLayout();
-			this->materialTabPageMgnt->ResumeLayout(false);
+			this->TabPage1->ResumeLayout(false);
+			this->TabPage1->PerformLayout();
+			this->TabPageMgnt->ResumeLayout(false);
 			this->cityManageCard->ResumeLayout(false);
-			this->materialTabPage2->ResumeLayout(false);
-			this->materialTabPage2->PerformLayout();
+			this->TabPageLog->ResumeLayout(false);
+			this->TabPageLog->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
