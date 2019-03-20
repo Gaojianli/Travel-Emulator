@@ -8,6 +8,7 @@ public:
 	SqlManager();
 	SQLiteDataReader^ excuteCommand(String^ command);
 	void removeCityByID(int id);
+    void removeCityByName(String ^ name);
 	void addCity(String^ name);
 private:
 	SQLiteConnection^ dbConnection;

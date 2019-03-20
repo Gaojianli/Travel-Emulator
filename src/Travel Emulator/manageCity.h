@@ -171,25 +171,47 @@ namespace TravelEmulator {
 		HeadsUp^ headupmsg = gcnew HeadsUp();
 		headupmsg->Titel = L"警告";
 		headupmsg->Text = L"将删除城市“" + cityListView->SelectedItems[0]->SubItems[1]->Text + L"”，此操作不可撤销，是否继续？";
-		MaterialFlatButton^ headUpButton = gcnew MaterialFlatButton();
-		headUpButton->Tag = headupmsg;
-		headUpButton->Text = L"是";
-		headUpButton->Click += gcnew System::EventHandler(this, &manageCity::headUpButton_Click);;
-		headupmsg->Buttons->Add(headUpButton);
+		//add cancel button
+		MaterialFlatButton^ cancelButton = gcnew MaterialFlatButton();
+		cancelButton->Tag = headupmsg;
+		cancelButton->Text = L"取消";
+		cancelButton->Click += gcnew System::EventHandler(this, &manageCity::cancelButton_Click);
+		headupmsg->Buttons->Add(cancelButton);
 		headupmsg->Show();
+		//add ok button
+		MaterialFlatButton^ okButton = gcnew MaterialFlatButton();
+		okButton->Tag = headupmsg;
+		okButton->Text = L"是";
+		okButton->Click += gcnew System::EventHandler(this, &manageCity::headUpOKButton_Click);
+		headupmsg->Buttons->Add(okButton);
 	}
 
-	private:System::Void headUpButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto idToRemove = System::Int16::Parse(cityListView->SelectedItems[0]->Text);
-		cityList->RemoveAt(idToRemove - 1);
-		sql->removeCityByID(idToRemove);
-		cityListView->SelectedItems->Clear();
-		cityListView->Items->RemoveAt(idToRemove - 1);
-		cityListView->Update();
-		destinationData->RemoveAt(idToRemove - 1);
-		departureData->RemoveAt(idToRemove - 1);
-		_sleep(300);//sleep for 300ms or it will error
+	private: System::Void cancelButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
+	}
+	private:System::Void headUpOKButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		auto idToRemove = System::Int16::Parse(cityListView->SelectedItems[0]->Text);
+		auto name = cityListView->SelectedItems[0]->SubItems[1]->Text;
+		auto findFun = gcnew Predicate<cities^>(this, &manageCity::getCityByName_listView);
+		cityList->Remove(cityList->Find(findFun));
+		destinationData->Remove(getCityByNameFromList(destinationData, cityListView->SelectedItems[0]->SubItems[1]->Text));
+		departureData->Remove(getCityByNameFromList(departureData, cityListView->SelectedItems[0]->SubItems[1]->Text));
+		sql->removeCityByName(cityListView->SelectedItems[0]->SubItems[1]->Text);
+		cityListView->Items->RemoveAt(cityListView->SelectedItems[0]->Index);
+		cityListView->SelectedItems->Clear();
+		cityListView->Update();
+		//_sleep(300);//sleep for 300ms or it will error
+		((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
+	}
+	private: bool getCityByName_listView(cities ^ obj) {
+		return obj->name->Equals(cityListView->SelectedItems[0]->SubItems[1]->Text);
+	}
+	private: String^ getCityByNameFromList(BindingList<String^> ^ source, String ^ str) {
+		for each (auto i in source) {
+			if (i->Equals(str))
+				return i;
+		}
+		return nullptr;
 	}
 	private: System::Void AddCityButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		auto control = gcnew cityAdd();
