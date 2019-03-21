@@ -94,10 +94,10 @@
     <ClCompile Include="sql.cpp">
       <Filter>Source Files\utils</Filter>
     </ClCompile>
-    <ClCompile Include="cityAdd.cpp">
+    <ClCompile Include="manageCity.cpp">
       <Filter>Header Files\dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="manageCity.cpp">
+    <ClCompile Include="cityAdd.cpp">
       <Filter>Header Files\dialogs</Filter>
     </ClCompile>
   </ItemGroup>

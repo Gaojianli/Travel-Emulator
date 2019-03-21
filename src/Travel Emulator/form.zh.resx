@@ -119,47 +119,56 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="destinationPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 174</value>
-  </data>
-  <data name="destinationPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 28</value>
-  </data>
-  <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
+    <value>457, 336</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="destinationPicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 8, 9, 8</value>
+  </data>
+  <data name="destinationPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 30</value>
+  </data>
+  <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 11pt</value>
+  </data>
   <data name="materialLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="materialLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 174</value>
+    <value>145, 336</value>
   </data>
-  <data name="materialLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 25</value>
+  <data name="materialLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 0, 9, 0</value>
   </data>
   <data name="materialLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
+    <value>Microsoft YaHei UI, 11pt</value>
   </data>
   <data name="materialLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 105</value>
+    <value>145, 203</value>
   </data>
-  <data name="materialLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 25</value>
+  <data name="materialLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 0, 9, 0</value>
   </data>
   <data name="depaturePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 105</value>
+    <value>457, 203</value>
+  </data>
+  <data name="depaturePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 12, 9, 12</value>
   </data>
   <data name="depaturePicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 28</value>
+    <value>186, 30</value>
   </data>
   <data name="TabPage1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
+  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 53</value>
+  </data>
   <data name="TabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>9, 12, 9, 12</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 371</value>
+    <value>1501, 751</value>
   </data>
   <data name="TabPage1.Text" xml:space="preserve">
     <value>查询路线</value>
@@ -167,80 +176,77 @@
   <data name="manageCityButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="manageCityButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 55</value>
+  <data name="manageCityButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 6, 5, 6</value>
   </data>
   <data name="manageCityButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 62</value>
+    <value>270, 120</value>
   </data>
   <data name="manageCityButton.Text" xml:space="preserve">
     <value>城市管理</value>
   </data>
+  <data name="cityManageCard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 191</value>
+  </data>
+  <data name="cityManageCard.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 6, 5, 6</value>
+  </data>
+  <data name="cityManageCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 48, 9, 10</value>
+  </data>
   <data name="cityManageCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 172</value>
+    <value>481, 333</value>
   </data>
   <data name="TabPageMgnt.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
+  <data name="TabPageMgnt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 53</value>
+  </data>
   <data name="TabPageMgnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>9, 12, 9, 12</value>
   </data>
   <data name="TabPageMgnt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 371</value>
+    <value>1501, 751</value>
   </data>
   <data name="TabPageMgnt.Text" xml:space="preserve">
     <value>管理</value>
   </data>
   <data name="saveLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>745, 329</value>
+    <value>1304, 636</value>
   </data>
-  <data name="saveLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 6</value>
-  </data>
-  <data name="saveLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="saveLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 36</value>
-  </data>
-  <data name="logOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 320</value>
+  <data name="logOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 12, 9, 12</value>
   </data>
   <data name="TabPageLog.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
+  <data name="TabPageLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 53</value>
+  </data>
   <data name="TabPageLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+    <value>9, 12, 9, 12</value>
   </data>
   <data name="TabPageLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 371</value>
+    <value>1501, 718</value>
   </data>
   <data name="TabPageLog.Text" xml:space="preserve">
     <value>日志</value>
   </data>
-  <data name="materialTabControlLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 59</value>
+  <data name="materialTabControlLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>9, 12, 9, 12</value>
   </data>
   <data name="materialTabControlLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 404</value>
-  </data>
-  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
+    <value>1521, 814</value>
   </data>
   <data name="materialTabSelector1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 5</value>
-  </data>
-  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 35</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 15</value>
+    <value>0, 0, 0, 19</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>869, 463</value>
+    <value>1521, 895</value>
   </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 24, 0, 0</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>16, 23, 16, 23</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>城市管理</value>

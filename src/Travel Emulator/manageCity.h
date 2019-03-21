@@ -214,12 +214,13 @@ namespace TravelEmulator {
 		return nullptr;
 	}
 	private: System::Void AddCityButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
+		UserControl^ t = gcnew UserControl();
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
 		control->getCityData(cityList);
-		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);
+		//here is a memory leak
 		MaterialDialog::Show(L"添加城市", t, MaterialDialog::Buttons::OK);
 		//update view
 		cityListView->BeginUpdate();
