@@ -21,6 +21,7 @@ List<cities^>^ Core::getCityData() {
 }
 
 void Core::initializeCityData() {
+	//Won't continue if error ocurred.
 	if (!errorFlag) {
 		auto result = sql->excuteCommand("select * from cities;");
 		cityData = gcnew List<cities^>();
