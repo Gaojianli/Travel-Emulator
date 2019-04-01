@@ -38,6 +38,7 @@ namespace TravelEmulator {
 	public:
 		SqlManager^ sql;
 		List<cities^>^ cityData;
+		Core^ core;
 		BindingList<String^>^ departureData;
 		BindingList<String^>^ destinationData;
 	public:
@@ -49,11 +50,12 @@ namespace TravelEmulator {
 			formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
 			cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"城市管理"));
 			log = gcnew Logger(logOutput);  //initialize log output
+			core = gcnew Core(log);
 			log->writeLog("程序启动成功", logLevel::Info);
-			sql = gcnew SqlManager();// initialize sql manager
+			sql = core->getSql();// initialize sql manager
 			log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
 			//----------Binding data--------
-			cityData = initializeCityData(this->sql);
+			cityData = core->getCityData();
 			departureData = gcnew BindingList<String^>();
 			for (int i = 0; i < cityData->Count; i++) {
 				departureData->Add(gcnew String(cityData[i]->name));
@@ -379,7 +381,7 @@ namespace TravelEmulator {
 	private: System::Void AddCity_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
-		control->getCityData(cityData);
+		control->setCityData(cityData);
 		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);
@@ -388,7 +390,6 @@ namespace TravelEmulator {
 	private: System::Void DepaturePicker_TextChanged(System::Object ^ sender, System::EventArgs ^ e) {
 		auto findFun = gcnew Predicate<cities^>(this, &form::getCityByName_depature);
 		auto select = cityData->Find(findFun);
-		log->writeLog(select->ToString(), logLevel::Info);
 	}
 	private: bool getCityByName_depature(cities ^ obj) {
 		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
