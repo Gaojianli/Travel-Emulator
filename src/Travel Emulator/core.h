@@ -17,8 +17,9 @@ public:
 private:
 	SqlManager^ sql;
 	List<cities^>^ cityData;
-	List<TimeTable^>^ timeTable;
+	List<Transport^>^ timeTable;
 	Logger^ log;
 	void initializeCityData();
 	void initializeTimeTable();
+	bool errorFlag = false;//set it as true if error occured.
 };

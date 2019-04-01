@@ -50,10 +50,10 @@ namespace TravelEmulator {
 			formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
 			cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"城市管理"));
 			log = gcnew Logger(logOutput);  //initialize log output
-			core = gcnew Core(log);
 			log->writeLog("程序启动成功", logLevel::Info);
-			sql = core->getSql();// initialize sql manager
 			log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
+			core = gcnew Core(log);
+			sql = core->getSql();// initialize sql manager
 			//----------Binding data--------
 			cityData = core->getCityData();
 			departureData = gcnew BindingList<String^>();
@@ -63,7 +63,6 @@ namespace TravelEmulator {
 			destinationData = gcnew BindingList<String^>(departureData);
 			depaturePicker->DataSource = departureData;
 			destinationPicker->DataSource = destinationData;
-			log->writeLog("数据导入成功，导入城市数量：" + cityData->Count.ToString(), logLevel::Info);
 			//-----------End----------------
 		}
 		//timer to collection garbage
