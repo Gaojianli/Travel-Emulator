@@ -216,7 +216,7 @@ namespace TravelEmulator {
 	private: System::Void AddCityButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
-		control->getCityData(cityList);
+		control->setCityData(cityList);
 		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);

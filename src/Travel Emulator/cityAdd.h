@@ -141,7 +141,7 @@ namespace TravelEmulator {
 			headupmsg->Buttons->Add(headUpButton);
 			headupmsg->Show();
 		}
-	public: void getCityData(List<cities^>^ list) {
+	public: void setCityData(List<cities^>^ list) {
 		cityList = list;
 	}
 	private: System::Void SaveButton_Click(System::Object^ sender, System::EventArgs^ e) {

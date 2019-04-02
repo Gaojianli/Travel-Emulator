@@ -128,9 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="MaterialSkin">
-      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialWinforms">
       <HintPath>MaterialWinforms.dll</HintPath>
     </Reference>
@@ -149,6 +146,7 @@
     <ClInclude Include="cityAdd.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="core.h" />
     <ClInclude Include="form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -157,7 +155,11 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="routineManage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="sql.h" />
+    <ClInclude Include="timeTable.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
@@ -175,10 +177,13 @@
   <ItemGroup>
     <ClCompile Include="cities.cpp" />
     <ClCompile Include="cityAdd.cpp" />
+    <ClCompile Include="core.cpp" />
     <ClCompile Include="form.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="manageCity.cpp" />
+    <ClCompile Include="routineManage.cpp" />
     <ClCompile Include="sql.cpp" />
+    <ClCompile Include="timeTable.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="manageCity.zh.resx">
       <DependentUpon>manageCity.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routineManage.resx">
+      <DependentUpon>routineManage.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
