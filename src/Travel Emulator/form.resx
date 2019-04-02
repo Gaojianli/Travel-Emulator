@@ -262,16 +262,16 @@
     <value>0</value>
   </data>
   <data name="materialRaisedButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 88</value>
+    <value>181, 92</value>
   </data>
   <data name="materialRaisedButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 86</value>
+    <value>173, 88</value>
   </data>
   <data name="materialRaisedButton1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="materialRaisedButton1.Text" xml:space="preserve">
-    <value>线路管理</value>
+    <value>管理</value>
   </data>
   <data name="&gt;&gt;materialRaisedButton1.Name" xml:space="preserve">
     <value>materialRaisedButton1</value>
@@ -286,7 +286,7 @@
     <value>0</value>
   </data>
   <data name="materialCard1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>851, 99</value>
+    <value>822, 99</value>
   </data>
   <data name="materialCard1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 25, 5, 5</value>
@@ -309,20 +309,17 @@
   <data name="&gt;&gt;materialCard1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="manageCityButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="manageCityButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 88</value>
+    <value>184, 92</value>
   </data>
   <data name="manageCityButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 86</value>
+    <value>173, 88</value>
   </data>
   <data name="manageCityButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="manageCityButton.Text" xml:space="preserve">
-    <value>城市管理</value>
+    <value>管理</value>
   </data>
   <data name="&gt;&gt;manageCityButton.Name" xml:space="preserve">
     <value>manageCityButton</value>
@@ -370,7 +367,7 @@
     <value>2</value>
   </data>
   <data name="TabPageMgnt.Text" xml:space="preserve">
-    <value>管理</value>
+    <value>城市管理</value>
   </data>
   <data name="&gt;&gt;TabPageMgnt.Name" xml:space="preserve">
     <value>TabPageMgnt</value>
@@ -454,7 +451,7 @@
     <value>1</value>
   </data>
   <data name="TabPageLog.Text" xml:space="preserve">
-    <value>日志</value>
+    <value>历史记录</value>
   </data>
   <data name="&gt;&gt;TabPageLog.Name" xml:space="preserve">
     <value>TabPageLog</value>

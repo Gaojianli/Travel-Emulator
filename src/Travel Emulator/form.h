@@ -1,6 +1,7 @@
 #pragma once
 #include "utils.h"
 #include "manageCity.h"
+#include "routineManage.h"
 namespace TravelEmulator {
 
 	using namespace System;
@@ -38,6 +39,7 @@ namespace TravelEmulator {
 	public:
 		SqlManager^ sql;
 		List<cities^>^ cityData;
+		Core^ core;
 		BindingList<String^>^ departureData;
 	private: MaterialWinforms::Controls::MaterialCard^ materialCard1;
 	public:
@@ -53,10 +55,11 @@ namespace TravelEmulator {
 			cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"城市管理"));
 			log = gcnew Logger(logOutput);  //initialize log output
 			log->writeLog("程序启动成功", logLevel::Info);
-			sql = gcnew SqlManager();// initialize sql manager
 			log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
+			core = gcnew Core(log);
+			sql = core->getSql();// initialize sql manager
 			//----------Binding data--------
-			cityData = initializeCityData(this->sql);
+			cityData = core->getCityData();
 			departureData = gcnew BindingList<String^>();
 			for (int i = 0; i < cityData->Count; i++) {
 				departureData->Add(gcnew String(cityData[i]->name));
@@ -64,7 +67,6 @@ namespace TravelEmulator {
 			destinationData = gcnew BindingList<String^>(departureData);
 			depaturePicker->DataSource = departureData;
 			destinationPicker->DataSource = destinationData;
-			log->writeLog("数据导入成功，导入城市数量：" + cityData->Count.ToString(), logLevel::Info);
 			//-----------End----------------
 		}
 		//timer to collection garbage
@@ -139,10 +141,10 @@ namespace TravelEmulator {
 		void InitializeComponent(void) {
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath5 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(form::typeid));
-			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath4 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
-			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath3 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath2 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath1 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
+			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath4 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
+			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath3 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			this->materialTabSelector1 = (gcnew MaterialWinforms::Controls::MaterialTabSelector());
 			this->materialTabControlLog = (gcnew MaterialWinforms::Controls::MaterialTabControl());
 			this->TabPage1 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
@@ -151,19 +153,19 @@ namespace TravelEmulator {
 			this->materialLabel1 = (gcnew MaterialWinforms::Controls::MaterialLabel());
 			this->depaturePicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
 			this->TabPageMgnt = (gcnew MaterialWinforms::Controls::MaterialTabPage());
+			this->materialCard1 = (gcnew MaterialWinforms::Controls::MaterialCard());
+			this->materialRaisedButton1 = (gcnew MaterialWinforms::Controls::MaterialRaisedButton());
 			this->cityManageCard = (gcnew MaterialWinforms::Controls::MaterialCard());
 			this->manageCityButton = (gcnew MaterialWinforms::Controls::MaterialRaisedButton());
 			this->TabPageLog = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->saveLog = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->logOutput = (gcnew MaterialWinforms::Controls::MaterialTextBox());
-			this->materialCard1 = (gcnew MaterialWinforms::Controls::MaterialCard());
-			this->materialRaisedButton1 = (gcnew MaterialWinforms::Controls::MaterialRaisedButton());
 			this->materialTabControlLog->SuspendLayout();
 			this->TabPage1->SuspendLayout();
 			this->TabPageMgnt->SuspendLayout();
+			this->materialCard1->SuspendLayout();
 			this->cityManageCard->SuspendLayout();
 			this->TabPageLog->SuspendLayout();
-			this->materialCard1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// materialTabSelector1
@@ -253,6 +255,32 @@ namespace TravelEmulator {
 			this->TabPageMgnt->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->TabPageMgnt->Name = L"TabPageMgnt";
 			// 
+			// materialCard1
+			// 
+			this->materialCard1->Controls->Add(this->materialRaisedButton1);
+			this->materialCard1->Depth = 0;
+			this->materialCard1->Elevation = 5;
+			this->materialCard1->LargeTitle = false;
+			resources->ApplyResources(this->materialCard1, L"materialCard1");
+			this->materialCard1->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialCard1->Name = L"materialCard1";
+			graphicsPath2->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
+			this->materialCard1->ShadowBorder = graphicsPath2;
+			this->materialCard1->Title = L"班次管理";
+			// 
+			// materialRaisedButton1
+			// 
+			this->materialRaisedButton1->Depth = 0;
+			this->materialRaisedButton1->Elevation = 5;
+			resources->ApplyResources(this->materialRaisedButton1, L"materialRaisedButton1");
+			this->materialRaisedButton1->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialRaisedButton1->Name = L"materialRaisedButton1";
+			this->materialRaisedButton1->Primary = true;
+			graphicsPath1->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
+			this->materialRaisedButton1->ShadowBorder = graphicsPath1;
+			this->materialRaisedButton1->UseVisualStyleBackColor = true;
+			this->materialRaisedButton1->Click += gcnew System::EventHandler(this, &form::MaterialRaisedButton1_Click);
+			// 
 			// cityManageCard
 			// 
 			this->cityManageCard->Controls->Add(this->manageCityButton);
@@ -268,9 +296,9 @@ namespace TravelEmulator {
 			// 
 			// manageCityButton
 			// 
-			resources->ApplyResources(this->manageCityButton, L"manageCityButton");
 			this->manageCityButton->Depth = 0;
 			this->manageCityButton->Elevation = 5;
+			resources->ApplyResources(this->manageCityButton, L"manageCityButton");
 			this->manageCityButton->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->manageCityButton->Name = L"manageCityButton";
 			this->manageCityButton->Primary = true;
@@ -317,32 +345,6 @@ namespace TravelEmulator {
 			this->logOutput->SelectionStart = 0;
 			this->logOutput->TabStop = false;
 			// 
-			// materialCard1
-			// 
-			this->materialCard1->Controls->Add(this->materialRaisedButton1);
-			this->materialCard1->Depth = 0;
-			this->materialCard1->Elevation = 5;
-			this->materialCard1->LargeTitle = false;
-			resources->ApplyResources(this->materialCard1, L"materialCard1");
-			this->materialCard1->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialCard1->Name = L"materialCard1";
-			graphicsPath2->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-			this->materialCard1->ShadowBorder = graphicsPath2;
-			this->materialCard1->Title = L"线路管理";
-			// 
-			// materialRaisedButton1
-			// 
-			this->materialRaisedButton1->Depth = 0;
-			this->materialRaisedButton1->Elevation = 5;
-			resources->ApplyResources(this->materialRaisedButton1, L"materialRaisedButton1");
-			this->materialRaisedButton1->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialRaisedButton1->Name = L"materialRaisedButton1";
-			this->materialRaisedButton1->Primary = true;
-			graphicsPath1->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-			this->materialRaisedButton1->ShadowBorder = graphicsPath1;
-			this->materialRaisedButton1->UseVisualStyleBackColor = true;
-			this->materialRaisedButton1->Click += gcnew System::EventHandler(this, &form::MaterialRaisedButton1_Click);
-			// 
 			// form
 			// 
 			resources->ApplyResources(this, L"$this");
@@ -357,10 +359,10 @@ namespace TravelEmulator {
 			this->TabPage1->ResumeLayout(false);
 			this->TabPage1->PerformLayout();
 			this->TabPageMgnt->ResumeLayout(false);
+			this->materialCard1->ResumeLayout(false);
 			this->cityManageCard->ResumeLayout(false);
 			this->TabPageLog->ResumeLayout(false);
 			this->TabPageLog->PerformLayout();
-			this->materialCard1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -415,7 +417,7 @@ namespace TravelEmulator {
 	private: System::Void AddCity_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
-		control->getCityData(cityData);
+		control->setCityData(cityData);
 		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);
@@ -424,7 +426,6 @@ namespace TravelEmulator {
 	private: System::Void DepaturePicker_TextChanged(System::Object ^ sender, System::EventArgs ^ e) {
 		auto findFun = gcnew Predicate<cities^>(this, &form::getCityByName_depature);
 		auto select = cityData->Find(findFun);
-		log->writeLog(select->ToString(), logLevel::Info);
 	}
 	private: bool getCityByName_depature(cities ^ obj) {
 		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
@@ -436,7 +437,10 @@ namespace TravelEmulator {
 		manageForm->Show();
 	}
 	private: System::Void MaterialRaisedButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		auto manageForm = gcnew routineManage();
+		manageForm->addSql(sql);
+		manageForm->setTimeTableData(core->getTimeTable());
+		manageForm->Show();
 	}
 };
 }  // namespace TravelEmulator
