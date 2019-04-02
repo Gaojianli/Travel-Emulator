@@ -158,6 +158,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="routineManage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="sql.h" />
     <ClInclude Include="timeTable.h" />
     <ClInclude Include="utils.h" />
@@ -181,6 +184,7 @@
     <ClCompile Include="form.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="manageCity.cpp" />
+    <ClCompile Include="routineManage.cpp" />
     <ClCompile Include="sql.cpp" />
     <ClCompile Include="timeTable.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -203,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="manageCity.zh.resx">
       <DependentUpon>manageCity.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="routineManage.resx">
+      <DependentUpon>routineManage.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -14,6 +14,7 @@ public:
 	Core(Logger^ logger);
 	SqlManager^ getSql();
 	List<cities^>^ getCityData();
+	List<Transport^>^ getTimeTable();
 private:
 	SqlManager^ sql;
 	List<cities^>^ cityData;

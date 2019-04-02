@@ -22,5 +22,7 @@ void logger::Logger::writeLog(String^ log, logLevel level) {
 		auto temp = System::Text::Encoding::Default->GetBytes(time + "\t" + "[" + logLevelString +
 			"]\t" + log + "\n");//convert to utf8
 		writerBox->Text = writerBox->Text + System::Text::Encoding::UTF8->GetString(temp);
+		delete time;
+		delete temp;
 	}
 }

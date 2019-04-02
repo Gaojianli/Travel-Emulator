@@ -28,7 +28,7 @@
     <Filter Include="Library">
       <UniqueIdentifier>{6876d58c-8dbe-4114-93bd-2b9c64e396c3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\dialogs">
+    <Filter Include="Header Files\contorls">
       <UniqueIdentifier>{aa52751a-ecb7-4d4c-b04a-e47ed251ad33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -52,16 +52,19 @@
       <Filter>Header Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="cityAdd.h">
-      <Filter>Header Files\dialogs</Filter>
+      <Filter>Header Files\contorls</Filter>
     </ClInclude>
     <ClInclude Include="manageCity.h">
-      <Filter>Header Files\dialogs</Filter>
+      <Filter>Header Files\contorls</Filter>
     </ClInclude>
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="timeTable.h">
       <Filter>Header Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="routineManage.h">
+      <Filter>Header Files\contorls</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -100,17 +103,20 @@
     <ClCompile Include="sql.cpp">
       <Filter>Source Files\utils</Filter>
     </ClCompile>
-    <ClCompile Include="cityAdd.cpp">
-      <Filter>Header Files\dialogs</Filter>
-    </ClCompile>
     <ClCompile Include="manageCity.cpp">
-      <Filter>Header Files\dialogs</Filter>
+      <Filter>Header Files\contorls</Filter>
     </ClCompile>
     <ClCompile Include="core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="timeTable.cpp">
       <Filter>Source Files\data</Filter>
+    </ClCompile>
+    <ClCompile Include="cityAdd.cpp">
+      <Filter>Header Files\contorls</Filter>
+    </ClCompile>
+    <ClCompile Include="routineManage.cpp">
+      <Filter>Header Files\contorls</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

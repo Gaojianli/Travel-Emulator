@@ -46,16 +46,16 @@ void Core::initializeTimeTable() {
 	if (!errorFlag) {
 		auto result = sql->excuteCommand("select * from TImeTables;");
 		try {
+			timeTable = gcnew List<Transport^>();
 			if (result->HasRows) {
 				while (result->Read()) {
-					timeTable = gcnew List<Transport^>();
 					auto id = result->GetInt16(0);
 					auto shift = result->GetString(1);
 					auto type = result->GetInt16(2);
 					auto departure = result->GetInt16(3);
 					auto destination = result->GetInt16(4);
-					auto start = result->GetDateTime(5);
-					auto arrive = result->GetDateTime(6);
+					auto start = System::DateTime::Parse(result->GetString(5));
+					auto arrive = System::DateTime::Parse(result->GetString(6));
 					auto cost = result->GetDouble(7);
 					timeTable->Add(gcnew Transport(id, shift, transportType(type), departure, destination, start, arrive, cost));
 				}
@@ -69,4 +69,8 @@ void Core::initializeTimeTable() {
 			log->writeLog(e->ToString(), logLevel::Error);
 		}
 	}
+}
+
+List<Transport^>^ Core::getTimeTable() {
+	return timeTable;
 }
