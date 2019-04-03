@@ -47,7 +47,7 @@ namespace TravelEmulator {
 	protected:
 
 	protected:
-	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel1;
+
 
 	private: MaterialWinforms::Controls::MaterialFlatButton^ saveButton;
 
@@ -68,15 +68,14 @@ namespace TravelEmulator {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(cityAdd::typeid));
 			this->nameInput = (gcnew MaterialWinforms::Controls::MaterialSingleLineTextField());
-			this->materialLabel1 = (gcnew MaterialWinforms::Controls::MaterialLabel());
 			this->saveButton = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->SuspendLayout();
 			// 
 			// nameInput
 			// 
-			resources->ApplyResources(this->nameInput, L"nameInput");
 			this->nameInput->Depth = 0;
-			this->nameInput->Hint = L"";
+			this->nameInput->Hint = L"城市名";
+			resources->ApplyResources(this->nameInput, L"nameInput");
 			this->nameInput->MaxLength = 32767;
 			this->nameInput->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->nameInput->Name = L"nameInput";
@@ -88,15 +87,6 @@ namespace TravelEmulator {
 			this->nameInput->TabStop = false;
 			this->nameInput->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->nameInput->UseSystemPasswordChar = false;
-			// 
-			// materialLabel1
-			// 
-			resources->ApplyResources(this->materialLabel1, L"materialLabel1");
-			this->materialLabel1->Depth = 0;
-			this->materialLabel1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->materialLabel1->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialLabel1->Name = L"materialLabel1";
 			// 
 			// saveButton
 			// 
@@ -117,7 +107,6 @@ namespace TravelEmulator {
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->saveButton);
-			this->Controls->Add(this->materialLabel1);
 			this->Controls->Add(this->nameInput);
 			this->Name = L"cityAdd";
 			this->ResumeLayout(false);

@@ -25,6 +25,9 @@ namespace TravelEmulator {
 		}
 	private:
 		SqlManager^ sql;
+		Logger^ logger;
+		List<Transport^>^ timeTable;
+		List<cities^>^ cityList;
 	private: MaterialWinforms::Controls::MaterialListView^ timeTableListView;
 
 	private: System::Windows::Forms::ColumnHeader^ shift;
@@ -33,15 +36,27 @@ namespace TravelEmulator {
 	private: System::Windows::Forms::ColumnHeader^ arrive;
 	private: System::Windows::Forms::ColumnHeader^ startTime;
 	private: System::Windows::Forms::ColumnHeader^ arriveTime;
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::ColumnHeader^ cost;
 
-			 List<Transport^>^ timeTable;
 	public:
-		void addSql(SqlManager^ parentSql) {
+		void init(SqlManager^ parentSql, Logger^ logOutput) {
 			sql = parentSql;
+			logger = logOutput;
 		}
-		void setTimeTableData(List<Transport^>^ timetable) {
+		void setData(List<Transport^>^ timetable, List<cities^>^ cityList) {
 			this->timeTable = timetable;
+			this->cityList = cityList;
 			timeTableListView->BeginUpdate();
 			for each (auto item in timeTable) {
 				ListViewItem^ ltv = gcnew ListViewItem();
@@ -54,10 +69,27 @@ namespace TravelEmulator {
 				else
 					typeName = "汽车";
 				ltv->SubItems->Add(typeName);
+				try {
+					ltv->SubItems->Add(getCityByIDFromList(item->departureID, cityList)->name);
+					ltv->SubItems->Add(getCityByIDFromList(item->destinationID, cityList)->name);
+				}
+				catch (KeyNotFoundException ^ e) {
+					logger->writeLog(e->ToString() + ", ingored", logLevel::Error);
+					continue;
+				}
+				ltv->SubItems->Add(item->start.ToString("t"));
+				ltv->SubItems->Add(item->arrive.ToString("t"));
+				ltv->SubItems->Add(item->cost.ToString("f2"));
 				timeTableListView->Items->Add(ltv);
 			}
 			timeTableListView->EndUpdate();
 		}
+	private: cities^ getCityByIDFromList(int id, List<cities^>^ cityList) {
+		for each (auto i in cityList)
+			if (i->id == id)
+				return i;
+		throw gcnew KeyNotFoundException("Can't not find city with id" + id.ToString());
+	}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -74,7 +106,7 @@ namespace TravelEmulator {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -105,12 +137,15 @@ namespace TravelEmulator {
 			this->timeTableListView->FullRowSelect = true;
 			this->timeTableListView->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
 			this->timeTableListView->HideSelection = false;
-			this->timeTableListView->Location = System::Drawing::Point(49, 82);
+			this->timeTableListView->HoverSelection = true;
+			this->timeTableListView->LabelWrap = false;
+			this->timeTableListView->Location = System::Drawing::Point(127, 63);
+			this->timeTableListView->Margin = System::Windows::Forms::Padding(2);
 			this->timeTableListView->MouseLocation = System::Drawing::Point(-1, -1);
 			this->timeTableListView->MouseState = MaterialWinforms::MouseState::OUT;
 			this->timeTableListView->Name = L"timeTableListView";
 			this->timeTableListView->OwnerDraw = true;
-			this->timeTableListView->Size = System::Drawing::Size(905, 457);
+			this->timeTableListView->Size = System::Drawing::Size(1170, 541);
 			this->timeTableListView->TabIndex = 0;
 			this->timeTableListView->UseCompatibleStateImageBehavior = false;
 			this->timeTableListView->View = System::Windows::Forms::View::Details;
@@ -118,40 +153,51 @@ namespace TravelEmulator {
 			// shift
 			// 
 			this->shift->Text = L"班次";
-			this->shift->Width = 56;
+			this->shift->Width = 115;
 			// 
 			// type
 			// 
 			this->type->Text = L"类型";
+			this->type->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->type->Width = 124;
 			// 
 			// start
 			// 
 			this->start->Text = L"出发站";
-			this->start->Width = 56;
+			this->start->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->start->Width = 167;
 			// 
 			// arrive
 			// 
 			this->arrive->Text = L"到达站";
 			this->arrive->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->arrive->Width = 167;
 			// 
 			// startTime
 			// 
 			this->startTime->Text = L"出发时间";
+			this->startTime->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->startTime->Width = 225;
 			// 
 			// arriveTime
 			// 
 			this->arriveTime->Text = L"到达时间";
+			this->arriveTime->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->arriveTime->Width = 225;
 			// 
 			// cost
 			// 
 			this->cost->Text = L"价格";
+			this->cost->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->cost->Width = 120;
 			// 
 			// routineManage
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(14, 29);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(995, 673);
+			this->ClientSize = System::Drawing::Size(1455, 659);
 			this->Controls->Add(this->timeTableListView);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"routineManage";
@@ -161,5 +207,7 @@ namespace TravelEmulator {
 
 		}
 #pragma endregion
-	};
+	private: System::Void MaterialComboBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

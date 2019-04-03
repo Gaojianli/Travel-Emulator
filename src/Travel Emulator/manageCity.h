@@ -98,6 +98,7 @@ namespace TravelEmulator {
 			this->cityListView->FullRowSelect = true;
 			this->cityListView->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
 			this->cityListView->HideSelection = false;
+			this->cityListView->HoverSelection = true;
 			this->cityListView->MouseLocation = System::Drawing::Point(-1, -1);
 			this->cityListView->MouseState = MaterialWinforms::MouseState::OUT;
 			this->cityListView->MultiSelect = false;

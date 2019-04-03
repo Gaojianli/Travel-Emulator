@@ -191,7 +191,7 @@ namespace TravelEmulator {
 			resources->ApplyResources(this->materialTabControlLog, L"materialTabControlLog");
 			this->materialTabControlLog->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->materialTabControlLog->Name = L"materialTabControlLog";
-			this->materialTabControlLog->SelectedIndex = 1;
+			this->materialTabControlLog->SelectedIndex = 2;
 			this->materialTabControlLog->TabsAreClosable = true;
 			// 
 			// TabPage1
@@ -438,8 +438,8 @@ namespace TravelEmulator {
 	}
 	private: System::Void MaterialRaisedButton1_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto manageForm = gcnew routineManage();
-		manageForm->addSql(sql);
-		manageForm->setTimeTableData(core->getTimeTable());
+		manageForm->init(sql,log);
+		manageForm->setData(core->getTimeTable(),cityData);
 		manageForm->Show();
 	}
 };
