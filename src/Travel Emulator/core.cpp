@@ -54,8 +54,10 @@ void Core::initializeTimeTable() {
 					auto type = result->GetInt16(2);
 					auto departure = result->GetInt16(3);
 					auto destination = result->GetInt16(4);
-					auto start = System::DateTime::Parse(result->GetString(5));
-					auto arrive = System::DateTime::Parse(result->GetString(6));
+					auto start = result->GetDateTime(5);
+					auto arrive = result->GetDateTime(6);
+					if (start.CompareTo(arrive) > 0)//deal with cross-day trains
+						arrive.AddDays(1);
 					auto cost = result->GetDouble(7);
 					timeTable->Add(gcnew Transport(id, shift, transportType(type), departure, destination, start, arrive, cost));
 				}
