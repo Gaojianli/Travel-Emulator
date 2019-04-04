@@ -76,3 +76,4 @@ void Core::initializeTimeTable() {
 List<Transport^>^ Core::getTimeTable() {
 	return timeTable;
 }
+

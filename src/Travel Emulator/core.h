@@ -4,7 +4,7 @@
 #include "logger.h"
 #include "sql.h"
 #include "timeTable.h"
-
+#include "graph.h"
 using namespace logger;
 using namespace System::Collections;
 using namespace System::Collections::Generic;
@@ -24,3 +24,5 @@ private:
 	void initializeTimeTable();
 	bool errorFlag = false;//set it as true if error occured.
 };
+
+
