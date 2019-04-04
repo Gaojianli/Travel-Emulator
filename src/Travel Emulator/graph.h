@@ -41,14 +41,13 @@ using timeTable=struct timeTable;
 
 class graph {
 public:
-	static graph *getInstance(int vertexNum, int numArc);
-	void addVertex(vertexNode toAdd);
+	static graph* getInstance(int vertexNum, int numArc, vector<city>* cityList, vector<timeTable>* timeTable);
 	int numvertex;
 	int numarc;
 private:
-	graph(int vertexNum,int numArc);
+	graph(int vertexNum, int numArc, vector<city>* cityList, vector<timeTable>* timeTable);
 	vertexNode* table;
-	int currentCount=0;
+	int currentCount = 0;
 	static graph* _instance;
 };
 

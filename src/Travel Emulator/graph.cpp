@@ -1,21 +1,17 @@
 #include "graph.h"
 
-graph::graph(int vertexNum, int arcNum) :numvertex(vertexNum), numarc(arcNum) {
+graph::graph(int vertexNum, int arcNum, vector<city>* cityList, vector<timeTable>* timeTable) :numvertex(vertexNum), numarc(arcNum) {
 	table = new vertexNode[vertexNum];
 
 }
 
-graph* graph::getInstance(int vertexNum, int numArc) {
+graph* graph::getInstance(int vertexNum, int numArc, vector<city>* cityList, vector<timeTable>* timeTable) {
 	if (_instance == nullptr)
-		_instance = new graph(vertexNum, numArc);
+		_instance = new graph(vertexNum, numArc, cityList, timeTable);
 	return _instance;
 }
 
-void graph::addVertex(vertexNode toAdd) {
-	table[currentCount++] = toAdd;
-}
-
-vector<city>* convertCityList(System::Collections::Generic::List <cities^>^ list) {
+vector<city>* convertCityList(System::Collections::Generic::List <cities^> ^ list) {
 	auto toReturn = new vector<city>();
 	for each (auto item in list) {
 		city toadd;
@@ -25,7 +21,7 @@ vector<city>* convertCityList(System::Collections::Generic::List <cities^>^ list
 	return toReturn;
 }
 
-vector<timeTable>* convertTimeTable(System::Collections::Generic::List<Transport^>^ list){
+vector<timeTable>* convertTimeTable(System::Collections::Generic::List<Transport^> ^ list) {
 	auto toReturn = new vector<timeTable>();
 	//convert Managed string to unManaged
 	auto manToUnman = [](String ^ toConvert)->char* {
