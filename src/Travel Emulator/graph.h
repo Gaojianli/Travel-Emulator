@@ -1,56 +1,53 @@
 #pragma once
-#pragma unmanaged
 #include "utils.h"
-#include<vector>
-using namespace std;
-struct ArcNode {
+#include "sql.h"
+using namespace System::Collections::Generic;
+public ref class ArcNode {
+public:
 	int adjvex;
 	double cost;
 	int timeCost;
-	struct ArcNode* next;
+	ArcNode^ next;
 };
-using ArcNode=struct ArcNode;
 
-struct vertexNode {
+public ref class vertexNode {
+public:
 	int id;
-	ArcNode* firstArc;
+	ArcNode^ firstArc;
 };
-using vertexNode=struct vertexNode;
 
-struct city {
-	int id;
+public ref class city {
+public:	int id;
 };
-using city=struct city;
 
-enum transportType {
+public enum transportType {
 	plane = 1,
 	train = 2,
 	bus = 3
 };
 
-struct timeTable {
-	char* shift;
+public ref class timeTable {
+public:
+	String^ shift;
 	transportType type;
 	int departureID;
 	int destinationID;
-	char* start;
-	char* arrive;
+	String^ start;
+	String^ arrive;
 	double cost;
 };
-using timeTable=struct timeTable;
 
-class graph {
+public ref class graph {
 public:
-	static graph* getInstance(int vertexNum, int numArc, vector<city>* cityList, vector<timeTable>* timeTable);
+	static graph^ getInstance(DateTime startTime, int strategy, int vertexNum, int numArc, List<city^>^ cityList, List<timeTable^>^ timeTables);
+	static void Update(int presentCity, List<bool>^ known, List<int>^ value, List<Attribute^>^ path, List<city^>^ cityList, List<timeTable^>^ timeTables);
 	int numvertex;
 	int numarc;
+	int strategy;
+	DateTime startTime;
 private:
-	graph(int vertexNum, int numArc, vector<city>* cityList, vector<timeTable>* timeTable);
-	vertexNode* table;
+	graph(DateTime startTime, int strategy, int vertexNum, int numArc, List<city^>^ cityList, List<timeTable^>^ timeTables);
+	vertexNode^ table;
 	int currentCount = 0;
-	static graph* _instance;
+	static graph^ _instance;
 };
-
-vector<city>* convertCityList(System::Collections::Generic::List <cities^>^ list);
-
-vector<timeTable>* convertTimeTable(System::Collections::Generic::List <Transport^>^ list);
