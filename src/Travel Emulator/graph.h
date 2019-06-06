@@ -32,22 +32,22 @@ public:
 	transportType type;
 	int departureID;
 	int destinationID;
-	String^ start;
-	String^ arrive;
+	DateTime start;
+	DateTime arrive;
 	double cost;
 };
 
 public ref class graph {
 public:
 	static graph^ getInstance(DateTime startTime, int strategy, int vertexNum, int numArc, List<city^>^ cityList, List<timeTable^>^ timeTables);
-	static void Update(int presentCity, List<bool>^ known, List<int>^ value, List<Attribute^>^ path, List<city^>^ cityList, List<timeTable^>^ timeTables);
+	static void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, List<city^>^ cityList, List<timeTable^>^ timeTables);
 	int numvertex;
 	int numarc;
 	int strategy;
 	DateTime startTime;
 private:
 	graph(DateTime startTime, int strategy, int vertexNum, int numArc, List<city^>^ cityList, List<timeTable^>^ timeTables);
-	vertexNode^ table;
+	List<vertexNode^>^ table;
 	int currentCount = 0;
 	static graph^ _instance;
 };
