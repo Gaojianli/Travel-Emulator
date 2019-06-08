@@ -9,7 +9,7 @@ using namespace logger;
 using namespace System::Collections;
 using namespace System::Collections::Generic;
 
-ref class Core {
+public ref class Core {
 public:
 	Core(Logger^ logger);
 	SqlManager^ getSql();

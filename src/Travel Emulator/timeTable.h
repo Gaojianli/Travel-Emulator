@@ -1,11 +1,11 @@
 #pragma once
 using namespace System;
-enum transportType {
+public enum transportType {
 	plane = 1,
 	train = 2,
 	bus = 3
 };
-ref class Transport {
+public ref class Transport {
 public:
 	Transport(
 		int id,

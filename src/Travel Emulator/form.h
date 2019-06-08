@@ -15,7 +15,8 @@ namespace TravelEmulator {
 	using namespace MaterialWinforms::Controls;
 	using namespace MaterialWinforms::Controls::Settings;
 	using namespace logger;
-
+	using namespace CefSharp;
+	using namespace CefSharp::WinForms;
 	/// <summary>
 	/// form 摘要
 	/// </summary>
@@ -23,16 +24,16 @@ namespace TravelEmulator {
 	ref class form : public MaterialWinforms::Controls::MaterialForm {
 	private:
 		Logger^ log;
+		ChromiumWebBrowser^ browser;
+	private:
+
 
 	private:
-		MaterialWinforms::Controls::MaterialComboBox^ destinationPicker;
+	private:
+	private:
 
-	private:
-	private:
-	private:
-		MaterialWinforms::Controls::MaterialLabel^ materialLabel2;
-	private: MaterialWinforms::Controls::MaterialCard^ cityManageCard;
-	private: MaterialWinforms::Controls::MaterialRaisedButton^ manageCityButton;
+
+
 
 
 
@@ -41,9 +42,30 @@ namespace TravelEmulator {
 		List<cities^>^ cityData;
 		Core^ core;
 		BindingList<String^>^ departureData;
-	private: MaterialWinforms::Controls::MaterialCard^ materialCard1;
+	private: MaterialWinforms::Controls::MaterialTabControl^ tabControl;
 	public:
+
+	public:
+	private: MaterialWinforms::Controls::MaterialTabPage^ TabPage1;
+	private: MaterialWinforms::Controls::MaterialFlatButton^ materialFlatButton1;
+	private: MaterialWinforms::Controls::MaterialComboBox^ destinationPicker;
+	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel2;
+	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel1;
+	private: MaterialWinforms::Controls::MaterialComboBox^ depaturePicker;
+	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageMgnt;
+	private: MaterialWinforms::Controls::MaterialCard^ materialCard1;
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ materialRaisedButton1;
+	private: MaterialWinforms::Controls::MaterialCard^ cityManageCard;
+	private: MaterialWinforms::Controls::MaterialRaisedButton^ manageCityButton;
+	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageLog;
+	private: MaterialWinforms::Controls::MaterialFlatButton^ saveLog;
+	private: MaterialWinforms::Controls::MaterialTextBox^ logOutput;
+
+	public:
+
+
+
+
 			 BindingList<String^>^ destinationData;
 	public:
 		form(void) {
@@ -96,31 +118,33 @@ namespace TravelEmulator {
 	private:
 		MaterialWinforms::Controls::MaterialTabSelector^ materialTabSelector1;
 
+
+
 	private:
-		MaterialWinforms::Controls::MaterialTabControl^ materialTabControlLog;
-	private: MaterialWinforms::Controls::MaterialTabPage^ TabPage1;
+
+
 
 	protected:
 	private:
 
-	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageLog;
-
-	private:
-
-	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageMgnt;
-
-	private:
 
 
 	private:
-		MaterialWinforms::Controls::MaterialComboBox^ depaturePicker;
+
+
 
 	private:
-		MaterialWinforms::Controls::MaterialLabel^ materialLabel1;
+
 
 	private:
-		MaterialWinforms::Controls::MaterialTextBox^ logOutput;
-	private: MaterialWinforms::Controls::MaterialFlatButton^ saveLog;
+
+
+	private:
+
+
+	private:
+
+
 
 	private:
 
@@ -146,8 +170,9 @@ namespace TravelEmulator {
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath4 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath3 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			this->materialTabSelector1 = (gcnew MaterialWinforms::Controls::MaterialTabSelector());
-			this->materialTabControlLog = (gcnew MaterialWinforms::Controls::MaterialTabControl());
+			this->tabControl = (gcnew MaterialWinforms::Controls::MaterialTabControl());
 			this->TabPage1 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
+			this->materialFlatButton1 = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->destinationPicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
 			this->materialLabel2 = (gcnew MaterialWinforms::Controls::MaterialLabel());
 			this->materialLabel1 = (gcnew MaterialWinforms::Controls::MaterialLabel());
@@ -160,7 +185,7 @@ namespace TravelEmulator {
 			this->TabPageLog = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->saveLog = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->logOutput = (gcnew MaterialWinforms::Controls::MaterialTextBox());
-			this->materialTabControlLog->SuspendLayout();
+			this->tabControl->SuspendLayout();
 			this->TabPage1->SuspendLayout();
 			this->TabPageMgnt->SuspendLayout();
 			this->materialCard1->SuspendLayout();
@@ -170,7 +195,7 @@ namespace TravelEmulator {
 			// 
 			// materialTabSelector1
 			// 
-			this->materialTabSelector1->BaseTabControl = this->materialTabControlLog;
+			this->materialTabSelector1->BaseTabControl = this->tabControl;
 			this->materialTabSelector1->CenterTabs = false;
 			this->materialTabSelector1->Depth = 0;
 			resources->ApplyResources(this->materialTabSelector1, L"materialTabSelector1");
@@ -182,21 +207,22 @@ namespace TravelEmulator {
 			this->materialTabSelector1->ShadowBorder = graphicsPath5;
 			this->materialTabSelector1->TabPadding = 24;
 			// 
-			// materialTabControlLog
+			// tabControl
 			// 
-			this->materialTabControlLog->Controls->Add(this->TabPage1);
-			this->materialTabControlLog->Controls->Add(this->TabPageMgnt);
-			this->materialTabControlLog->Controls->Add(this->TabPageLog);
-			this->materialTabControlLog->Depth = 0;
-			resources->ApplyResources(this->materialTabControlLog, L"materialTabControlLog");
-			this->materialTabControlLog->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialTabControlLog->Name = L"materialTabControlLog";
-			this->materialTabControlLog->SelectedIndex = 2;
-			this->materialTabControlLog->TabsAreClosable = true;
+			this->tabControl->Controls->Add(this->TabPage1);
+			this->tabControl->Controls->Add(this->TabPageMgnt);
+			this->tabControl->Controls->Add(this->TabPageLog);
+			this->tabControl->Depth = 0;
+			resources->ApplyResources(this->tabControl, L"tabControl");
+			this->tabControl->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->tabControl->Name = L"tabControl";
+			this->tabControl->SelectedIndex = 0;
+			this->tabControl->TabsAreClosable = true;
 			// 
 			// TabPage1
 			// 
 			this->TabPage1->Closable = false;
+			this->TabPage1->Controls->Add(this->materialFlatButton1);
 			this->TabPage1->Controls->Add(this->destinationPicker);
 			this->TabPage1->Controls->Add(this->materialLabel2);
 			this->TabPage1->Controls->Add(this->materialLabel1);
@@ -205,6 +231,20 @@ namespace TravelEmulator {
 			resources->ApplyResources(this->TabPage1, L"TabPage1");
 			this->TabPage1->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->TabPage1->Name = L"TabPage1";
+			// 
+			// materialFlatButton1
+			// 
+			this->materialFlatButton1->Accent = false;
+			resources->ApplyResources(this->materialFlatButton1, L"materialFlatButton1");
+			this->materialFlatButton1->Capitalized = true;
+			this->materialFlatButton1->Depth = 0;
+			this->materialFlatButton1->IconImage = nullptr;
+			this->materialFlatButton1->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialFlatButton1->Name = L"materialFlatButton1";
+			this->materialFlatButton1->Primary = false;
+			this->materialFlatButton1->Selected = false;
+			this->materialFlatButton1->UseVisualStyleBackColor = true;
+			this->materialFlatButton1->Click += gcnew System::EventHandler(this, &form::MaterialFlatButton1_Click_1);
 			// 
 			// destinationPicker
 			// 
@@ -349,13 +389,12 @@ namespace TravelEmulator {
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->materialTabControlLog);
+			this->Controls->Add(this->tabControl);
 			this->Controls->Add(this->materialTabSelector1);
 			this->MaximizeBox = false;
 			this->Name = L"form";
-			this->Load += gcnew System::EventHandler(this, &form::Form_Load);
 			this->TextChanged += gcnew System::EventHandler(this, &form::MaterialComboBox1_TextChanged);
-			this->materialTabControlLog->ResumeLayout(false);
+			this->tabControl->ResumeLayout(false);
 			this->TabPage1->ResumeLayout(false);
 			this->TabPage1->PerformLayout();
 			this->TabPageMgnt->ResumeLayout(false);
@@ -367,9 +406,6 @@ namespace TravelEmulator {
 
 		}
 #pragma endregion
-	private:
-		System::Void Form_Load(System::Object^ sender, System::EventArgs^ e) {}
-
 	private:
 		System::Void MaterialComboBox1_TextChanged(System::Object^ sender,
 			System::EventArgs^ e) {
@@ -442,5 +478,23 @@ namespace TravelEmulator {
 		manageForm->setData(core->getTimeTable(),cityData);
 		manageForm->Show();
 	}
+private: System::Void MaterialTabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
+	mapTable->Text = "地图";
+	auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
+	panel->Dock = DockStyle::Fill;
+	mapTable->Controls->Add(panel);
+	auto settings = gcnew CefSettings();
+	settings->RemoteDebuggingPort = 9229;
+	Cef::Initialize(settings);
+	auto testList = gcnew List<String^>();
+	browser = gcnew ChromiumWebBrowser("file:///C:/Users/%20gaojianli/Desktop/数据结构/test.html",nullptr);
+	browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
+	panel->Controls->Add(browser);
+	browser->Dock = DockStyle::Fill;
+	tabControl->TabPages->Add(mapTable);
+}
 };
 }  // namespace TravelEmulator
