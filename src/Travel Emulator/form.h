@@ -409,7 +409,14 @@ namespace TravelEmulator {
 		}
 	private:
 		System::Void button1_click(System::Object^ sender, System::EventArgs^ e) {
-			auto timeTable = TravelEmulator::
+			auto tmpcore = gcnew Core(log);
+			auto start = DateTime(1989, 1, 1, 0, 0, 0);
+			auto end = DateTime(1989, 1, 2, 0, 0, 0);
+			auto tmpgraph = gcnew graph(start, end, 1500, 1, 10, 1, 3, tmpcore->cityData, tmpcore->timeTable);
+			tmpgraph->getInstance(start, end, 1500, 1, 10, 1, 3, tmpcore->cityData, tmpcore->timeTable);
+			for each (auto item in tmpgraph->path) {
+				System::Console::WriteLine(item);
+			}
 		}
 	private:
 		void showHeadupMessage(String ^ title, String ^ info) {

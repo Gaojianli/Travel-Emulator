@@ -20,7 +20,8 @@ public:
 
 public ref class graph {
 public:
-	static graph^ getInstance(DateTime startTime, DateTime deadlineTime,int min, int strategy, int vertexNum, int departure,int destination, List<city^>^ cityList, List<timeTable^>^ timeTables);
+	graph(DateTime startTime, DateTime deadlineTime, int min, int strategy, int vertexNum, int departure, int destination, List<cities^>^ cityList, List<Transport^>^ timeTables);
+	static graph^ getInstance(DateTime startTime, DateTime deadlineTime,int min, int strategy, int vertexNum, int departure,int destination, List<cities^>^ cityList, List<Transport^>^ timeTables);
 	int numvertex;
 	int departure;
 	int destination;
@@ -30,9 +31,8 @@ public:
 	DateTime startTime;
 	DateTime deadlineTime;
 private:
-	static void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<city^>^ cityList, List<timeTable^>^ timeTables);
-	static void DFS(int prensentCity, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<city^>^ cityList, List<timeTable^>^ timeTables);
-	graph(DateTime startTime, DateTime deadlineTime,int min, int strategy, int vertexNum, int departure,int destination, List<city^>^ cityList, List<timeTable^>^ timeTables);
+	static void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<cities^>^ cityList, List<Transport^>^ timeTables);
+	static void DFS(int prensentCity, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<cities^>^ cityList, List<Transport^>^ timeTables);
 	int currentCount = 0;
 	static graph^ _instance;
 };
@@ -46,7 +46,7 @@ public:
 	{
 		Value = value;
 	}
-	bool IsMatch(timeTable^ comp)
+	bool IsMatch(Transport^ comp)
 	{
 		return comp->shift == Value;
 	}
