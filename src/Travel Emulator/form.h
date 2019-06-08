@@ -393,7 +393,6 @@ namespace TravelEmulator {
 			this->Controls->Add(this->materialTabSelector1);
 			this->MaximizeBox = false;
 			this->Name = L"form";
-			this->Load += gcnew System::EventHandler(this, &form::Form_Load);
 			this->TextChanged += gcnew System::EventHandler(this, &form::MaterialComboBox1_TextChanged);
 			this->tabControl->ResumeLayout(false);
 			this->TabPage1->ResumeLayout(false);
@@ -407,9 +406,6 @@ namespace TravelEmulator {
 
 		}
 #pragma endregion
-	private:
-		System::Void Form_Load(System::Object^ sender, System::EventArgs^ e) {}
-
 	private:
 		System::Void MaterialComboBox1_TextChanged(System::Object^ sender,
 			System::EventArgs^ e) {
@@ -491,11 +487,11 @@ private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System
 	panel->Dock = DockStyle::Fill;
 	mapTable->Controls->Add(panel);
 	auto settings = gcnew CefSettings();
+	settings->RemoteDebuggingPort = 9229;
 	Cef::Initialize(settings);
 	auto testList = gcnew List<String^>();
-	for (int i = 1; i < 50; i++)
-		testList->Add(i.ToString());
 	browser = gcnew ChromiumWebBrowser("file:///C:/Users/%20gaojianli/Desktop/数据结构/test.html",nullptr);
+	browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
 	panel->Controls->Add(browser);
 	browser->Dock = DockStyle::Fill;
 	tabControl->TabPages->Add(mapTable);
