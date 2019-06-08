@@ -155,6 +155,7 @@ namespace TravelEmulator {
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
 			this->Name = L"manageCity";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &manageCity::ManageCity_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &manageCity::RemoveCity_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -232,6 +233,10 @@ namespace TravelEmulator {
 			cityListView->Items->Add(ltv);
 		}
 		cityListView->EndUpdate();
+		delete t;
+		delete control;
 	}
-	};
+	private: System::Void ManageCity_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+	}
+};
 }
