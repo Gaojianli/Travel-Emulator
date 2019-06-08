@@ -1,7 +1,7 @@
 // cities.h The city class
 #pragma once
 using namespace System;
-ref class cities {
+public ref class cities {
  public:
   int id;
   String ^ name;

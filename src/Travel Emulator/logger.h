@@ -2,10 +2,10 @@
 using namespace System::IO;
 using namespace System;
 namespace logger {
-	enum class logLevel {
+	public enum class logLevel {
 		Warning, Info, Error
 	};
-	ref class Logger {
+	public ref class Logger {
 	private:
 		MaterialWinforms::Controls::MaterialTextBox^ writerBox;
 
