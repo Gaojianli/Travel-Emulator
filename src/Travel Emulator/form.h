@@ -44,6 +44,7 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialCard^ materialCard1;
 	public:
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ materialRaisedButton1;
+	private: System::Windows::Forms::Button^ button1;
 			 BindingList<String^>^ destinationData;
 	public:
 		form(void) {
@@ -140,11 +141,11 @@ namespace TravelEmulator {
 		/// </summary>
 		void InitializeComponent(void) {
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath5 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(form::typeid));
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath2 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath1 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath4 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath3 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(form::typeid));
 			this->materialTabSelector1 = (gcnew MaterialWinforms::Controls::MaterialTabSelector());
 			this->materialTabControlLog = (gcnew MaterialWinforms::Controls::MaterialTabControl());
 			this->TabPage1 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
@@ -160,6 +161,7 @@ namespace TravelEmulator {
 			this->TabPageLog = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->saveLog = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->logOutput = (gcnew MaterialWinforms::Controls::MaterialTextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->materialTabControlLog->SuspendLayout();
 			this->TabPage1->SuspendLayout();
 			this->TabPageMgnt->SuspendLayout();
@@ -191,12 +193,13 @@ namespace TravelEmulator {
 			resources->ApplyResources(this->materialTabControlLog, L"materialTabControlLog");
 			this->materialTabControlLog->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->materialTabControlLog->Name = L"materialTabControlLog";
-			this->materialTabControlLog->SelectedIndex = 2;
+			this->materialTabControlLog->SelectedIndex = 0;
 			this->materialTabControlLog->TabsAreClosable = true;
 			// 
 			// TabPage1
 			// 
 			this->TabPage1->Closable = false;
+			this->TabPage1->Controls->Add(this->button1);
 			this->TabPage1->Controls->Add(this->destinationPicker);
 			this->TabPage1->Controls->Add(this->materialLabel2);
 			this->TabPage1->Controls->Add(this->materialLabel1);
@@ -345,6 +348,13 @@ namespace TravelEmulator {
 			this->logOutput->SelectionStart = 0;
 			this->logOutput->TabStop = false;
 			// 
+			// button1
+			// 
+			resources->ApplyResources(this->button1, L"button1");
+			this->button1->Name = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &form::button1_click);
+			// 
 			// form
 			// 
 			resources->ApplyResources(this, L"$this");
@@ -378,7 +388,6 @@ namespace TravelEmulator {
 			// logOutput->Text->Concat(L"当前选择的城市：" +
 			// depaturePicker->SelectedItem + "\n");
 		}
-
 	private:
 		System::Void MaterialFlatButton1_Click(System::Object ^ sender,
 			System::EventArgs ^ e) {
@@ -397,6 +406,10 @@ namespace TravelEmulator {
 					showHeadupMessage(convertToUtf8(L"错误"), convertToUtf8("打开文件失败，请重试"));
 				}
 			}
+		}
+	private:
+		System::Void button1_click(System::Object^ sender, System::EventArgs^ e) {
+			auto timeTable = TravelEmulator::
 		}
 	private:
 		void showHeadupMessage(String ^ title, String ^ info) {
