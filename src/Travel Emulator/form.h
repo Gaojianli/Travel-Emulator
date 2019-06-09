@@ -507,10 +507,11 @@ namespace TravelEmulator {
 		tabControl->TabPages->Add(mapTable);
 	}
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto start = DateTime(1989, 1, 1, 0, 0, 0);
-		auto end = DateTime(1989, 1, 2, 0, 0, 0);
-		auto tmpgraph = graph::getInstance(start, end, 15000, 0, 10, 5, 6, cityData, core->timeTable);
-		for each (auto i in tmpgraph->path) {
+		auto start = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
+		auto end = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
+		auto graph = graph::getInstance(cityData, core->timeTable);
+		auto result = graph->getPath(start, 1, 10, 5, 6, 1500, end);
+		for each (auto i in result) {
 			if(i)
 				log->writeLog(i, logLevel::Info);
 		}

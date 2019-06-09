@@ -20,20 +20,15 @@ public:
 
 public ref class graph {
 public:
-	graph(DateTime startTime, DateTime deadlineTime, int min, int strategy, int vertexNum, int departure, int destination, List<cities^>^ cityList, List<Transport^>^ timeTables);
-	static graph^ getInstance(DateTime startTime, DateTime deadlineTime,int min, int strategy, int vertexNum, int departure,int destination, List<cities^>^ cityList, List<Transport^>^ timeTables);
-	int numvertex;
-	int departure;
-	int destination;
-	int strategy;
-	int min;
-	List<String^>^ path;
-	DateTime startTime;
-	DateTime deadlineTime;
+	graph(List<cities^>^ cityList, List<Transport^>^ timeTables);
+	static graph^ getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables);
+	List<String^>^ getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, int min, DateTime deadlineTime);
+	List<cities^>^ cityList;
+	List<Transport^>^ timeTables;
 private:
-	static void makePath(int presentCity, List<String^>^ path, List<String^>^ ultimatePath, List<Transport^>^ timeTables);
-	static void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<cities^>^ cityList, List<Transport^>^ timeTables);
-	static void DFS(int prensentCity, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<cities^>^ cityList, List<Transport^>^ timeTables);
+	void makePath(int presentCity, List<String^>^ path, List<String^>^ ultimatePath, int departure, int destination);
+	void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, int strategy);
+	void DFS(int prensentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, DateTime deadlineTime, int& min);
 	int currentCount = 0;
 	static graph^ _instance;
 };
