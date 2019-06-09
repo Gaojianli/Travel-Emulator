@@ -31,6 +31,7 @@ public:
 	DateTime startTime;
 	DateTime deadlineTime;
 private:
+	static void makePath(int presentCity, List<String^>^ path, List<String^>^ ultimatePath, List<Transport^>^ timeTables);
 	static void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<cities^>^ cityList, List<Transport^>^ timeTables);
 	static void DFS(int prensentCity, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<cities^>^ cityList, List<Transport^>^ timeTables);
 	int currentCount = 0;
