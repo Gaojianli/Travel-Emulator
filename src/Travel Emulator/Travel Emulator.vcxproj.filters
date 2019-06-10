@@ -90,6 +90,92 @@
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
     <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="index.html">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="app.manifest" />
@@ -126,6 +212,9 @@
       <Filter>Header Files\contorls</Filter>
     </ClCompile>
     <ClCompile Include="graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

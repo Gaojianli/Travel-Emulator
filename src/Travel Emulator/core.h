@@ -23,6 +23,5 @@ private:
 	void initializeCityData();
 	void initializeTimeTable();
 	bool errorFlag = false;//set it as true if error occured.
+
 };
-
-
