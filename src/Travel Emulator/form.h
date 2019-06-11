@@ -18,7 +18,7 @@ namespace TravelEmulator {
 	using namespace CefSharp;
 	using namespace CefSharp::WinForms;
 	/// <summary>
-	/// form æ‘˜è¦
+	/// form ÕªÒª
 	/// </summary>
 	public
 	ref class form : public MaterialWinforms::Controls::MaterialForm {
@@ -43,10 +43,12 @@ namespace TravelEmulator {
 		Core^ core;
 		BindingList<String^>^ departureData;
 	private: MaterialWinforms::Controls::MaterialTabControl^ tabControl;
+	private: MaterialWinforms::Controls::MaterialTabPage^ queryRoutineTab;
+
 	public:
 
 	public:
-	private: MaterialWinforms::Controls::MaterialTabPage^ TabPage1;
+
 	private: MaterialWinforms::Controls::MaterialFlatButton^ materialFlatButton1;
 	private: MaterialWinforms::Controls::MaterialComboBox^ destinationPicker;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel2;
@@ -54,13 +56,31 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialComboBox^ depaturePicker;
 	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageMgnt;
 	private: MaterialWinforms::Controls::MaterialCard^ materialCard1;
-	private: MaterialWinforms::Controls::MaterialRaisedButton^ materialRaisedButton1;
+	private: MaterialWinforms::Controls::MaterialRaisedButton^ mamangeShiftButton;
+
+
 	private: MaterialWinforms::Controls::MaterialCard^ cityManageCard;
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ manageCityButton;
 	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageLog;
 	private: MaterialWinforms::Controls::MaterialFlatButton^ saveLog;
 	private: MaterialWinforms::Controls::MaterialTextBox^ logOutput;
-	private: System::Windows::Forms::Button^ button1;
+	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel6;
+	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel5;
+	private: MaterialWinforms::Controls::MaterialComboBox^ materialComboBox1;
+	private: MaterialWinforms::Controls::MaterialComboBox^ startMinutesPicker;
+	private: MaterialWinforms::Controls::MaterialComboBox^ arriveHourPicker;
+	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel4;
+	private: MaterialWinforms::Controls::MaterialComboBox^ startHourPicker;
+	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel3;
+	private: MaterialWinforms::Controls::MaterialCheckBox^ addOneDayCheckBox;
+
+
+
+
+
+
+
+
 
 	public:
 
@@ -75,10 +95,10 @@ namespace TravelEmulator {
 			auto formManager = MaterialWinforms::MaterialSkinManager::Instance;
 			formManager->AddFormToManage(this);
 			formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
-			cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"åŸå¸‚ç®¡ç†"));
+			cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"³ÇÊĞ¹ÜÀí"));
 			log = gcnew Logger(logOutput);  //initialize log output
-			log->writeLog("ç¨‹åºå¯åŠ¨æˆåŠŸ", logLevel::Info);
-			log->writeLog("æ•°æ®åº“è¿æ¥æˆåŠŸï¼Œå°è¯•å¯¼å…¥æ•°æ®...", logLevel::Info);
+			log->writeLog("³ÌĞòÆô¶¯³É¹¦", logLevel::Info);
+			log->writeLog("Êı¾İ¿âÁ¬½Ó³É¹¦£¬³¢ÊÔµ¼ÈëÊı¾İ...", logLevel::Info);
 			core = gcnew Core(log);
 			sql = core->getSql();// initialize sql manager
 			//----------Binding data--------
@@ -108,7 +128,7 @@ namespace TravelEmulator {
 	}
 	protected:
 		/// <summary>
-		/// æ¸…ç†æ‰€æœ‰æ­£åœ¨ä½¿ç”¨çš„èµ„æºã€‚
+		/// ÇåÀíËùÓĞÕıÔÚÊ¹ÓÃµÄ×ÊÔ´¡£
 		/// </summary>
 		~form() {
 			if (components) {
@@ -154,14 +174,14 @@ namespace TravelEmulator {
 	protected:
 	private:
 		/// <summary>
-		/// å¿…éœ€çš„è®¾è®¡å™¨å˜é‡ã€‚
+		/// ±ØĞèµÄÉè¼ÆÆ÷±äÁ¿¡£
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// è®¾è®¡å™¨æ”¯æŒæ‰€éœ€çš„æ–¹æ³• - ä¸è¦ä¿®æ”¹
-		/// ä½¿ç”¨ä»£ç ç¼–è¾‘å™¨ä¿®æ”¹æ­¤æ–¹æ³•çš„å†…å®¹ã€‚
+		/// Éè¼ÆÆ÷Ö§³ÖËùĞèµÄ·½·¨ - ²»ÒªĞŞ¸Ä
+		/// Ê¹ÓÃ´úÂë±à¼­Æ÷ĞŞ¸Ä´Ë·½·¨µÄÄÚÈİ¡£
 		/// </summary>
 		void InitializeComponent(void) {
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath5 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
@@ -172,8 +192,16 @@ namespace TravelEmulator {
 			System::Drawing::Drawing2D::GraphicsPath^ graphicsPath3 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 			this->materialTabSelector1 = (gcnew MaterialWinforms::Controls::MaterialTabSelector());
 			this->tabControl = (gcnew MaterialWinforms::Controls::MaterialTabControl());
-			this->TabPage1 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->queryRoutineTab = (gcnew MaterialWinforms::Controls::MaterialTabPage());
+			this->addOneDayCheckBox = (gcnew MaterialWinforms::Controls::MaterialCheckBox());
+			this->materialLabel6 = (gcnew MaterialWinforms::Controls::MaterialLabel());
+			this->materialLabel5 = (gcnew MaterialWinforms::Controls::MaterialLabel());
+			this->materialComboBox1 = (gcnew MaterialWinforms::Controls::MaterialComboBox());
+			this->startMinutesPicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
+			this->arriveHourPicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
+			this->materialLabel4 = (gcnew MaterialWinforms::Controls::MaterialLabel());
+			this->startHourPicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
+			this->materialLabel3 = (gcnew MaterialWinforms::Controls::MaterialLabel());
 			this->materialFlatButton1 = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->destinationPicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
 			this->materialLabel2 = (gcnew MaterialWinforms::Controls::MaterialLabel());
@@ -181,14 +209,14 @@ namespace TravelEmulator {
 			this->depaturePicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
 			this->TabPageMgnt = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->materialCard1 = (gcnew MaterialWinforms::Controls::MaterialCard());
-			this->materialRaisedButton1 = (gcnew MaterialWinforms::Controls::MaterialRaisedButton());
+			this->mamangeShiftButton = (gcnew MaterialWinforms::Controls::MaterialRaisedButton());
 			this->cityManageCard = (gcnew MaterialWinforms::Controls::MaterialCard());
 			this->manageCityButton = (gcnew MaterialWinforms::Controls::MaterialRaisedButton());
 			this->TabPageLog = (gcnew MaterialWinforms::Controls::MaterialTabPage());
 			this->saveLog = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->logOutput = (gcnew MaterialWinforms::Controls::MaterialTextBox());
 			this->tabControl->SuspendLayout();
-			this->TabPage1->SuspendLayout();
+			this->queryRoutineTab->SuspendLayout();
 			this->TabPageMgnt->SuspendLayout();
 			this->materialCard1->SuspendLayout();
 			this->cityManageCard->SuspendLayout();
@@ -211,7 +239,7 @@ namespace TravelEmulator {
 			// 
 			// tabControl
 			// 
-			this->tabControl->Controls->Add(this->TabPage1);
+			this->tabControl->Controls->Add(this->queryRoutineTab);
 			this->tabControl->Controls->Add(this->TabPageMgnt);
 			this->tabControl->Controls->Add(this->TabPageLog);
 			this->tabControl->Depth = 0;
@@ -221,26 +249,140 @@ namespace TravelEmulator {
 			this->tabControl->SelectedIndex = 0;
 			this->tabControl->TabsAreClosable = true;
 			// 
-			// TabPage1
+			// queryRoutineTab
 			// 
-			this->TabPage1->Closable = false;
-			this->TabPage1->Controls->Add(this->button1);
-			this->TabPage1->Controls->Add(this->materialFlatButton1);
-			this->TabPage1->Controls->Add(this->destinationPicker);
-			this->TabPage1->Controls->Add(this->materialLabel2);
-			this->TabPage1->Controls->Add(this->materialLabel1);
-			this->TabPage1->Controls->Add(this->depaturePicker);
-			this->TabPage1->Depth = 0;
-			resources->ApplyResources(this->TabPage1, L"TabPage1");
-			this->TabPage1->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->TabPage1->Name = L"TabPage1";
+			this->queryRoutineTab->Closable = false;
+			this->queryRoutineTab->Controls->Add(this->addOneDayCheckBox);
+			this->queryRoutineTab->Controls->Add(this->materialLabel6);
+			this->queryRoutineTab->Controls->Add(this->materialLabel5);
+			this->queryRoutineTab->Controls->Add(this->materialComboBox1);
+			this->queryRoutineTab->Controls->Add(this->startMinutesPicker);
+			this->queryRoutineTab->Controls->Add(this->arriveHourPicker);
+			this->queryRoutineTab->Controls->Add(this->materialLabel4);
+			this->queryRoutineTab->Controls->Add(this->startHourPicker);
+			this->queryRoutineTab->Controls->Add(this->materialLabel3);
+			this->queryRoutineTab->Controls->Add(this->materialFlatButton1);
+			this->queryRoutineTab->Controls->Add(this->destinationPicker);
+			this->queryRoutineTab->Controls->Add(this->materialLabel2);
+			this->queryRoutineTab->Controls->Add(this->materialLabel1);
+			this->queryRoutineTab->Controls->Add(this->depaturePicker);
+			this->queryRoutineTab->Depth = 0;
+			resources->ApplyResources(this->queryRoutineTab, L"queryRoutineTab");
+			this->queryRoutineTab->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->queryRoutineTab->Name = L"queryRoutineTab";
 			// 
-			// button1
+			// addOneDayCheckBox
 			// 
-			resources->ApplyResources(this->button1, L"button1");
-			this->button1->Name = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &form::Button1_Click);
+			resources->ApplyResources(this->addOneDayCheckBox, L"addOneDayCheckBox");
+			this->addOneDayCheckBox->Depth = 0;
+			this->addOneDayCheckBox->MouseLocation = System::Drawing::Point(-1, -1);
+			this->addOneDayCheckBox->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->addOneDayCheckBox->Name = L"addOneDayCheckBox";
+			this->addOneDayCheckBox->Ripple = true;
+			this->addOneDayCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// materialLabel6
+			// 
+			resources->ApplyResources(this->materialLabel6, L"materialLabel6");
+			this->materialLabel6->Depth = 0;
+			this->materialLabel6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->materialLabel6->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialLabel6->Name = L"materialLabel6";
+			// 
+			// materialLabel5
+			// 
+			resources->ApplyResources(this->materialLabel5, L"materialLabel5");
+			this->materialLabel5->Depth = 0;
+			this->materialLabel5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->materialLabel5->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialLabel5->Name = L"materialLabel5";
+			// 
+			// materialComboBox1
+			// 
+			this->materialComboBox1->Depth = 0;
+			this->materialComboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->materialComboBox1->FormattingEnabled = true;
+			this->materialComboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				resources->GetString(L"materialComboBox1.Items"),
+					resources->GetString(L"materialComboBox1.Items1"), resources->GetString(L"materialComboBox1.Items2"), resources->GetString(L"materialComboBox1.Items3")
+			});
+			resources->ApplyResources(this->materialComboBox1, L"materialComboBox1");
+			this->materialComboBox1->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialComboBox1->Name = L"materialComboBox1";
+			// 
+			// startMinutesPicker
+			// 
+			this->startMinutesPicker->Depth = 0;
+			this->startMinutesPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->startMinutesPicker->FormattingEnabled = true;
+			this->startMinutesPicker->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				resources->GetString(L"startMinutesPicker.Items"),
+					resources->GetString(L"startMinutesPicker.Items1"), resources->GetString(L"startMinutesPicker.Items2"), resources->GetString(L"startMinutesPicker.Items3")
+			});
+			resources->ApplyResources(this->startMinutesPicker, L"startMinutesPicker");
+			this->startMinutesPicker->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->startMinutesPicker->Name = L"startMinutesPicker";
+			// 
+			// arriveHourPicker
+			// 
+			this->arriveHourPicker->Depth = 0;
+			this->arriveHourPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->arriveHourPicker->FormattingEnabled = true;
+			this->arriveHourPicker->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
+				resources->GetString(L"arriveHourPicker.Items"),
+					resources->GetString(L"arriveHourPicker.Items1"), resources->GetString(L"arriveHourPicker.Items2"), resources->GetString(L"arriveHourPicker.Items3"),
+					resources->GetString(L"arriveHourPicker.Items4"), resources->GetString(L"arriveHourPicker.Items5"), resources->GetString(L"arriveHourPicker.Items6"),
+					resources->GetString(L"arriveHourPicker.Items7"), resources->GetString(L"arriveHourPicker.Items8"), resources->GetString(L"arriveHourPicker.Items9"),
+					resources->GetString(L"arriveHourPicker.Items10"), resources->GetString(L"arriveHourPicker.Items11"), resources->GetString(L"arriveHourPicker.Items12"),
+					resources->GetString(L"arriveHourPicker.Items13"), resources->GetString(L"arriveHourPicker.Items14"), resources->GetString(L"arriveHourPicker.Items15"),
+					resources->GetString(L"arriveHourPicker.Items16"), resources->GetString(L"arriveHourPicker.Items17"), resources->GetString(L"arriveHourPicker.Items18"),
+					resources->GetString(L"arriveHourPicker.Items19"), resources->GetString(L"arriveHourPicker.Items20"), resources->GetString(L"arriveHourPicker.Items21"),
+					resources->GetString(L"arriveHourPicker.Items22"), resources->GetString(L"arriveHourPicker.Items23")
+			});
+			resources->ApplyResources(this->arriveHourPicker, L"arriveHourPicker");
+			this->arriveHourPicker->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->arriveHourPicker->Name = L"arriveHourPicker";
+			this->arriveHourPicker->SelectedValueChanged += gcnew System::EventHandler(this, &form::ArriveHourPicker_SelectedValueChanged);
+			// 
+			// materialLabel4
+			// 
+			resources->ApplyResources(this->materialLabel4, L"materialLabel4");
+			this->materialLabel4->Depth = 0;
+			this->materialLabel4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->materialLabel4->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialLabel4->Name = L"materialLabel4";
+			// 
+			// startHourPicker
+			// 
+			this->startHourPicker->Depth = 0;
+			this->startHourPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->startHourPicker->FormattingEnabled = true;
+			this->startHourPicker->Items->AddRange(gcnew cli::array< System::Object^  >(24) {
+				resources->GetString(L"startHourPicker.Items"),
+					resources->GetString(L"startHourPicker.Items1"), resources->GetString(L"startHourPicker.Items2"), resources->GetString(L"startHourPicker.Items3"),
+					resources->GetString(L"startHourPicker.Items4"), resources->GetString(L"startHourPicker.Items5"), resources->GetString(L"startHourPicker.Items6"),
+					resources->GetString(L"startHourPicker.Items7"), resources->GetString(L"startHourPicker.Items8"), resources->GetString(L"startHourPicker.Items9"),
+					resources->GetString(L"startHourPicker.Items10"), resources->GetString(L"startHourPicker.Items11"), resources->GetString(L"startHourPicker.Items12"),
+					resources->GetString(L"startHourPicker.Items13"), resources->GetString(L"startHourPicker.Items14"), resources->GetString(L"startHourPicker.Items15"),
+					resources->GetString(L"startHourPicker.Items16"), resources->GetString(L"startHourPicker.Items17"), resources->GetString(L"startHourPicker.Items18"),
+					resources->GetString(L"startHourPicker.Items19"), resources->GetString(L"startHourPicker.Items20"), resources->GetString(L"startHourPicker.Items21"),
+					resources->GetString(L"startHourPicker.Items22"), resources->GetString(L"startHourPicker.Items23")
+			});
+			resources->ApplyResources(this->startHourPicker, L"startHourPicker");
+			this->startHourPicker->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->startHourPicker->Name = L"startHourPicker";
+			// 
+			// materialLabel3
+			// 
+			resources->ApplyResources(this->materialLabel3, L"materialLabel3");
+			this->materialLabel3->Depth = 0;
+			this->materialLabel3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->materialLabel3->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->materialLabel3->Name = L"materialLabel3";
 			// 
 			// materialFlatButton1
 			// 
@@ -307,7 +449,7 @@ namespace TravelEmulator {
 			// 
 			// materialCard1
 			// 
-			this->materialCard1->Controls->Add(this->materialRaisedButton1);
+			this->materialCard1->Controls->Add(this->mamangeShiftButton);
 			this->materialCard1->Depth = 0;
 			this->materialCard1->Elevation = 5;
 			this->materialCard1->LargeTitle = false;
@@ -316,20 +458,20 @@ namespace TravelEmulator {
 			this->materialCard1->Name = L"materialCard1";
 			graphicsPath2->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
 			this->materialCard1->ShadowBorder = graphicsPath2;
-			this->materialCard1->Title = L"ç­æ¬¡ç®¡ç†";
+			this->materialCard1->Title = L"°à´Î¹ÜÀí";
 			// 
-			// materialRaisedButton1
+			// mamangeShiftButton
 			// 
-			this->materialRaisedButton1->Depth = 0;
-			this->materialRaisedButton1->Elevation = 5;
-			resources->ApplyResources(this->materialRaisedButton1, L"materialRaisedButton1");
-			this->materialRaisedButton1->MouseState = MaterialWinforms::MouseState::HOVER;
-			this->materialRaisedButton1->Name = L"materialRaisedButton1";
-			this->materialRaisedButton1->Primary = true;
+			this->mamangeShiftButton->Depth = 0;
+			this->mamangeShiftButton->Elevation = 5;
+			resources->ApplyResources(this->mamangeShiftButton, L"mamangeShiftButton");
+			this->mamangeShiftButton->MouseState = MaterialWinforms::MouseState::HOVER;
+			this->mamangeShiftButton->Name = L"mamangeShiftButton";
+			this->mamangeShiftButton->Primary = true;
 			graphicsPath1->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-			this->materialRaisedButton1->ShadowBorder = graphicsPath1;
-			this->materialRaisedButton1->UseVisualStyleBackColor = true;
-			this->materialRaisedButton1->Click += gcnew System::EventHandler(this, &form::MaterialRaisedButton1_Click);
+			this->mamangeShiftButton->ShadowBorder = graphicsPath1;
+			this->mamangeShiftButton->UseVisualStyleBackColor = true;
+			this->mamangeShiftButton->Click += gcnew System::EventHandler(this, &form::mamangeShiftButton_Click);
 			// 
 			// cityManageCard
 			// 
@@ -342,7 +484,7 @@ namespace TravelEmulator {
 			this->cityManageCard->Name = L"cityManageCard";
 			graphicsPath4->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
 			this->cityManageCard->ShadowBorder = graphicsPath4;
-			this->cityManageCard->Title = L"åŸå¸‚ç®¡ç†";
+			this->cityManageCard->Title = L"³ÇÊĞ¹ÜÀí";
 			// 
 			// manageCityButton
 			// 
@@ -405,8 +547,8 @@ namespace TravelEmulator {
 			this->Name = L"form";
 			this->TextChanged += gcnew System::EventHandler(this, &form::MaterialComboBox1_TextChanged);
 			this->tabControl->ResumeLayout(false);
-			this->TabPage1->ResumeLayout(false);
-			this->TabPage1->PerformLayout();
+			this->queryRoutineTab->ResumeLayout(false);
+			this->queryRoutineTab->PerformLayout();
 			this->TabPageMgnt->ResumeLayout(false);
 			this->materialCard1->ResumeLayout(false);
 			this->cityManageCard->ResumeLayout(false);
@@ -419,9 +561,9 @@ namespace TravelEmulator {
 	private:
 		System::Void MaterialComboBox1_TextChanged(System::Object^ sender,
 			System::EventArgs^ e) {
-			System::Console::WriteLine(L"å½“å‰é€‰æ‹©çš„åŸå¸‚ï¼š" +
+			System::Console::WriteLine(L"µ±Ç°Ñ¡ÔñµÄ³ÇÊĞ£º" +
 				depaturePicker->SelectedItem);
-			// logOutput->Text->Concat(L"å½“å‰é€‰æ‹©çš„åŸå¸‚ï¼š" +
+			// logOutput->Text->Concat(L"µ±Ç°Ñ¡ÔñµÄ³ÇÊĞ£º" +
 			// depaturePicker->SelectedItem + "\n");
 		}
 
@@ -429,18 +571,18 @@ namespace TravelEmulator {
 		System::Void MaterialFlatButton1_Click(System::Object^ sender,
 			System::EventArgs^ e) {
 			auto dialog = gcnew SaveFileDialog();
-			dialog->Title = convertToUtf8("è¯·é€‰æ‹©è¦ä¿å­˜çš„æ–‡ä»¶");
-			dialog->Filter = convertToUtf8("æ—¥å¿—æ–‡ä»¶(*.log)|*.log");
+			dialog->Title = convertToUtf8("ÇëÑ¡ÔñÒª±£´æµÄÎÄ¼ş");
+			dialog->Filter = convertToUtf8("ÈÕÖ¾ÎÄ¼ş(*.log)|*.log");
 			if (dialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 				auto file = dialog->FileName;
 				auto sw = gcnew StreamWriter(file, false);
 				if (sw) {
 					sw->WriteLine(logOutput->Text);
 					sw->Close();
-					showHeadupMessage(convertToUtf8(L"æˆåŠŸ"), convertToUtf8(L"æ—¥å¿—ä¿å­˜æˆåŠŸ"));
+					showHeadupMessage(convertToUtf8(L"³É¹¦"), convertToUtf8(L"ÈÕÖ¾±£´æ³É¹¦"));
 				}
 				else {
-					showHeadupMessage(convertToUtf8(L"é”™è¯¯"), convertToUtf8("æ‰“å¼€æ–‡ä»¶å¤±è´¥ï¼Œè¯·é‡è¯•"));
+					showHeadupMessage(convertToUtf8(L"´íÎó"), convertToUtf8("´ò¿ªÎÄ¼şÊ§°Ü£¬ÇëÖØÊÔ"));
 				}
 			}
 		}
@@ -467,7 +609,7 @@ namespace TravelEmulator {
 		UserControl^ t = gcnew UserControl();
 		t->Size = control->Size;
 		t->Controls->Add(control);
-		MaterialDialog::Show(convertToUtf8(L"æ·»åŠ åŸå¸‚"), t, MaterialDialog::Buttons::OK);
+		MaterialDialog::Show(convertToUtf8(L"Ìí¼Ó³ÇÊĞ"), t, MaterialDialog::Buttons::OK);
 	}
 	private: System::Void DepaturePicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		auto findFun = gcnew Predicate<cities^>(this, &form::getCityByName_depature);
@@ -476,53 +618,19 @@ namespace TravelEmulator {
 	private: bool getCityByName_depature(cities^ obj) {
 		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
 	}
-	private: System::Void manageCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto manageForm = gcnew manageCity();
-		manageForm->addSql(sql);//add the sql object to the dialog
-		manageForm->getCityData(cityData, departureData, destinationData);
-		manageForm->Show();
-	}
-	private: System::Void MaterialRaisedButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto manageForm = gcnew routineManage();
-		manageForm->init(sql, log);
-		manageForm->setData(core->getTimeTable(), cityData);
-		manageForm->Show();
-	}
+	private: System::Void manageCityButton_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void mamangeShiftButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MaterialTabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-		auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
-		mapTable->Text = "åœ°å›¾";
-		auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
-		panel->Dock = DockStyle::Fill;
-		mapTable->Controls->Add(panel);
-		auto settings = gcnew CefSettings();
-		settings->RemoteDebuggingPort = 9229;
-		Cef::Initialize(settings);
-		browser = gcnew ChromiumWebBrowser(Environment::CurrentDirectory + "\\index.html", nullptr);
-		browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
-		panel->Controls->Add(browser);
-		browser->Dock = DockStyle::Fill;
-		tabControl->TabPages->Add(mapTable);
-		auto start = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
-		auto end = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
-		auto graph = graph::getInstance(cityData, core->timeTable);
-		auto result = graph->getPath(start, 1, 10, 5, 6, 1500, end);
-		RemoveNull(result);
-		browser->JavascriptObjectRepository->Register("shiftDataList", core->getTimeTable(), true, BindingOptions::DefaultBinder);
-		browser->JavascriptObjectRepository->Register("pathList", result, true, BindingOptions::DefaultBinder);
-		browser->JavascriptObjectRepository->Register("departure", cityData[5], true, BindingOptions::DefaultBinder);
-		browser->JavascriptObjectRepository->Register("destination", cityData[6], true, BindingOptions::DefaultBinder);
-	}
-	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto start = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
-		auto end = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 23, 0, 0);
-		auto graph = graph::getInstance(cityData, core->timeTable);
-		auto result = graph->getPath(start, 2, 10, 5, 6, 3500, end);
-		for each (auto i in result) {
-			if (i)
-				log->writeLog(i, logLevel::Info);
+	private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void ArriveHourPicker_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (startHourPicker->SelectedItem) {
+			if (Convert::ToInt16(startHourPicker->SelectedItem->ToString()) >= Convert::ToInt16(arriveHourPicker->SelectedItem->ToString()))
+				addOneDayCheckBox->Checked = true;
+			else
+				addOneDayCheckBox->Checked = false;
 		}
 	}
-	};
+};
 }// namespace TravelEmulator

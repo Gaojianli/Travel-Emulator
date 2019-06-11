@@ -32,11 +32,11 @@ void Core::initializeCityData() {
 				}
 			}
 			if (log)
-				log->writeLog("���ݵ���ɹ����������������" + cityData->Count.ToString(), logLevel::Info);
+				log->writeLog("????????????????????????" + cityData->Count.ToString(), logLevel::Info);
 		}
 		catch (Exception ^ e) {
 			errorFlag = true;
-			log->writeLog("���ݵ���ʧ�ܣ��������ʧ�ܡ�", logLevel::Error);
+			log->writeLog("??????????????????????", logLevel::Error);
 			log->writeLog("Error:" + e->ToString(), logLevel::Error);
 		}
 	}
@@ -63,11 +63,11 @@ void Core::initializeTimeTable() {
 				}
 			}
 			if (log)
-				log->writeLog("����·��������" + timeTable->Count.ToString(), logLevel::Info);
+				log->writeLog("????��????????" + timeTable->Count.ToString(), logLevel::Info);
 		}
 		catch (Exception ^ e) {
 			errorFlag = true;
-			log->writeLog("���ݵ���ʧ�ܣ��������ʧ�ܡ�", logLevel::Error);
+			log->writeLog("??????????????????????", logLevel::Error);
 			log->writeLog(e->ToString(), logLevel::Error);
 		}
 	}
