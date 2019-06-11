@@ -32,11 +32,11 @@ void Core::initializeCityData() {
 				}
 			}
 			if (log)
-				log->writeLog("Êý¾Ýµ¼Èë³É¹¦£¬µ¼Èë³ÇÊÐÊýÁ¿£º" + cityData->Count.ToString(), logLevel::Info);
+				log->writeLog("ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + cityData->Count.ToString(), logLevel::Info);
 		}
 		catch (Exception ^ e) {
 			errorFlag = true;
-			log->writeLog("Êý¾Ýµ¼ÈëÊ§°Ü£¬³ÌÐòÆô¶¯Ê§°Ü¡£", logLevel::Error);
+			log->writeLog("ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½", logLevel::Error);
 			log->writeLog("Error:" + e->ToString(), logLevel::Error);
 		}
 	}
@@ -63,11 +63,11 @@ void Core::initializeTimeTable() {
 				}
 			}
 			if (log)
-				log->writeLog("µ¼ÈëÂ·ÏßÊýÁ¿£º" + timeTable->Count.ToString(), logLevel::Info);
+				log->writeLog("ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + timeTable->Count.ToString(), logLevel::Info);
 		}
 		catch (Exception ^ e) {
 			errorFlag = true;
-			log->writeLog("Êý¾Ýµ¼ÈëÊ§°Ü£¬³ÌÐòÆô¶¯Ê§°Ü¡£", logLevel::Error);
+			log->writeLog("ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü¡ï¿½", logLevel::Error);
 			log->writeLog(e->ToString(), logLevel::Error);
 		}
 	}

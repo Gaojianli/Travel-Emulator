@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="db.db" />
+    <None Include="index.html" />
     <None Include="MaterialWinforms.dll" />
     <None Include="packages.config" />
     <None Include="SQLite.Interop.dll" />
@@ -187,6 +188,7 @@
     <ClCompile Include="form.cpp" />
     <ClCompile Include="graph.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="manageCity.cpp" />
     <ClCompile Include="routineManage.cpp" />
     <ClCompile Include="sql.cpp" />

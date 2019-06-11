@@ -499,12 +499,20 @@ namespace TravelEmulator {
 		auto settings = gcnew CefSettings();
 		settings->RemoteDebuggingPort = 9229;
 		Cef::Initialize(settings);
-		auto testList = gcnew List<String^>();
-		browser = gcnew ChromiumWebBrowser("file:///C:/Users/%20gaojianli/Desktop/数据结构/test.html", nullptr);
+		browser = gcnew ChromiumWebBrowser(Environment::CurrentDirectory + "\\index.html", nullptr);
 		browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
 		panel->Controls->Add(browser);
 		browser->Dock = DockStyle::Fill;
 		tabControl->TabPages->Add(mapTable);
+		auto start = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
+		auto end = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
+		auto graph = graph::getInstance(cityData, core->timeTable);
+		auto result = graph->getPath(start, 1, 10, 5, 6, 1500, end);
+		RemoveNull(result);
+		browser->JavascriptObjectRepository->Register("shiftDataList", core->getTimeTable(), true, BindingOptions::DefaultBinder);
+		browser->JavascriptObjectRepository->Register("pathList", result, true, BindingOptions::DefaultBinder);
+		browser->JavascriptObjectRepository->Register("departure", cityData[5], true, BindingOptions::DefaultBinder);
+		browser->JavascriptObjectRepository->Register("destination", cityData[6], true, BindingOptions::DefaultBinder);
 	}
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto start = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
@@ -512,7 +520,7 @@ namespace TravelEmulator {
 		auto graph = graph::getInstance(cityData, core->timeTable);
 		auto result = graph->getPath(start, 2, 10, 5, 6, 3500, end);
 		for each (auto i in result) {
-			if(i)
+			if (i)
 				log->writeLog(i, logLevel::Info);
 		}
 	}

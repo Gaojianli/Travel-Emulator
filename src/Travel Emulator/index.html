@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body,
+        html,
+        #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=DyvETQzybwludetQjv5OOKekPekwb22E">
+    </script>
+    <title>地图展示</title>
+</head>
+
+<body>
+    <div id="allmap"></div>
+</body>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap"); // 创建Map实例
+    const getPoint = async name => new Promise(res => {
+        let myGeo = new BMap.Geocoder();
+        myGeo.getPoint(name, res);
+    });
+    const drawMarker = cityName => new Promise(res => {
+        let myGeo = new BMap.Geocoder();
+        myGeo.getPoint(cityName, point => {
+            const marker = new BMap.Marker(point);
+            marker.setLabel(new BMap.Label(cityName, {
+                offset: new BMap.Size(20, -10)
+            }))
+            map.addOverlay(marker);
+            res();
+        });
+    });
+    const drawMap = async () => {
+        const cityList = await cityDataList.toArray();
+        const shiftList = await shiftDataList.toArray();
+        const path = await pathList.toArray();
+        //draw mark
+        await drawMarker(await departure.getName());
+        await drawMarker(await destination.getName());
+        let currentCity = await departure.getID();
+        map.enableScrollWheelZoom(true);
+        for (const shift of path) {
+            const possableShift = shiftList.filter(item => item.shift === shift);
+            const currentShift = possableShift.find(item => item.departureID === currentCity);
+            let sy = new BMap.Symbol(BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW, {
+                scale: 0.6,
+                strokeColor: '#fff',
+                strokeWeight: '2',
+            });
+            const startCity = cityList.find(city => city.id === currentShift.departureID);
+            const endCity = cityList.find(city => city.id === currentShift.destinationID);
+            const icons = new BMap.IconSequence(sy, '10', '30');
+            const pois = [
+                await getPoint(startCity.name),
+                await getPoint(endCity.name),
+            ];
+            const polyline = new BMap.Polyline(pois, {
+                enableEditing: false,
+                enableClicking: false,
+                icons: [icons],
+                strokeWeight: '8',
+                strokeOpacity: 0.8,
+                strokeColor: "#18a45b" 
+            });
+            map.addOverlay(polyline);
+            currentCity = endCity.id;
+        }
+
+    }
+    (async function () {
+        const bindList = [
+            "cityDataList",
+            "shiftDataList",
+            "pathList",
+            "departure",
+            "destination",
+        ]
+        await Promise.all(bindList.map(CefSharp.BindObjectAsync));
+        map.centerAndZoom(new BMap.Point(109.23537830149425, 30.86983795641283), 4); // 初始化地图,设置中心点坐标和地图级别
+        map.setCurrentCity("北京");
+        drawMap();
+    })()
+</script>
+
+</html>

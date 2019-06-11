@@ -7,6 +7,8 @@ public ref class cities {
   String ^ name;
   cities(String ^ name);
   cities(int id, String ^ name);
+  String^ getName();
+  int getID();
  private:
   static int count = 0;
 };
