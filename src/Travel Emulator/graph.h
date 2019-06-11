@@ -28,7 +28,7 @@ public:
 private:
 	void makePath(int presentCity, List<String^>^ path, List<String^>^ ultimatePath, int departure, int destination);
 	void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, int strategy);
-	void DFS(int prensentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, DateTime deadlineTime, int& min);
+	void DFS(int prensentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, DateTime deadlineTime, int& min, List<String^>^ DFSPath);
 	int currentCount = 0;
 	static graph^ _instance;
 };

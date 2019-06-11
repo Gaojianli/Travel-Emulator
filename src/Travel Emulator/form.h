@@ -508,9 +508,9 @@ namespace TravelEmulator {
 	}
 	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto start = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
-		auto end = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
+		auto end = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 23, 0, 0);
 		auto graph = graph::getInstance(cityData, core->timeTable);
-		auto result = graph->getPath(start, 1, 10, 5, 6, 1500, end);
+		auto result = graph->getPath(start, 2, 10, 5, 6, 3500, end);
 		for each (auto i in result) {
 			if(i)
 				log->writeLog(i, logLevel::Info);

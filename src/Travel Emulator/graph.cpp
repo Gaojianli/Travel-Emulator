@@ -1,8 +1,8 @@
 #include "graph.h"
 constexpr auto intMax = 99999999;
+//auto DFSpath = gcnew List<String^>();
 
 graph::graph(List<cities^> ^ cityList, List<Transport^> ^ timeTables) :timeTables(timeTables),cityList(cityList){
-	
 }
 
 graph^ graph::getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables) {
@@ -14,7 +14,7 @@ graph^ graph::getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables)
 List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, int min , DateTime deadlineTime )
 {
 	auto path = gcnew List<String^>();
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < vertexNum; i++) {
 		path->Add(nullptr);
 	}
 	auto known = gcnew List<bool>(vertexNum);
@@ -22,17 +22,21 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 	auto time = gcnew List<DateTime>(vertexNum);
 	for (int i = 0; i < vertexNum; i++) {
 		known->Add(false);
-		value->Add(intMax);
 		time->Add(DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0));
-		time[i]=time[i].AddMonths(1);
 	}
 	time[departure] = startTime;
 	int presentCity = departure;
 	if (strategy == 2) {
-		auto tmppath = gcnew List<String^>();
-		DFS(presentCity, destination, tmppath, known, value, time, path, deadlineTime, min);
+		for (int i = 0; i < vertexNum; i++) {
+			value->Add(0);
+		}
+		DFS(presentCity, destination, nullptr, known, value, time, deadlineTime, min, path);
 	}
 	else {
+		for (int i = 0; i < vertexNum; i++) {
+			value->Add(intMax);
+			time[i] = time[i].AddMonths(1);
+		}
 		known[departure] = true;
 		value[departure] = 0;
 		while (true) {
@@ -128,14 +132,19 @@ void graph::Update(int presentCity, List<bool>^ known, List<int>^ value, List<Da
 	}
 }
 
-void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, DateTime deadlineTime, int& min)
+void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, DateTime deadlineTime, int& min, List<String^>^ DFSPath)
 {
+	if (tmppath == nullptr)
+		tmppath = gcnew List<String^>();
 	if (time[presentCity] > deadlineTime||value[presentCity]>min)
 		return;
 	known[presentCity] = true;
 	if (presentCity == destination) {
 		min = value[presentCity];
-		path = tmppath;
+		DFSPath->Clear();
+		for each (auto item in tmppath) {
+			DFSPath->Add(item);
+		}
 		/*auto mark = gcnew List<bool>(path->Count);
 		for each (auto item in path) {
 			auto tmp = timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(item),&FindShiftPredic::IsMatch));
@@ -157,7 +166,7 @@ void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<b
 				tmppath->Add(item->shift);
 				time[item->destinationID] = item->arrive;
 				value[item->destinationID] = value[presentCity] + item->cost;
-				DFS(item->destinationID,destination, tmppath, known, value, time, path, deadlineTime, min);
+				DFS(item->destinationID,destination, tmppath, known, value, time, deadlineTime, min, DFSPath);
 				known[item->destinationID] = false;
 				tmppath->RemoveAt(tmppath->Count - 1);
 			}
