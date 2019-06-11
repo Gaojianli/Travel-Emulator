@@ -4,7 +4,7 @@
 #include "logger.h"
 #include "sql.h"
 #include "timeTable.h"
-
+#include "graph.h"
 using namespace logger;
 using namespace System::Collections;
 using namespace System::Collections::Generic;
@@ -15,12 +15,14 @@ public:
 	SqlManager^ getSql();
 	List<cities^>^ getCityData();
 	List<Transport^>^ getTimeTable();
-private:
-	SqlManager^ sql;
 	List<cities^>^ cityData;
 	List<Transport^>^ timeTable;
+private:
+	SqlManager^ sql;
 	Logger^ log;
 	void initializeCityData();
 	void initializeTimeTable();
 	bool errorFlag = false;//set it as true if error occured.
 };
+
+

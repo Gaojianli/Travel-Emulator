@@ -154,6 +154,7 @@
     <ClInclude Include="form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="graph.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="manageCity.h">
       <FileType>CppControl</FileType>
@@ -184,6 +185,7 @@
     <ClCompile Include="cityAdd.cpp" />
     <ClCompile Include="core.cpp" />
     <ClCompile Include="form.cpp" />
+    <ClCompile Include="graph.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="manageCity.cpp" />
     <ClCompile Include="routineManage.cpp" />

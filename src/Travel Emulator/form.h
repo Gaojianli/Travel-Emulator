@@ -60,13 +60,14 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageLog;
 	private: MaterialWinforms::Controls::MaterialFlatButton^ saveLog;
 	private: MaterialWinforms::Controls::MaterialTextBox^ logOutput;
+	private: System::Windows::Forms::Button^ button1;
 
 	public:
 
 
 
 
-			 BindingList<String^>^ destinationData;
+		BindingList<String^>^ destinationData;
 	public:
 		form(void) {
 			InitializeComponent();
@@ -172,6 +173,7 @@ namespace TravelEmulator {
 			this->materialTabSelector1 = (gcnew MaterialWinforms::Controls::MaterialTabSelector());
 			this->tabControl = (gcnew MaterialWinforms::Controls::MaterialTabControl());
 			this->TabPage1 = (gcnew MaterialWinforms::Controls::MaterialTabPage());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->materialFlatButton1 = (gcnew MaterialWinforms::Controls::MaterialFlatButton());
 			this->destinationPicker = (gcnew MaterialWinforms::Controls::MaterialComboBox());
 			this->materialLabel2 = (gcnew MaterialWinforms::Controls::MaterialLabel());
@@ -222,6 +224,7 @@ namespace TravelEmulator {
 			// TabPage1
 			// 
 			this->TabPage1->Closable = false;
+			this->TabPage1->Controls->Add(this->button1);
 			this->TabPage1->Controls->Add(this->materialFlatButton1);
 			this->TabPage1->Controls->Add(this->destinationPicker);
 			this->TabPage1->Controls->Add(this->materialLabel2);
@@ -231,6 +234,13 @@ namespace TravelEmulator {
 			resources->ApplyResources(this->TabPage1, L"TabPage1");
 			this->TabPage1->MouseState = MaterialWinforms::MouseState::HOVER;
 			this->TabPage1->Name = L"TabPage1";
+			// 
+			// button1
+			// 
+			resources->ApplyResources(this->button1, L"button1");
+			this->button1->Name = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &form::Button1_Click);
 			// 
 			// materialFlatButton1
 			// 
@@ -416,8 +426,8 @@ namespace TravelEmulator {
 		}
 
 	private:
-		System::Void MaterialFlatButton1_Click(System::Object ^ sender,
-			System::EventArgs ^ e) {
+		System::Void MaterialFlatButton1_Click(System::Object^ sender,
+			System::EventArgs^ e) {
 			auto dialog = gcnew SaveFileDialog();
 			dialog->Title = convertToUtf8("请选择要保存的文件");
 			dialog->Filter = convertToUtf8("日志文件(*.log)|*.log");
@@ -435,7 +445,7 @@ namespace TravelEmulator {
 			}
 		}
 	private:
-		void showHeadupMessage(String ^ title, String ^ info) {
+		void showHeadupMessage(String^ title, String^ info) {
 			HeadsUp^ headupmsg = gcnew HeadsUp();
 			headupmsg->Titel = title;
 			headupmsg->Text = info;
@@ -446,11 +456,11 @@ namespace TravelEmulator {
 			headupmsg->Buttons->Add(headUpButton);
 			headupmsg->Show();
 		}
-		System::Void headUpButton_Click(System::Object ^ sender,
-			System::EventArgs ^ e) {
+		System::Void headUpButton_Click(System::Object^ sender,
+			System::EventArgs^ e) {
 			((HeadsUp^)((MaterialFlatButton^)sender)->Tag)->Close();
 		}
-	private: System::Void AddCity_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	private: System::Void AddCity_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto control = gcnew cityAdd();
 		control->addSql(sql);//add the sql object to the dialog
 		control->setCityData(cityData);
@@ -459,14 +469,14 @@ namespace TravelEmulator {
 		t->Controls->Add(control);
 		MaterialDialog::Show(convertToUtf8(L"添加城市"), t, MaterialDialog::Buttons::OK);
 	}
-	private: System::Void DepaturePicker_TextChanged(System::Object ^ sender, System::EventArgs ^ e) {
+	private: System::Void DepaturePicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		auto findFun = gcnew Predicate<cities^>(this, &form::getCityByName_depature);
 		auto select = cityData->Find(findFun);
 	}
-	private: bool getCityByName_depature(cities ^ obj) {
+	private: bool getCityByName_depature(cities^ obj) {
 		return obj->name->Equals(depaturePicker->SelectedItem->ToString());
 	}
-	private: System::Void manageCityButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	private: System::Void manageCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto manageForm = gcnew manageCity();
 		manageForm->addSql(sql);//add the sql object to the dialog
 		manageForm->getCityData(cityData, departureData, destinationData);
@@ -474,27 +484,37 @@ namespace TravelEmulator {
 	}
 	private: System::Void MaterialRaisedButton1_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto manageForm = gcnew routineManage();
-		manageForm->init(sql,log);
-		manageForm->setData(core->getTimeTable(),cityData);
+		manageForm->init(sql, log);
+		manageForm->setData(core->getTimeTable(), cityData);
 		manageForm->Show();
 	}
-private: System::Void MaterialTabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
-	mapTable->Text = "地图";
-	auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
-	panel->Dock = DockStyle::Fill;
-	mapTable->Controls->Add(panel);
-	auto settings = gcnew CefSettings();
-	settings->RemoteDebuggingPort = 9229;
-	Cef::Initialize(settings);
-	auto testList = gcnew List<String^>();
-	browser = gcnew ChromiumWebBrowser("file:///C:/Users/%20gaojianli/Desktop/数据结构/test.html",nullptr);
-	browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
-	panel->Controls->Add(browser);
-	browser->Dock = DockStyle::Fill;
-	tabControl->TabPages->Add(mapTable);
-}
-};
-}  // namespace TravelEmulator
+	private: System::Void MaterialTabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
+		mapTable->Text = "地图";
+		auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
+		panel->Dock = DockStyle::Fill;
+		mapTable->Controls->Add(panel);
+		auto settings = gcnew CefSettings();
+		settings->RemoteDebuggingPort = 9229;
+		Cef::Initialize(settings);
+		auto testList = gcnew List<String^>();
+		browser = gcnew ChromiumWebBrowser("file:///C:/Users/%20gaojianli/Desktop/数据结构/test.html", nullptr);
+		browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
+		panel->Controls->Add(browser);
+		browser->Dock = DockStyle::Fill;
+		tabControl->TabPages->Add(mapTable);
+	}
+	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		auto start = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
+		auto end = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 23, 0, 0);
+		auto graph = graph::getInstance(cityData, core->timeTable);
+		auto result = graph->getPath(start, 2, 10, 5, 6, 3500, end);
+		for each (auto i in result) {
+			if(i)
+				log->writeLog(i, logLevel::Info);
+		}
+	}
+	};
+}// namespace TravelEmulator

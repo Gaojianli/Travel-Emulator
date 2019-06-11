@@ -66,6 +66,9 @@
     <ClInclude Include="routineManage.h">
       <Filter>Header Files\contorls</Filter>
     </ClInclude>
+    <ClInclude Include="graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Travel Emulator.rc">
@@ -121,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="routineManage.cpp">
       <Filter>Header Files\contorls</Filter>
+    </ClCompile>
+    <ClCompile Include="graph.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
