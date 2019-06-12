@@ -89,22 +89,23 @@ inline void TravelEmulator::routineManage::InitializeComponent(void)
 			this->start, this->arrive, this->startTime, this->arriveTime, this->cost
 	});
 	this->timeTableListView->Depth = 0;
-	this->timeTableListView->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 24));
+	this->timeTableListView->Font = (gcnew System::Drawing::Font(L"微软雅黑", 24));
 	this->timeTableListView->FullRowSelect = true;
 	this->timeTableListView->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
 	this->timeTableListView->HideSelection = false;
 	this->timeTableListView->HoverSelection = true;
 	this->timeTableListView->LabelWrap = false;
-	this->timeTableListView->Location = System::Drawing::Point(127, 63);
+	this->timeTableListView->Location = System::Drawing::Point(113, 47);
 	this->timeTableListView->Margin = System::Windows::Forms::Padding(2);
 	this->timeTableListView->MouseLocation = System::Drawing::Point(-1, -1);
 	this->timeTableListView->MouseState = MaterialWinforms::MouseState::OUT;
 	this->timeTableListView->Name = L"timeTableListView";
 	this->timeTableListView->OwnerDraw = true;
-	this->timeTableListView->Size = System::Drawing::Size(1170, 541);
+	this->timeTableListView->Size = System::Drawing::Size(1040, 406);
 	this->timeTableListView->TabIndex = 0;
 	this->timeTableListView->UseCompatibleStateImageBehavior = false;
 	this->timeTableListView->View = System::Windows::Forms::View::Details;
+	this->timeTableListView->SelectedIndexChanged += gcnew System::EventHandler(this, &routineManage::TimeTableListView_SelectedIndexChanged);
 	// 
 	// shift
 	// 
@@ -149,9 +150,9 @@ inline void TravelEmulator::routineManage::InitializeComponent(void)
 	// 
 	// routineManage
 	// 
-	this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+	this->AutoScaleDimensions = System::Drawing::SizeF(8, 15);
 	this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-	this->ClientSize = System::Drawing::Size(1455, 659);
+	this->ClientSize = System::Drawing::Size(1293, 494);
 	this->Controls->Add(this->timeTableListView);
 	this->Margin = System::Windows::Forms::Padding(2);
 	this->MaximizeBox = false;

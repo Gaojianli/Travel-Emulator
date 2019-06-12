@@ -117,37 +117,146 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="shift.Text" xml:space="preserve">
+    <value>班次</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="shift.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="start.Text" xml:space="preserve">
+    <value>起点</value>
+  </data>
+  <data name="start.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="arrive.Text" xml:space="preserve">
+    <value>终点</value>
+  </data>
+  <data name="arrive.Width" type="System.Int32, mscorlib">
+    <value>108</value>
+  </data>
+  <data name="startTime.Text" xml:space="preserve">
+    <value>出发时间</value>
+  </data>
+  <data name="startTime.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="arriveTime.Text" xml:space="preserve">
+    <value>抵达时间</value>
+  </data>
+  <data name="arriveTime.Width" type="System.Int32, mscorlib">
+    <value>149</value>
+  </data>
+  <data name="cost.Text" xml:space="preserve">
+    <value>花费</value>
+  </data>
+  <data name="cost.Width" type="System.Int32, mscorlib">
+    <value>89</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 404</value>
+  <data name="resultView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 24pt</value>
   </data>
-  <data name="materialTabSelector1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 8</value>
+  <data name="resultView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 177</value>
   </data>
-  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 35</value>
+  <data name="resultView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>650, 184</value>
   </data>
-  <data name="TabPage1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+  <data name="arriveMinutesPicker.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="TabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+  <data name="arriveMinutesPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>611, 79</value>
   </data>
-  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 371</value>
+  <data name="arriveMinutesPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 28</value>
+  </data>
+  <data name="strategy2RadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="strategy2RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>436, 136</value>
+  </data>
+  <data name="strategy1RadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="strategy1RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 136</value>
+  </data>
+  <data name="strategy0RadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="strategy0RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 136</value>
+  </data>
+  <data name="strategy0RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 30</value>
+  </data>
+  <data name="addOneDayCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="addOneDayCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>669, 77</value>
+  </data>
+  <data name="materialLabel6.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="materialLabel6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="materialLabel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>594, 81</value>
+  </data>
+  <data name="materialLabel5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="materialLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 81</value>
+  </data>
+  <data name="startMinutesPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 79</value>
+  </data>
+  <data name="arriveHourPicker.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="arriveHourPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>547, 79</value>
+  </data>
+  <data name="materialLabel4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="materialLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>370, 81</value>
+  </data>
+  <data name="materialLabel4.Text" xml:space="preserve">
+    <value>请选择截止时间：</value>
+  </data>
+  <data name="startHourPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 79</value>
+  </data>
+  <data name="materialLabel3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="materialLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 81</value>
   </data>
   <data name="materialFlatButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>525, 221</value>
+    <value>624, 134</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="materialFlatButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
+  <data name="materialFlatButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 36</value>
+  </data>
+  <data name="materialFlatButton1.Text" xml:space="preserve">
+    <value>生成方案</value>
+  </data>
   <data name="destinationPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 172</value>
+    <value>547, 24</value>
   </data>
   <data name="destinationPicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 4, 5, 4</value>
@@ -156,7 +265,7 @@
     <value>微软雅黑, 11pt</value>
   </data>
   <data name="materialLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 174</value>
+    <value>370, 26</value>
   </data>
   <data name="materialLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -165,46 +274,31 @@
     <value>微软雅黑, 11pt</value>
   </data>
   <data name="materialLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 105</value>
+    <value>56, 26</value>
   </data>
   <data name="materialLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
   </data>
   <data name="depaturePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 103</value>
+    <value>240, 24</value>
   </data>
   <data name="depaturePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 6, 5, 6</value>
   </data>
-  <data name="TabPageMgnt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+  <data name="queryRoutineTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>851, 375</value>
   </data>
-  <data name="TabPageMgnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 6, 5, 6</value>
+  <data name="mamangeShiftButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>341, 45</value>
   </data>
-  <data name="TabPageMgnt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>765, 270</value>
+  <data name="mamangeShiftButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 62</value>
   </data>
-  <data name="TabPageMgnt.Text" xml:space="preserve">
-    <value>管理</value>
-  </data>
-  <data name="materialRaisedButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 35</value>
-  </data>
-  <data name="materialRaisedButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 34</value>
-  </data>
-  <data name="materialCard1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 38</value>
-  </data>
-  <data name="materialCard1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 9, 2, 2</value>
-  </data>
-  <data name="materialCard1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 100</value>
+  <data name="mamangeShiftButton.Text" xml:space="preserve">
+    <value>班次管理</value>
   </data>
   <data name="manageCityButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 55</value>
+    <value>90, 45</value>
   </data>
   <data name="manageCityButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 62</value>
@@ -213,25 +307,25 @@
     <value>城市管理</value>
   </data>
   <data name="cityManageCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 88</value>
+    <value>107, 60</value>
   </data>
   <data name="cityManageCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 25, 5, 5</value>
   </data>
   <data name="cityManageCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 172</value>
+    <value>579, 172</value>
   </data>
-  <data name="TabPageLog.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TabPageMgnt.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
-  <data name="TabPageLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="TabPageMgnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 6, 5, 6</value>
   </data>
-  <data name="TabPageLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>765, 270</value>
+  <data name="TabPageMgnt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>851, 375</value>
   </data>
-  <data name="TabPageLog.Text" xml:space="preserve">
-    <value>日志</value>
+  <data name="TabPageMgnt.Text" xml:space="preserve">
+    <value>管理</value>
   </data>
   <data name="saveLog.Location" type="System.Drawing.Point, System.Drawing">
     <value>745, 329</value>
@@ -245,8 +339,32 @@
   <data name="logOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>869, 320</value>
   </data>
+  <data name="TabPageLog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="TabPageLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 6, 5, 6</value>
+  </data>
+  <data name="TabPageLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>851, 375</value>
+  </data>
+  <data name="TabPageLog.Text" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>859, 408</value>
+  </data>
+  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>859, 35</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>869, 463</value>
+    <value>859, 467</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Off</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>9, 12, 9, 12</value>

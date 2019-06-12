@@ -43,19 +43,19 @@ namespace TravelEmulator {
 		Core^ core;
 		BindingList<String^>^ departureData;
 	private: MaterialWinforms::Controls::MaterialTabControl^ tabControl;
-	private: MaterialWinforms::Controls::MaterialTabPage^ queryRoutineTab;
+
 
 	public:
 
 	public:
 
 	private: MaterialWinforms::Controls::MaterialFlatButton^ materialFlatButton1;
-	private: MaterialWinforms::Controls::MaterialComboBox^ destinationPicker;
-	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel2;
+
+
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel1;
 	private: MaterialWinforms::Controls::MaterialComboBox^ depaturePicker;
 	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageMgnt;
-	private: MaterialWinforms::Controls::MaterialCard^ materialCard1;
+
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ mamangeShiftButton;
 
 
@@ -66,13 +66,58 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialTextBox^ logOutput;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel6;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel5;
-	private: MaterialWinforms::Controls::MaterialComboBox^ materialComboBox1;
+
+
+
+
 	private: MaterialWinforms::Controls::MaterialComboBox^ startMinutesPicker;
 	private: MaterialWinforms::Controls::MaterialComboBox^ arriveHourPicker;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel4;
 	private: MaterialWinforms::Controls::MaterialComboBox^ startHourPicker;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel3;
 	private: MaterialWinforms::Controls::MaterialCheckBox^ addOneDayCheckBox;
+
+
+
+
+
+
+
+
+
+	private: MaterialWinforms::Controls::MaterialComboBox^ destinationPicker;
+	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel2;
+
+
+
+
+	private: MaterialWinforms::Controls::MaterialRadioButton^ strategy1RadioButton;
+	private: MaterialWinforms::Controls::MaterialRadioButton^ strategy0RadioButton;
+	private: MaterialWinforms::Controls::MaterialRadioButton^ strategy2RadioButton;
+	private: MaterialWinforms::Controls::MaterialComboBox^ arriveMinutesPicker;
+	private: MaterialWinforms::Controls::MaterialListView^ resultView;
+	private: System::Windows::Forms::ColumnHeader^ shift;
+	private: System::Windows::Forms::ColumnHeader^ start;
+	private: System::Windows::Forms::ColumnHeader^ arrive;
+	private: System::Windows::Forms::ColumnHeader^ startTime;
+	private: System::Windows::Forms::ColumnHeader^ arriveTime;
+	private: System::Windows::Forms::ColumnHeader^ cost;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -148,24 +193,35 @@ namespace TravelEmulator {
 		/// </summary>
 		void InitializeComponent(void);
 #pragma endregion
-	private:
-		System::Void MaterialComboBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
 
 	private:
-		System::Void MaterialFlatButton1_Click(System::Object^ sender,
+		System::Void saveLogButton_Clicked(System::Object^ sender,
 			System::EventArgs^ e);
 	private:
 		void showHeadupMessage(String^ title, String^ info);
 		System::Void headUpButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void AddCity_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void DepaturePicker_TextChanged(System::Object^ sender, System::EventArgs^ e);
-	private: bool getCityByName_depature(cities^ obj);
 	private: System::Void manageCityButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void mamangeShiftButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MaterialTabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void Button1_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ArriveHourPicker_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void MaterialCheckBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void MaterialRadioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Strategy0RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Strategy1RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Strategy2RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void DestinationPicker_TextChanged(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void ResultView_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void ArriveHourPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void MaterialLabel6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void ArriveMinutesPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }// namespace TravelEmulator

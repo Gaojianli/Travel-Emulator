@@ -66,5 +66,7 @@ namespace TravelEmulator {
 		void InitializeComponent(void);
 #pragma endregion
 	private: System::Void MaterialComboBox1_TextChanged(System::Object^ sender, System::EventArgs^ e);
-};
+	private: System::Void TimeTableListView_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }

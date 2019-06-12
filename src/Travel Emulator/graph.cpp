@@ -11,14 +11,15 @@ graph^ graph::getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables)
 	return _instance;
 }
 
-List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, int min , DateTime deadlineTime )
+List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, DateTime deadlineTime )
 {
+	double min = 10000;
 	auto path = gcnew List<String^>();
 	for (int i = 0; i < vertexNum; i++) {
 		path->Add(nullptr);
 	}
 	auto known = gcnew List<bool>(vertexNum);
-	auto value = gcnew List<int>(vertexNum);
+	auto value = gcnew List<double>(vertexNum);
 	auto time = gcnew List<DateTime>(vertexNum);
 	for (int i = 0; i < vertexNum; i++) {
 		known->Add(false);
@@ -43,7 +44,7 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 			Update(presentCity, known, value, time, path, strategy);
 			presentCity = -1;
 			if (strategy == 0) {
-				int minn = intMax;
+				double minn = intMax;
 				for (auto ix = 0; ix < known->Count; ix++) {
 					if (!known[ix] && minn > value[ix])
 					{
@@ -83,7 +84,7 @@ void graph::makePath(int presentCity, List<String^>^ path, List<String^>^ ultima
 	}
 }
 
-void graph::Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, int strategy)
+void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<String^>^ path, int strategy)
 {
 	auto targetTable = gcnew List<Transport^>();
 	for each (auto item in timeTables) {
@@ -132,7 +133,7 @@ void graph::Update(int presentCity, List<bool>^ known, List<int>^ value, List<Da
 	}
 }
 
-void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, DateTime deadlineTime, int& min, List<String^>^ DFSPath)
+void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<String^>^ DFSPath)
 {
 	if (tmppath == nullptr)
 		tmppath = gcnew List<String^>();

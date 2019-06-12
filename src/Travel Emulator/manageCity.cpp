@@ -57,12 +57,10 @@ inline void TravelEmulator::manageCity::InitializeComponent(void)
 	// 
 	// cityListView
 	// 
-	resources->ApplyResources(this->cityListView, L"cityListView");
 	this->cityListView->BorderStyle = System::Windows::Forms::BorderStyle::None;
-	this->cityListView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) {
-		this->id, this->cityName
-	});
+	this->cityListView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->id, this->cityName });
 	this->cityListView->Depth = 0;
+	resources->ApplyResources(this->cityListView, L"cityListView");
 	this->cityListView->FullRowSelect = true;
 	this->cityListView->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
 	this->cityListView->HideSelection = false;
