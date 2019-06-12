@@ -47,7 +47,6 @@
         const path = await pathList.toArray();
         //draw mark
         await drawMarker(await departure.getName());
-        await drawMarker(await destination.getName());
         let currentCity = await departure.getID();
         map.enableScrollWheelZoom(true);
         for (const shift of path) {
@@ -60,6 +59,7 @@
             });
             const startCity = cityList.find(city => city.id === currentShift.departureID);
             const endCity = cityList.find(city => city.id === currentShift.destinationID);
+            await drawMarker(await endCity.name);
             const icons = new BMap.IconSequence(sy, '10', '30');
             const pois = [
                 await getPoint(startCity.name),

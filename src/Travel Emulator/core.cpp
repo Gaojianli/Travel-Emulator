@@ -1,4 +1,4 @@
-#include "core.h"
+﻿#include "core.h"
 
 Core::Core(Logger^ logger) :log(logger) {
 	sql = gcnew SqlManager();
@@ -32,12 +32,12 @@ void Core::initializeCityData() {
 				}
 			}
 			if (log)
-				log->writeLog("���ݵ���ɹ����������������" + cityData->Count.ToString(), logLevel::Info);
+				log->writeLog(L"成功导入城市数量：" + cityData->Count.ToString(), logLevel::Info);
 		}
 		catch (Exception ^ e) {
 			errorFlag = true;
-			log->writeLog("���ݵ���ʧ�ܣ��������ʧ�ܡ�", logLevel::Error);
-			log->writeLog("Error:" + e->ToString(), logLevel::Error);
+			log->writeLog(L"导入失败", logLevel::Error);
+			log->writeLog(L"Error:" + e->ToString(), logLevel::Error);
 		}
 	}
 }
@@ -63,11 +63,11 @@ void Core::initializeTimeTable() {
 				}
 			}
 			if (log)
-				log->writeLog("����·��������" + timeTable->Count.ToString(), logLevel::Info);
+				log->writeLog("成功导入班次数量：" + timeTable->Count.ToString(), logLevel::Info);
 		}
 		catch (Exception ^ e) {
 			errorFlag = true;
-			log->writeLog("���ݵ���ʧ�ܣ��������ʧ�ܡ�", logLevel::Error);
+			log->writeLog("导入失败", logLevel::Error);
 			log->writeLog(e->ToString(), logLevel::Error);
 		}
 	}

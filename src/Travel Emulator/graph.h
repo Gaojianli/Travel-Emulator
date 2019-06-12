@@ -22,28 +22,13 @@ public ref class graph {
 public:
 	graph(List<cities^>^ cityList, List<Transport^>^ timeTables);
 	static graph^ getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables);
-	List<String^>^ getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, int min, DateTime deadlineTime);
+	List<String^>^ getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, DateTime deadlineTime);
 	List<cities^>^ cityList;
 	List<Transport^>^ timeTables;
 private:
 	void makePath(int presentCity, List<String^>^ path, List<String^>^ ultimatePath, int departure, int destination);
-	void Update(int presentCity, List<bool>^ known, List<int>^ value, List<DateTime>^ time, List<String^>^ path, int strategy);
-	void DFS(int prensentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<int>^ value, List<DateTime>^ time, DateTime deadlineTime, int& min, List<String^>^ DFSPath);
+	void Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<String^>^ path, int strategy);
+	void DFS(int prensentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<String^>^ DFSPath);
 	int currentCount = 0;
 	static graph^ _instance;
-};
-
-public value class FindShiftPredic
-{
-	String^ Value;
-public:
-
-	FindShiftPredic(String^ value)
-	{
-		Value = value;
-	}
-	bool IsMatch(Transport^ comp)
-	{
-		return comp->shift == Value;
-	}
 };

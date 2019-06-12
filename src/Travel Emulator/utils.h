@@ -27,3 +27,36 @@ inline void RemoveNull(System::Collections::Generic::List<T>^ list) {
 		}
 	}
 }
+template<typename T>
+public value class FindCityPredic
+{
+	T Value;
+public:
+
+	FindCityPredic(T value)
+	{
+		Value = value;
+	}
+	bool IsMatch(cities^ comp)
+	{
+		if constexpr (std::is_same_v<T, String^>)
+			return comp->name == Value;
+		else
+			return comp->id == Value;
+	}
+};
+
+public value class FindShiftPredic
+{
+	String^ Value;
+public:
+
+	FindShiftPredic(String^ value)
+	{
+		Value = value;
+	}
+	bool IsMatch(Transport^ comp)
+	{
+		return comp->shift == Value;
+	}
+};
