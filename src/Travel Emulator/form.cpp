@@ -1,9 +1,9 @@
-#include "form.h"
+ï»¿#include "form.h"
 
 
 /// <summary>
-/// Éè¼ÆÆ÷Ö§³ÖËùĞèµÄ·½·¨ - ²»ÒªĞŞ¸Ä
-/// Ê¹ÓÃ´úÂë±à¼­Æ÷ĞŞ¸Ä´Ë·½·¨µÄÄÚÈİ¡£
+/// è®¾è®¡å™¨æ”¯æŒæ‰€éœ€çš„æ–¹æ³• - ä¸è¦ä¿®æ”¹
+/// ä½¿ç”¨ä»£ç ç¼–è¾‘å™¨ä¿®æ”¹æ­¤æ–¹æ³•çš„å†…å®¹ã€‚
 /// </summary>
 
 inline TravelEmulator::form::form(void) {
@@ -12,10 +12,10 @@ inline TravelEmulator::form::form(void) {
 	auto formManager = MaterialWinforms::MaterialSkinManager::Instance;
 	formManager->AddFormToManage(this);
 	formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
-	cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"³ÇÊĞ¹ÜÀí"));
+	cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"åŸå¸‚ç®¡ç†"));
 	log = gcnew Logger(logOutput);  //initialize log output
-	log->writeLog("³ÌĞòÆô¶¯³É¹¦", logLevel::Info);
-	log->writeLog("Êı¾İ¿âÁ¬½Ó³É¹¦£¬³¢ÊÔµ¼ÈëÊı¾İ...", logLevel::Info);
+	log->writeLog("ç¨‹åºå¯åŠ¨æˆåŠŸ", logLevel::Info);
+	log->writeLog("æ•°æ®åº“è¿æ¥æˆåŠŸï¼Œå°è¯•å¯¼å…¥æ•°æ®...", logLevel::Info);
 	core = gcnew Core(log);
 	sql = core->getSql();// initialize sql manager
 						 //----------Binding data--------
@@ -51,7 +51,7 @@ inline void TravelEmulator::form::OnTimedEvent(Object^ source, System::Timers::E
 }
 
 /// <summary>
-/// ÇåÀíËùÓĞÕıÔÚÊ¹ÓÃµÄ×ÊÔ´¡£
+/// æ¸…ç†æ‰€æœ‰æ­£åœ¨ä½¿ç”¨çš„èµ„æºã€‚
 /// </summary>
 
 inline TravelEmulator::form::~form() {
@@ -439,7 +439,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->cityManageCard->Name = L"cityManageCard";
 	graphicsPath3->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
 	this->cityManageCard->ShadowBorder = graphicsPath3;
-	this->cityManageCard->Title = L"¹ÜÀí";
+	this->cityManageCard->Title = L"ç®¡ç†";
 	// 
 	// mamangeShiftButton
 	// 
@@ -526,18 +526,18 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 
 inline System::Void TravelEmulator::form::saveLogButton_Clicked(System::Object^ sender, System::EventArgs^ e) {
 	auto dialog = gcnew SaveFileDialog();
-	dialog->Title = convertToUtf8("ÇëÑ¡ÔñÒª±£´æµÄÎÄ¼ş");
-	dialog->Filter = convertToUtf8("ÈÕÖ¾ÎÄ¼ş(*.log)|*.log");
+	dialog->Title = convertToUtf8("è¯·é€‰æ‹©è¦ä¿å­˜çš„æ–‡ä»¶");
+	dialog->Filter = convertToUtf8("æ—¥å¿—æ–‡ä»¶(*.log)|*.log");
 	if (dialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		auto file = dialog->FileName;
 		auto sw = gcnew StreamWriter(file, false);
 		if (sw) {
 			sw->WriteLine(logOutput->Text);
 			sw->Close();
-			showHeadupMessage(convertToUtf8(L"³É¹¦"), convertToUtf8(L"ÈÕÖ¾±£´æ³É¹¦"));
+			showHeadupMessage(convertToUtf8(L"æˆåŠŸ"), convertToUtf8(L"æ—¥å¿—ä¿å­˜æˆåŠŸ"));
 		}
 		else {
-			showHeadupMessage(convertToUtf8(L"´íÎó"), convertToUtf8("´ò¿ªÎÄ¼şÊ§°Ü£¬ÇëÖØÊÔ"));
+			showHeadupMessage(convertToUtf8(L"é”™è¯¯"), convertToUtf8("æ‰“å¼€æ–‡ä»¶å¤±è´¥ï¼Œè¯·é‡è¯•"));
 		}
 	}
 }
@@ -565,7 +565,7 @@ inline System::Void TravelEmulator::form::AddCity_Click(System::Object^ sender, 
 	UserControl^ t = gcnew UserControl();
 	t->Size = control->Size;
 	t->Controls->Add(control);
-	MaterialDialog::Show(convertToUtf8(L"Ìí¼Ó³ÇÊĞ"), t, MaterialDialog::Buttons::OK);
+	MaterialDialog::Show(convertToUtf8(L"æ·»åŠ åŸå¸‚"), t, MaterialDialog::Buttons::OK);
 }
 
 inline System::Void TravelEmulator::form::DepaturePicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -594,7 +594,7 @@ inline System::Void TravelEmulator::form::mamangeShiftButton_Click(System::Objec
 inline System::Void TravelEmulator::form::MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	if (browser==nullptr) {
 		auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
-		mapTable->Text = L"µØÍ¼";
+		mapTable->Text = L"åœ°å›¾";
 		auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
 		panel->Dock = DockStyle::Fill;
 		mapTable->Controls->Add(panel);

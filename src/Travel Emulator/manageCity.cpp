@@ -1,4 +1,4 @@
-#include "manageCity.h"
+ï»¿#include "manageCity.h"
 
 inline TravelEmulator::manageCity::manageCity(void)
 {
@@ -6,7 +6,7 @@ inline TravelEmulator::manageCity::manageCity(void)
 	auto formManager = MaterialWinforms::MaterialSkinManager::Instance;
 	formManager->AddFormToManage(this);
 	formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
-	this->Text = L"³ÇÊÐ¹ÜÀí";
+	this->Text = L"åŸŽå¸‚ç®¡ç†";
 }
 
 inline void TravelEmulator::manageCity::addSql(SqlManager^ parentSql) {
@@ -139,19 +139,19 @@ inline System::Void TravelEmulator::manageCity::CityListView_SelectedIndexChange
 
 inline System::Void TravelEmulator::manageCity::DeleteCityButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	HeadsUp^ headupmsg = gcnew HeadsUp();
-	headupmsg->Titel = L"¾¯¸æ";
-	headupmsg->Text = L"½«É¾³ý³ÇÊÐ¡°" + cityListView->SelectedItems[0]->SubItems[1]->Text + L"¡±£¬´Ë²Ù×÷²»¿É³·Ïú£¬ÊÇ·ñ¼ÌÐø£¿";
+	headupmsg->Titel = L"è­¦å‘Š";
+	headupmsg->Text = L"å°†åˆ é™¤åŸŽå¸‚â€œ" + cityListView->SelectedItems[0]->SubItems[1]->Text + L"â€ï¼Œæ­¤æ“ä½œä¸å¯æ’¤é”€ï¼Œæ˜¯å¦ç»§ç»­ï¼Ÿ";
 	//add cancel button
 	MaterialFlatButton^ cancelButton = gcnew MaterialFlatButton();
 	cancelButton->Tag = headupmsg;
-	cancelButton->Text = L"È¡Ïû";
+	cancelButton->Text = L"å–æ¶ˆ";
 	cancelButton->Click += gcnew System::EventHandler(this, &manageCity::cancelButton_Click);
 	headupmsg->Buttons->Add(cancelButton);
 	headupmsg->Show();
 	//add ok button
 	MaterialFlatButton^ okButton = gcnew MaterialFlatButton();
 	okButton->Tag = headupmsg;
-	okButton->Text = L"ÊÇ";
+	okButton->Text = L"æ˜¯";
 	okButton->Click += gcnew System::EventHandler(this, &manageCity::headUpOKButton_Click);
 	headupmsg->Buttons->Add(okButton);
 }
@@ -194,7 +194,7 @@ inline System::Void TravelEmulator::manageCity::AddCityButton_Click(System::Obje
 	UserControl^ t = gcnew UserControl();
 	t->Size = control->Size;
 	t->Controls->Add(control);
-	MaterialDialog::Show(L"Ìí¼Ó³ÇÊÐ", t, MaterialDialog::Buttons::OK);
+	MaterialDialog::Show(L"æ·»åŠ åŸŽå¸‚", t, MaterialDialog::Buttons::OK);
 	//update view
 	cityListView->BeginUpdate();
 	cityListView->Items->Clear();
