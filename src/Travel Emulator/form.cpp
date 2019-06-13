@@ -805,7 +805,7 @@ void TravelEmulator::form::timeMagicCallback()
 	if (result->Count > currentShiftID && result[currentShiftID]->start < DateTime::Parse(timeLabel->Text)) {
 		log->writeLog(result[currentShiftID]->start.ToShortTimeString() + "，乘客登上" + result[currentShiftID]->shift, logLevel::Info);
 		auto entry = gcnew MaterialTimeLineEntry();
-		entry->Title = result[0]->shift;
+		entry->Title = result[currentShiftID]->shift;
 		if (result[currentShiftID]->type == plane) {
 			entry->User = Drawing::Image::FromFile("plane-departure-solid.png");
 		}
