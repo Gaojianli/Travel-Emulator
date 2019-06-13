@@ -71,6 +71,7 @@ inline TravelEmulator::routineManage::~routineManage()
 
 inline void TravelEmulator::routineManage::InitializeComponent(void)
 {
+	System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(routineManage::typeid));
 	this->timeTableListView = (gcnew MaterialWinforms::Controls::MaterialListView());
 	this->shift = (gcnew System::Windows::Forms::ColumnHeader());
 	this->type = (gcnew System::Windows::Forms::ColumnHeader());
@@ -95,7 +96,7 @@ inline void TravelEmulator::routineManage::InitializeComponent(void)
 	this->timeTableListView->HideSelection = false;
 	this->timeTableListView->HoverSelection = true;
 	this->timeTableListView->LabelWrap = false;
-	this->timeTableListView->Location = System::Drawing::Point(113, 47);
+	this->timeTableListView->Location = System::Drawing::Point(101, 44);
 	this->timeTableListView->Margin = System::Windows::Forms::Padding(2);
 	this->timeTableListView->MouseLocation = System::Drawing::Point(-1, -1);
 	this->timeTableListView->MouseState = MaterialWinforms::MouseState::OUT;
@@ -154,6 +155,7 @@ inline void TravelEmulator::routineManage::InitializeComponent(void)
 	this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 	this->ClientSize = System::Drawing::Size(1293, 494);
 	this->Controls->Add(this->timeTableListView);
+	this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 	this->Margin = System::Windows::Forms::Padding(2);
 	this->MaximizeBox = false;
 	this->MinimizeBox = false;

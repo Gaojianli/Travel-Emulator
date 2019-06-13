@@ -19,7 +19,7 @@ inline TravelEmulator::form::form(void) {
 	sql = core->getSql();// initialize sql manager
 	//initialize browser
 	auto settings = gcnew CefSettings();
-	settings->RemoteDebuggingPort = 9229;
+	//settings->RemoteDebuggingPort = 9229; //debug for chrome
 	Cef::Initialize(settings);
 	//----------Binding data--------
 	cityData = core->getCityData();
@@ -473,7 +473,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->tabControl->Depth = 0;
 	this->tabControl->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->tabControl->Name = L"tabControl";
-	this->tabControl->SelectedIndex = 2;
+	this->tabControl->SelectedIndex = 0;
 	this->tabControl->TabsAreClosable = true;
 	// 
 	// TabPageMgnt
