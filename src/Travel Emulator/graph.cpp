@@ -11,10 +11,10 @@ graph^ graph::getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables)
 	return _instance;
 }
 
-List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, DateTime deadlineTime )
+List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, DateTime deadlineTime )
 {
 	double min = 10000;
-	auto path = gcnew List<String^>();
+	auto path = gcnew List<Transport^>();
 	for (int i = 0; i < vertexNum; i++) {
 		path->Add(nullptr);
 	}
@@ -23,7 +23,7 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 	auto time = gcnew List<DateTime>(vertexNum);
 	for (int i = 0; i < vertexNum; i++) {
 		known->Add(false);
-		time->Add(DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0));
+		time->Add(DateTime(startTime.Year, startTime.Month, startTime.Day, 0, 0, 0));
 	}
 	time[departure] = startTime;
 	int presentCity = departure;
@@ -36,7 +36,7 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 	else {
 		for (int i = 0; i < vertexNum; i++) {
 			value->Add(intMax);
-			time[i] = time[i].AddMonths(1);
+			time[i] = time[i].AddDays(2);
 		}
 		known[departure] = true;
 		value[departure] = 0;
@@ -66,25 +66,25 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 				break;
 			known[presentCity] = true;
 		}
-		auto ultimatePath = gcnew List<String^>;
+		auto ultimatePath = gcnew List<Transport^>;
 		makePath(destination, path, ultimatePath, departure, destination);
 		path = ultimatePath;
 	}
 	return path;
 }
 
-void graph::makePath(int presentCity, List<String^>^ path, List<String^>^ ultimatePath, int departure, int destination)
+void graph::makePath(int presentCity, List<Transport^>^ path, List<Transport^>^ ultimatePath, int departure, int destination)
 {
-	auto tmp = timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(path[presentCity]), &FindShiftPredic::IsMatch));
-	if (!tmp)
+	//auto tmp = timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(path[presentCity]), &FindShiftPredic::IsMatch));
+	if (!path[presentCity])
 		return;
 	if (presentCity != departure) {
-		makePath(tmp->departureID, path, ultimatePath, departure, destination);
+		makePath(path[presentCity]->departureID, path, ultimatePath, departure, destination);
 		ultimatePath->Add(path[presentCity]);
 	}
 }
 
-void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<String^>^ path, int strategy)
+void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<Transport^>^ path, int strategy)
 {
 	auto targetTable = gcnew List<Transport^>();
 	for each (auto item in timeTables) {
@@ -103,7 +103,7 @@ void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List
 		if (strategy == 0) {
 			if (!known[item->destinationID] && value[item->destinationID] > value[presentCity] + item->cost) {
 				value[item->destinationID] = value[presentCity] + item->cost;
-				path[item->destinationID] = item->shift;
+				path[item->destinationID] = item;
 			}
 		}
 		if (strategy == 1) {
@@ -115,28 +115,28 @@ void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List
 				若time[到底城市]，则更新值*/
 			if (!span && time[item->departureID] <= item->start && time[item->destinationID] > item->arrive) {
 				time[item->destinationID] = time[item->destinationID].AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
+				path[item->destinationID] = item;
 			}
 			else if (!span && time[item->departureID] > item->start && time[item->destinationID] > item->arrive.AddDays(1)) {
 				time[item->destinationID] = time[item->destinationID].AddDays(1).AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
+				path[item->destinationID] = item;
 			}
 			else if (span && time[item->departureID] <= item->start && time[item->destinationID] > item->arrive.AddDays(1)) {
 				time[item->destinationID] = time[item->destinationID].AddDays(1).AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
+				path[item->destinationID] = item;
 			}
 			else if (span && time[item->departureID] > item->start && time[item->destinationID] > item->arrive.AddDays(2)) {
 				time[item->destinationID] = time[item->destinationID].AddDays(2).AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
+				path[item->destinationID] = item;
 			}
 		}
 	}
 }
 
-void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<String^>^ DFSPath)
+void graph::DFS(int presentCity, int destination, List<Transport^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<Transport^>^ DFSPath)
 {
 	if (tmppath == nullptr)
-		tmppath = gcnew List<String^>();
+		tmppath = gcnew List<Transport^>();
 	if (time[presentCity] > deadlineTime||value[presentCity]>min)
 		return;
 	known[presentCity] = true;
@@ -158,14 +158,19 @@ void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<b
 		for each (auto item in timeTables) {
 			if (item->departureID == presentCity) {
 				targetTable->Add(item);
+				if (item->start > item->arrive)
+					item->arrive = item->arrive.AddDays(1);
 			}
 		}
 		for each (auto item in targetTable) {
 			if (known[item->destinationID] == true)
 				continue;
 			else {
-				tmppath->Add(item->shift);
-				time[item->destinationID] = item->arrive;
+				tmppath->Add(item);
+				if (time[item->departureID]>item->start)
+					time[item->destinationID] = item->arrive.AddDays(1);
+				else
+					time[item->destinationID] = item->arrive;
 				value[item->destinationID] = value[presentCity] + item->cost;
 				DFS(item->destinationID,destination, tmppath, known, value, time, deadlineTime, min, DFSPath);
 				known[item->destinationID] = false;

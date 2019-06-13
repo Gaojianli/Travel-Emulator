@@ -110,6 +110,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// queryRoutineTab
 	// 
+	resources->ApplyResources(queryRoutineTab, L"queryRoutineTab");
 	queryRoutineTab->Closable = false;
 	queryRoutineTab->Controls->Add(this->resultView);
 	queryRoutineTab->Controls->Add(this->arriveMinutesPicker);
@@ -130,12 +131,12 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	queryRoutineTab->Controls->Add(this->materialLabel1);
 	queryRoutineTab->Controls->Add(this->depaturePicker);
 	queryRoutineTab->Depth = 0;
-	resources->ApplyResources(queryRoutineTab, L"queryRoutineTab");
 	queryRoutineTab->MouseState = MaterialWinforms::MouseState::HOVER;
 	queryRoutineTab->Name = L"queryRoutineTab";
 	// 
 	// resultView
 	// 
+	resources->ApplyResources(this->resultView, L"resultView");
 	this->resultView->Activation = System::Windows::Forms::ItemActivation::OneClick;
 	this->resultView->BorderStyle = System::Windows::Forms::BorderStyle::None;
 	this->resultView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(6) {
@@ -143,7 +144,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 			this->arrive, this->startTime, this->arriveTime, this->cost
 	});
 	this->resultView->Depth = 0;
-	resources->ApplyResources(this->resultView, L"resultView");
 	this->resultView->ForeColor = System::Drawing::SystemColors::WindowText;
 	this->resultView->FullRowSelect = true;
 	this->resultView->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
@@ -157,8 +157,33 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->resultView->View = System::Windows::Forms::View::Details;
 	this->resultView->SelectedIndexChanged += gcnew System::EventHandler(this, &form::ResultView_SelectedIndexChanged);
 	// 
+	// shift
+	// 
+	resources->ApplyResources(this->shift, L"shift");
+	// 
+	// start
+	// 
+	resources->ApplyResources(this->start, L"start");
+	// 
+	// arrive
+	// 
+	resources->ApplyResources(this->arrive, L"arrive");
+	// 
+	// startTime
+	// 
+	resources->ApplyResources(this->startTime, L"startTime");
+	// 
+	// arriveTime
+	// 
+	resources->ApplyResources(this->arriveTime, L"arriveTime");
+	// 
+	// cost
+	// 
+	resources->ApplyResources(this->cost, L"cost");
+	// 
 	// arriveMinutesPicker
 	// 
+	resources->ApplyResources(this->arriveMinutesPicker, L"arriveMinutesPicker");
 	this->arriveMinutesPicker->Depth = 0;
 	this->arriveMinutesPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 	this->arriveMinutesPicker->ForeColor = System::Drawing::SystemColors::Window;
@@ -167,7 +192,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 		resources->GetString(L"arriveMinutesPicker.Items"),
 			resources->GetString(L"arriveMinutesPicker.Items1"), resources->GetString(L"arriveMinutesPicker.Items2"), resources->GetString(L"arriveMinutesPicker.Items3")
 	});
-	resources->ApplyResources(this->arriveMinutesPicker, L"arriveMinutesPicker");
 	this->arriveMinutesPicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->arriveMinutesPicker->Name = L"arriveMinutesPicker";
 	this->arriveMinutesPicker->TextChanged += gcnew System::EventHandler(this, &form::ArriveMinutesPicker_TextChanged);
@@ -197,9 +221,9 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// strategy0RadioButton
 	// 
+	resources->ApplyResources(this->strategy0RadioButton, L"strategy0RadioButton");
 	this->strategy0RadioButton->Checked = true;
 	this->strategy0RadioButton->Depth = 0;
-	resources->ApplyResources(this->strategy0RadioButton, L"strategy0RadioButton");
 	this->strategy0RadioButton->MouseLocation = System::Drawing::Point(-1, -1);
 	this->strategy0RadioButton->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->strategy0RadioButton->Name = L"strategy0RadioButton";
@@ -239,6 +263,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// startMinutesPicker
 	// 
+	resources->ApplyResources(this->startMinutesPicker, L"startMinutesPicker");
 	this->startMinutesPicker->Depth = 0;
 	this->startMinutesPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 	this->startMinutesPicker->ForeColor = System::Drawing::SystemColors::Window;
@@ -247,12 +272,12 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 		resources->GetString(L"startMinutesPicker.Items"),
 			resources->GetString(L"startMinutesPicker.Items1"), resources->GetString(L"startMinutesPicker.Items2"), resources->GetString(L"startMinutesPicker.Items3")
 	});
-	resources->ApplyResources(this->startMinutesPicker, L"startMinutesPicker");
 	this->startMinutesPicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->startMinutesPicker->Name = L"startMinutesPicker";
 	// 
 	// arriveHourPicker
 	// 
+	resources->ApplyResources(this->arriveHourPicker, L"arriveHourPicker");
 	this->arriveHourPicker->Depth = 0;
 	this->arriveHourPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 	this->arriveHourPicker->ForeColor = System::Drawing::SystemColors::Window;
@@ -268,7 +293,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 			resources->GetString(L"arriveHourPicker.Items19"), resources->GetString(L"arriveHourPicker.Items20"), resources->GetString(L"arriveHourPicker.Items21"),
 			resources->GetString(L"arriveHourPicker.Items22"), resources->GetString(L"arriveHourPicker.Items23")
 	});
-	resources->ApplyResources(this->arriveHourPicker, L"arriveHourPicker");
 	this->arriveHourPicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->arriveHourPicker->Name = L"arriveHourPicker";
 	this->arriveHourPicker->SelectedValueChanged += gcnew System::EventHandler(this, &form::ArriveHourPicker_SelectedValueChanged);
@@ -286,6 +310,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// startHourPicker
 	// 
+	resources->ApplyResources(this->startHourPicker, L"startHourPicker");
 	this->startHourPicker->Depth = 0;
 	this->startHourPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 	this->startHourPicker->ForeColor = System::Drawing::SystemColors::Window;
@@ -301,7 +326,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 			resources->GetString(L"startHourPicker.Items19"), resources->GetString(L"startHourPicker.Items20"), resources->GetString(L"startHourPicker.Items21"),
 			resources->GetString(L"startHourPicker.Items22"), resources->GetString(L"startHourPicker.Items23")
 	});
-	resources->ApplyResources(this->startHourPicker, L"startHourPicker");
 	this->startHourPicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->startHourPicker->Name = L"startHourPicker";
 	// 
@@ -330,11 +354,11 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// destinationPicker
 	// 
+	resources->ApplyResources(this->destinationPicker, L"destinationPicker");
 	this->destinationPicker->Depth = 0;
 	this->destinationPicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 	this->destinationPicker->ForeColor = System::Drawing::SystemColors::Window;
 	this->destinationPicker->FormattingEnabled = true;
-	resources->ApplyResources(this->destinationPicker, L"destinationPicker");
 	this->destinationPicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->destinationPicker->Name = L"destinationPicker";
 	this->destinationPicker->TextChanged += gcnew System::EventHandler(this, &form::DestinationPicker_TextChanged);
@@ -359,21 +383,21 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// depaturePicker
 	// 
+	resources->ApplyResources(this->depaturePicker, L"depaturePicker");
 	this->depaturePicker->Depth = 0;
 	this->depaturePicker->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 	this->depaturePicker->ForeColor = System::Drawing::SystemColors::Window;
 	this->depaturePicker->FormattingEnabled = true;
-	resources->ApplyResources(this->depaturePicker, L"depaturePicker");
 	this->depaturePicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->depaturePicker->Name = L"depaturePicker";
 	this->depaturePicker->TextChanged += gcnew System::EventHandler(this, &form::DepaturePicker_TextChanged);
 	// 
 	// materialTabSelector1
 	// 
+	resources->ApplyResources(this->materialTabSelector1, L"materialTabSelector1");
 	this->materialTabSelector1->BaseTabControl = this->tabControl;
 	this->materialTabSelector1->CenterTabs = false;
 	this->materialTabSelector1->Depth = 0;
-	resources->ApplyResources(this->materialTabSelector1, L"materialTabSelector1");
 	this->materialTabSelector1->Elevation = 10;
 	this->materialTabSelector1->MaxTabWidht = -1;
 	this->materialTabSelector1->MouseState = MaterialWinforms::MouseState::HOVER;
@@ -384,33 +408,33 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// tabControl
 	// 
+	resources->ApplyResources(this->tabControl, L"tabControl");
 	this->tabControl->Controls->Add(queryRoutineTab);
 	this->tabControl->Controls->Add(this->TabPageMgnt);
 	this->tabControl->Controls->Add(this->TabPageLog);
 	this->tabControl->Depth = 0;
-	resources->ApplyResources(this->tabControl, L"tabControl");
 	this->tabControl->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->tabControl->Name = L"tabControl";
-	this->tabControl->SelectedIndex = 1;
+	this->tabControl->SelectedIndex = 0;
 	this->tabControl->TabsAreClosable = true;
 	// 
 	// TabPageMgnt
 	// 
+	resources->ApplyResources(this->TabPageMgnt, L"TabPageMgnt");
 	this->TabPageMgnt->Closable = false;
 	this->TabPageMgnt->Controls->Add(this->cityManageCard);
 	this->TabPageMgnt->Depth = 0;
-	resources->ApplyResources(this->TabPageMgnt, L"TabPageMgnt");
 	this->TabPageMgnt->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->TabPageMgnt->Name = L"TabPageMgnt";
 	// 
 	// cityManageCard
 	// 
+	resources->ApplyResources(this->cityManageCard, L"cityManageCard");
 	this->cityManageCard->Controls->Add(this->mamangeShiftButton);
 	this->cityManageCard->Controls->Add(this->manageCityButton);
 	this->cityManageCard->Depth = 0;
 	this->cityManageCard->Elevation = 5;
 	this->cityManageCard->LargeTitle = false;
-	resources->ApplyResources(this->cityManageCard, L"cityManageCard");
 	this->cityManageCard->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->cityManageCard->Name = L"cityManageCard";
 	graphicsPath3->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
@@ -419,9 +443,9 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// mamangeShiftButton
 	// 
+	resources->ApplyResources(this->mamangeShiftButton, L"mamangeShiftButton");
 	this->mamangeShiftButton->Depth = 0;
 	this->mamangeShiftButton->Elevation = 5;
-	resources->ApplyResources(this->mamangeShiftButton, L"mamangeShiftButton");
 	this->mamangeShiftButton->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->mamangeShiftButton->Name = L"mamangeShiftButton";
 	this->mamangeShiftButton->Primary = true;
@@ -432,9 +456,9 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// manageCityButton
 	// 
+	resources->ApplyResources(this->manageCityButton, L"manageCityButton");
 	this->manageCityButton->Depth = 0;
 	this->manageCityButton->Elevation = 5;
-	resources->ApplyResources(this->manageCityButton, L"manageCityButton");
 	this->manageCityButton->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->manageCityButton->Name = L"manageCityButton";
 	this->manageCityButton->Primary = true;
@@ -445,11 +469,11 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// TabPageLog
 	// 
+	resources->ApplyResources(this->TabPageLog, L"TabPageLog");
 	this->TabPageLog->Closable = false;
 	this->TabPageLog->Controls->Add(this->saveLog);
 	this->TabPageLog->Controls->Add(this->logOutput);
 	this->TabPageLog->Depth = 0;
-	resources->ApplyResources(this->TabPageLog, L"TabPageLog");
 	this->TabPageLog->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->TabPageLog->Name = L"TabPageLog";
 	// 
@@ -469,9 +493,9 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	// logOutput
 	// 
+	resources->ApplyResources(this->logOutput, L"logOutput");
 	this->logOutput->Depth = 0;
 	this->logOutput->Hint = L"";
-	resources->ApplyResources(this->logOutput, L"logOutput");
 	this->logOutput->MaxLength = 2147483647;
 	this->logOutput->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->logOutput->Name = L"logOutput";
@@ -619,20 +643,20 @@ inline System::Void TravelEmulator::form::MaterialFlatButton1_Click_1(System::Ob
 	resultView->BeginUpdate();
 	resultView->Items->Clear();
 	for each (auto item in result) {
-		auto tmpShift = graph->timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(item->ToString()), &FindShiftPredic::IsMatch));
+		//auto tmpShift = graph->timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(item->ToString()), &FindShiftPredic::IsMatch));
 		ListViewItem^ ltv = gcnew ListViewItem();
-		ltv->Text = item;
+		ltv->Text = item->shift;
 		try {
-			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(tmpShift->departureID), &FindCityPredic<int>::IsMatch))->name);
-			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(tmpShift->destinationID), &FindCityPredic<int>::IsMatch))->name);
+			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(item->departureID), &FindCityPredic<int>::IsMatch))->name);
+			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(item->destinationID), &FindCityPredic<int>::IsMatch))->name);
 		}
 		catch (KeyNotFoundException^ e) {
 			log->writeLog(e->ToString() + ", ingored", logLevel::Error);
 			continue;
 		}
-		ltv->SubItems->Add(tmpShift->start.ToString("t"));
-		ltv->SubItems->Add(tmpShift->arrive.ToString("t"));
-		ltv->SubItems->Add(tmpShift->cost.ToString("f2"));
+		ltv->SubItems->Add(item->start.ToString("t"));
+		ltv->SubItems->Add(item->arrive.ToString("t"));
+		ltv->SubItems->Add(item->cost.ToString("f2"));
 		resultView->Items->Add(ltv);
 	}
 	resultView->EndUpdate();
