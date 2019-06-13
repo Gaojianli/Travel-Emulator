@@ -615,7 +615,7 @@ inline System::Void TravelEmulator::form::MaterialFlatButton1_Click_1(System::Ob
 		if (addOneDayCheckBox->Checked)
 			arriveTime = arriveTime.AddDays(1);
 	}
-	auto thread= gcnew Threading::Thread(gcnew Threading::ParameterizedThreadStart(this, &form::fetchResult));
+	auto thread = gcnew Threading::Thread(gcnew Threading::ParameterizedThreadStart(this, &form::fetchResult));
 	thread->Start(Tuple::Create(startTime, strategy, cityData->Count, startCity->id, arriveCity->id, arriveTime, Tuple::Create(startCity, arriveCity)));
 }
 
@@ -638,12 +638,12 @@ inline System::Void TravelEmulator::form::Strategy1RadioButton_CheckedChanged(Sy
 }
 
 inline System::Void TravelEmulator::form::Strategy2RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if(strategy2RadioButton->Checked) {
+	if (strategy2RadioButton->Checked) {
 		materialLabel6->Enabled = true;
 		arriveHourPicker->Enabled = true;
 		arriveMinutesPicker->Enabled = true;
 	}
-	else if(!strategy2RadioButton->Checked) {
+	else if (!strategy2RadioButton->Checked) {
 		materialLabel6->Enabled = false;
 		arriveHourPicker->Enabled = false;
 		arriveMinutesPicker->Enabled = false;
@@ -661,20 +661,19 @@ inline System::Void TravelEmulator::form::DestinationPicker_TextChanged(System::
 
 void TravelEmulator::form::fetchResult(Object^ param)
 {
-	auto args = safe_cast<Tuple<DateTime,int,int,int,int,DateTime,Tuple<cities^,cities^>^>^>(param);
+	auto args = safe_cast<Tuple<DateTime, int, int, int, int, DateTime, Tuple<cities^, cities^>^>^>(param);
 	auto finishCallback = gcnew fetchResultDelegate(this, &form::fetchResultFinished);
 	if (browser == nullptr) {
 		browser = gcnew ChromiumWebBrowser(Environment::CurrentDirectory + "\\index.html", nullptr);
-		browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
 	}
 	else {
 		browser->JavascriptObjectRepository->UnRegisterAll();
-		browser->Location = browser->Location;
 	}
 	//
 	auto graph = graph::getInstance(cityData, core->timeTable);
 	auto result = graph->getPath(args->Item1, args->Item2, args->Item3, args->Item4, args->Item5, args->Item6);
 	RemoveNull(result);
+	browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
 	browser->JavascriptObjectRepository->Register("shiftDataList", core->getTimeTable(), true, BindingOptions::DefaultBinder);
 	browser->JavascriptObjectRepository->Register("pathList", result, true, BindingOptions::DefaultBinder);
 	browser->JavascriptObjectRepository->Register("departure", args->Item7->Item1, true, BindingOptions::DefaultBinder);
@@ -684,14 +683,20 @@ void TravelEmulator::form::fetchResult(Object^ param)
 
 void TravelEmulator::form::fetchResultFinished(List<Transport^>^ result)
 {
-	auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
-	mapTable->Text = L"地图";
-	auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
-	panel->Dock = DockStyle::Fill;
-	mapTable->Controls->Add(panel);
-	panel->Controls->Add(browser);
-	browser->Dock = DockStyle::Fill;
-	tabControl->TabPages->Add(mapTable);
+	if (browser->Tag == nullptr) {
+		auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
+		mapTable->Text = L"地图";
+		auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
+		panel->Dock = DockStyle::Fill;
+		mapTable->Controls->Add(panel);
+		panel->Controls->Add(browser);
+		browser->Dock = DockStyle::Fill;
+		tabControl->TabPages->Add(mapTable);
+		browser->Tag = panel;
+	}
+	else {
+		WebBrowserExtensions::Reload(browser);
+	}
 	resultView->BeginUpdate();
 	resultView->Items->Clear();
 	for each (auto item in result) {
