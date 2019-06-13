@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "utils.h"
 #include "manageCity.h"
 #include "routineManage.h"
@@ -18,7 +18,7 @@ namespace TravelEmulator {
 	using namespace CefSharp;
 	using namespace CefSharp::WinForms;
 	/// <summary>
-	/// form ÕªÒª
+	/// form æ‘˜è¦
 	/// </summary>
 	public
 	ref class form : public MaterialWinforms::Controls::MaterialForm {
@@ -140,7 +140,7 @@ namespace TravelEmulator {
 	private: void OnTimedEvent(Object^ source, System::Timers::ElapsedEventArgs^ e);
 	protected:
 		/// <summary>
-		/// ÇåÀíËùÓĞÕıÔÚÊ¹ÓÃµÄ×ÊÔ´¡£
+		/// æ¸…ç†æ‰€æœ‰æ­£åœ¨ä½¿ç”¨çš„èµ„æºã€‚
 		/// </summary>
 		~form();
 
@@ -182,14 +182,14 @@ namespace TravelEmulator {
 	protected:
 	private:
 		/// <summary>
-		/// ±ØĞèµÄÉè¼ÆÆ÷±äÁ¿¡£
+		/// å¿…éœ€çš„è®¾è®¡å™¨å˜é‡ã€‚
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Éè¼ÆÆ÷Ö§³ÖËùĞèµÄ·½·¨ - ²»ÒªĞŞ¸Ä
-		/// Ê¹ÓÃ´úÂë±à¼­Æ÷ĞŞ¸Ä´Ë·½·¨µÄÄÚÈİ¡£
+		/// è®¾è®¡å™¨æ”¯æŒæ‰€éœ€çš„æ–¹æ³• - ä¸è¦ä¿®æ”¹
+		/// ä½¿ç”¨ä»£ç ç¼–è¾‘å™¨ä¿®æ”¹æ­¤æ–¹æ³•çš„å†…å®¹ã€‚
 		/// </summary>
 		void InitializeComponent(void);
 #pragma endregion
@@ -217,11 +217,14 @@ namespace TravelEmulator {
 	private: System::Void DestinationPicker_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ResultView_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void ArriveHourPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void MaterialLabel6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void ArriveMinutesPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void ArriveHourPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void MaterialLabel6_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void ArriveMinutesPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: void fetchResult(Object^ param);
+	private: delegate void fetchResultDelegate(List<Transport^>^);
+	private:void fetchResultFinished(List<Transport^>^);
+	};
 }// namespace TravelEmulator

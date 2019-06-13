@@ -49,10 +49,8 @@
         await drawMarker(await departure.getName());
         let currentCity = await departure.getID();
         map.enableScrollWheelZoom(true);
-        for (const shift of path) {
-            const possableShift = shiftList.filter(item => item.shift === shift);
-            const currentShift = possableShift.find(item => item.departureID === currentCity);
-            let sy = new BMap.Symbol(BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW, {
+        for (const currentShift of path) {
+            const sy = new BMap.Symbol(BMap_Symbol_SHAPE_BACKWARD_OPEN_ARROW, {
                 scale: 0.6,
                 strokeColor: '#fff',
                 strokeWeight: '2',

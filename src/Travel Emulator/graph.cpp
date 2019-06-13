@@ -2,7 +2,7 @@
 constexpr auto intMax = 99999999;
 //auto DFSpath = gcnew List<String^>();
 
-graph::graph(List<cities^> ^ cityList, List<Transport^> ^ timeTables) :timeTables(timeTables),cityList(cityList){
+graph::graph(List<cities^>^ cityList, List<Transport^>^ timeTables) :timeTables(timeTables), cityList(cityList) {
 }
 
 graph^ graph::getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables) {
@@ -11,10 +11,10 @@ graph^ graph::getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables)
 	return _instance;
 }
 
-List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, DateTime deadlineTime )
+List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, DateTime deadlineTime)
 {
 	double min = 10000;
-	auto path = gcnew List<String^>();
+	auto path = gcnew List<Transport^>();
 	for (int i = 0; i < vertexNum; i++) {
 		path->Add(nullptr);
 	}
@@ -23,11 +23,11 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 	auto time = gcnew List<DateTime>(vertexNum);
 	for (int i = 0; i < vertexNum; i++) {
 		known->Add(false);
-		time->Add(DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0));
+		time->Add(DateTime(startTime.Year, startTime.Month, startTime.Day, 0, 0, 0));
 	}
-	time[departure] = startTime;
 	int presentCity = departure;
 	if (strategy == 2) {
+		time[departure] = startTime;
 		for (int i = 0; i < vertexNum; i++) {
 			value->Add(0);
 		}
@@ -36,12 +36,13 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 	else {
 		for (int i = 0; i < vertexNum; i++) {
 			value->Add(intMax);
-			time[i] = time[i].AddMonths(1);
+			time[i] = time[i].AddHours(startTime.Hour).AddMinutes(startTime.Minute).AddSeconds(startTime.Second);
 		}
 		known[departure] = true;
+		time[departure] = startTime;
 		value[departure] = 0;
 		while (true) {
-			Update(presentCity, known, value, time, path, strategy);
+			Update(presentCity, known, value, time, path, strategy, startTime);
 			presentCity = -1;
 			if (strategy == 0) {
 				double minn = intMax;
@@ -66,25 +67,25 @@ List<String^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, i
 				break;
 			known[presentCity] = true;
 		}
-		auto ultimatePath = gcnew List<String^>;
+		auto ultimatePath = gcnew List<Transport^>;
 		makePath(destination, path, ultimatePath, departure, destination);
 		path = ultimatePath;
 	}
 	return path;
 }
 
-void graph::makePath(int presentCity, List<String^>^ path, List<String^>^ ultimatePath, int departure, int destination)
+void graph::makePath(int presentCity, List<Transport^>^ path, List<Transport^>^ ultimatePath, int departure, int destination)
 {
-	auto tmp = timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(path[presentCity]), &FindShiftPredic::IsMatch));
-	if (!tmp)
+	//auto tmp = timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(path[presentCity]), &FindShiftPredic::IsMatch));
+	if (!path[presentCity])
 		return;
 	if (presentCity != departure) {
-		makePath(tmp->departureID, path, ultimatePath, departure, destination);
+		makePath(path[presentCity]->departureID, path, ultimatePath, departure, destination);
 		ultimatePath->Add(path[presentCity]);
 	}
 }
 
-void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<String^>^ path, int strategy)
+void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<Transport^>^ path, int strategy, DateTime startTime)
 {
 	auto targetTable = gcnew List<Transport^>();
 	for each (auto item in timeTables) {
@@ -96,48 +97,48 @@ void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List
 	{
 		//判断是否跨天
 		bool span = false;
-		DateTime start = item->start;
-		DateTime end = item->arrive;
-		if (start > end)
+		if (item->start > item->arrive)
 			span = true;
 		if (strategy == 0) {
 			if (!known[item->destinationID] && value[item->destinationID] > value[presentCity] + item->cost) {
 				value[item->destinationID] = value[presentCity] + item->cost;
-				path[item->destinationID] = item->shift;
+				path[item->destinationID] = item;
 			}
 		}
 		if (strategy == 1) {
-			/*判断条件有四种情况：
-				第一种：行程不跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的当天日期+行程到达时间与time[到达城市]比较
-				第二种：行程不跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
-				第三钟：行程跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
-				第四钟：行程跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的后天日期+行程到达时间与time[到达城市]比较
-				若time[到底城市]，则更新值*/
-			if (!span && time[item->departureID] <= item->start && time[item->destinationID] > item->arrive) {
-				time[item->destinationID] = time[item->destinationID].AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
-			}
-			else if (!span && time[item->departureID] > item->start && time[item->destinationID] > item->arrive.AddDays(1)) {
-				time[item->destinationID] = time[item->destinationID].AddDays(1).AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
-			}
-			else if (span && time[item->departureID] <= item->start && time[item->destinationID] > item->arrive.AddDays(1)) {
-				time[item->destinationID] = time[item->destinationID].AddDays(1).AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
-			}
-			else if (span && time[item->departureID] > item->start && time[item->destinationID] > item->arrive.AddDays(2)) {
-				time[item->destinationID] = time[item->destinationID].AddDays(2).AddHours(item->arrive.Hour).AddMinutes(item->arrive.Minute);
-				path[item->destinationID] = item->shift;
+			if (!known[item->destinationID]) {
+				/*判断条件有四种情况：
+					第一种：行程不跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的当天日期+行程到达时间与time[到达城市]比较
+					第二种：行程不跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
+					第三钟：行程跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
+					第四钟：行程跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的后天日期+行程到达时间与time[到达城市]比较
+					若time[到底城市]，则更新值*/
+				if (!span && time[item->departureID] <= item->start && (time[item->destinationID] == startTime ||time[item->destinationID] > item->arrive)) {
+					time[item->destinationID] = DateTime(time[item->destinationID].Year, time[item->destinationID].Month, time[item->destinationID].Day, item->arrive.Hour, item->arrive.Minute,0);
+					path[item->destinationID] = item;
+				}
+				else if (!span && time[item->departureID] > item->start && (time[item->destinationID] == startTime ||time[item->destinationID] > item->arrive.AddDays(1))) {
+					time[item->destinationID] = DateTime(time[item->destinationID].Year, time[item->destinationID].Month, time[item->destinationID].Day, item->arrive.Hour, item->arrive.Minute, 0).AddDays(1);
+					path[item->destinationID] = item;
+				}
+				else if (span && time[item->departureID] <= item->start && (time[item->destinationID] == startTime ||time[item->destinationID] > item->arrive.AddDays(1))) {
+					time[item->destinationID] = DateTime(time[item->destinationID].Year, time[item->destinationID].Month, time[item->destinationID].Day, item->arrive.Hour, item->arrive.Minute, 0).AddDays(1);
+					path[item->destinationID] = item;
+				}
+				else if (span && time[item->departureID] > item->start && (time[item->destinationID] == startTime ||time[item->destinationID] > item->arrive.AddDays(2))) {
+					time[item->destinationID] = DateTime(time[item->destinationID].Year, time[item->destinationID].Month, time[item->destinationID].Day, item->arrive.Hour, item->arrive.Minute, 0).AddDays(2);
+					path[item->destinationID] = item;
+				}
 			}
 		}
 	}
 }
 
-void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<String^>^ DFSPath)
+void graph::DFS(int presentCity, int destination, List<Transport^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<Transport^>^ DFSPath)
 {
 	if (tmppath == nullptr)
-		tmppath = gcnew List<String^>();
-	if (time[presentCity] > deadlineTime||value[presentCity]>min)
+		tmppath = gcnew List<Transport^>();
+	if (time[presentCity] > deadlineTime || value[presentCity] > min)
 		return;
 	known[presentCity] = true;
 	if (presentCity == destination) {
@@ -158,16 +159,21 @@ void graph::DFS(int presentCity, int destination, List<String^>^ tmppath, List<b
 		for each (auto item in timeTables) {
 			if (item->departureID == presentCity) {
 				targetTable->Add(item);
+				if (item->start > item->arrive)
+					item->arrive = item->arrive.AddDays(1);
 			}
 		}
 		for each (auto item in targetTable) {
 			if (known[item->destinationID] == true)
 				continue;
 			else {
-				tmppath->Add(item->shift);
-				time[item->destinationID] = item->arrive;
+				tmppath->Add(item);
+				if (time[item->departureID] > item->start)
+					time[item->destinationID] = item->arrive.AddDays(1);
+				else
+					time[item->destinationID] = item->arrive;
 				value[item->destinationID] = value[presentCity] + item->cost;
-				DFS(item->destinationID,destination, tmppath, known, value, time, deadlineTime, min, DFSPath);
+				DFS(item->destinationID, destination, tmppath, known, value, time, deadlineTime, min, DFSPath);
 				known[item->destinationID] = false;
 				tmppath->RemoveAt(tmppath->Count - 1);
 			}
