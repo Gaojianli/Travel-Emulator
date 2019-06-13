@@ -31,6 +31,9 @@
     <Filter Include="Header Files\contorls">
       <UniqueIdentifier>{aa52751a-ecb7-4d4c-b04a-e47ed251ad33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\controls">
+      <UniqueIdentifier>{059b74fd-a4ee-44f9-8b7a-fd7b91aa5f7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -591,6 +594,89 @@
     <None Include="@(CefSharpCommonBinaries64)" />
     <None Include="@(CefSharpCommonBinaries64)" />
     <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="app.manifest" />
@@ -611,26 +697,26 @@
     <ClCompile Include="sql.cpp">
       <Filter>Source Files\utils</Filter>
     </ClCompile>
-    <ClCompile Include="manageCity.cpp">
-      <Filter>Header Files\contorls</Filter>
-    </ClCompile>
     <ClCompile Include="core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="timeTable.cpp">
       <Filter>Source Files\data</Filter>
     </ClCompile>
-    <ClCompile Include="cityAdd.cpp">
-      <Filter>Header Files\contorls</Filter>
-    </ClCompile>
-    <ClCompile Include="routineManage.cpp">
-      <Filter>Header Files\contorls</Filter>
-    </ClCompile>
     <ClCompile Include="graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cityAdd.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="manageCity.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="routineManage.cpp">
+      <Filter>Source Files\controls</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

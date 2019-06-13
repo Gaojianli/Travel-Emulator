@@ -113,7 +113,7 @@ namespace TravelEmulator {
 	private: System::Void mamangeShiftButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MaterialTabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void getPathButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ArriveHourPicker_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MaterialCheckBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
@@ -122,14 +122,6 @@ namespace TravelEmulator {
 	private: System::Void Strategy1RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Strategy2RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void DestinationPicker_TextChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void ResultView_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void ArriveHourPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void MaterialLabel6_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void ArriveMinutesPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: void fetchResult(Object^ param);
 	private: delegate void fetchResultDelegate(List<Transport^>^);
 	private:void fetchResultFinished(List<Transport^>^);

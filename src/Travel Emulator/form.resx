@@ -117,34 +117,989 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="queryRoutineTab.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
+  <data name="&gt;&gt;materialLabel5.Name" xml:space="preserve">
+    <value>materialLabel5</value>
+  </data>
+  <data name="&gt;&gt;arriveMinutesPicker.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;strategy2RadioButton.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialRadioButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="strategy0RadioButton.Text" xml:space="preserve">
+    <value>策略1：花费最少</value>
+  </data>
+  <data name="&gt;&gt;manageCityButton.Name" xml:space="preserve">
+    <value>manageCityButton</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="timeLabel.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TabPageLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="resultView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 97</value>
+  </data>
+  <data name="startHourPicker.Items8" xml:space="preserve">
+    <value>08</value>
+  </data>
+  <data name="arriveHourPicker.Items18" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;startHourPicker.Name" xml:space="preserve">
+    <value>startHourPicker</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 15</value>
+  </data>
+  <data name="startHourPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 28</value>
+  </data>
+  <data name="materialLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 25</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="saveLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 6, 3, 6</value>
+  </data>
+  <data name="&gt;&gt;strategy1RadioButton.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialRadioButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="startHourPicker.Items19" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="strategy0RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 30</value>
+  </data>
+  <data name="strategy2RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialLabel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 11pt</value>
   </data>
-  <data name="timeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>814, 336</value>
+  <data name="&gt;&gt;materialLabel4.Name" xml:space="preserve">
+    <value>materialLabel4</value>
   </data>
-  <data name="timeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
+  <data name="&gt;&gt;materialTabSelector1.Name" xml:space="preserve">
+    <value>materialTabSelector1</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="timeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="arriveHourPicker.Items19" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="TabPageLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>862, 371</value>
   </data>
   <data name="&gt;&gt;timeLabel.Name" xml:space="preserve">
     <value>timeLabel</value>
   </data>
+  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 35</value>
+  </data>
+  <data name="&gt;&gt;materialLabel6.Name" xml:space="preserve">
+    <value>materialLabel6</value>
+  </data>
+  <data name="&gt;&gt;strategy0RadioButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="startHourPicker.Items15" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="manageCityButton.Text" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="&gt;&gt;materialTimeline1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTimeline, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="arriveHourPicker.Items1" xml:space="preserve">
+    <value>01</value>
+  </data>
+  <data name="&gt;&gt;mamangeShiftButton.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialRaisedButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;arriveTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="materialLabel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="materialFlatButton1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="materialLabel6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="materialLabel5.Text" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="depaturePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 28</value>
+  </data>
+  <data name="&gt;&gt;queryRoutineTab.Name" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;materialLabel2.Name" xml:space="preserve">
+    <value>materialLabel2</value>
+  </data>
+  <data name="startHourPicker.Items" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="&gt;&gt;strategy1RadioButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="strategy1RadioButton.Text" xml:space="preserve">
+    <value>策略2：时间最短</value>
+  </data>
+  <data name="startHourPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 215</value>
+  </data>
+  <data name="&gt;&gt;floatButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="addOneDayCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 261</value>
+  </data>
+  <data name="materialLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;materialLabel6.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="resultView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 24pt</value>
+  </data>
+  <data name="queryRoutineTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="materialFlatButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>619, 307</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>旅行模拟系统</value>
+  </data>
+  <data name="arriveMinutesPicker.Items2" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;destinationPicker.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="saveLog.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;strategy2RadioButton.Name" xml:space="preserve">
+    <value>strategy2RadioButton</value>
+  </data>
+  <data name="arriveHourPicker.Items9" xml:space="preserve">
+    <value>09</value>
+  </data>
+  <data name="&gt;&gt;materialLabel3.Name" xml:space="preserve">
+    <value>materialLabel3</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 404</value>
+  </data>
+  <data name="floatButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;timeLine.Name" xml:space="preserve">
+    <value>timeLine</value>
+  </data>
+  <data name="materialLabel6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="manageCityButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TabPageMgnt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="strategy2RadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="materialLabel5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;materialFlatButton1.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="arriveHourPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;materialLabel5.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="arriveHourPicker.Items21" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="startHourPicker.Items5" xml:space="preserve">
+    <value>05</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;resultView.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="resultView.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="materialLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="materialLabel2.Text" xml:space="preserve">
+    <value>请选择目的地：</value>
+  </data>
+  <data name="&gt;&gt;queryRoutineTab.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="strategy1RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="startHourPicker.Items11" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="TabPageMgnt.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="addOneDayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 30</value>
+  </data>
+  <data name="&gt;&gt;TabPageMgnt.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="queryRoutineTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>862, 371</value>
+  </data>
+  <data name="startHourPicker.Items14" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="destinationPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 158</value>
+  </data>
+  <data name="arriveHourPicker.Items12" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;materialLabel2.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="strategy0RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 104</value>
+  </data>
+  <data name="&gt;&gt;startMinutesPicker.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="timeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="startMinutesPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;arriveTime.Name" xml:space="preserve">
+    <value>arriveTime</value>
+  </data>
+  <data name="&gt;&gt;arriveHourPicker.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="startHourPicker.Items6" xml:space="preserve">
+    <value>06</value>
+  </data>
+  <data name="cityManageCard.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="arriveHourPicker.Items13" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="materialFlatButton1.Text" xml:space="preserve">
+    <value>materialFlatButton1</value>
+  </data>
+  <data name="&gt;&gt;cost.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="materialLabel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 25</value>
+  </data>
+  <data name="mamangeShiftButton.Text" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="startHourPicker.Items21" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;startMinutesPicker.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;materialLabel4.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;materialTimeline1.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 263</value>
+  </data>
+  <data name="&gt;&gt;saveLog.Parent" xml:space="preserve">
+    <value>TabPageLog</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialForm, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="mamangeShiftButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="arriveHourPicker.Items10" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="materialLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;arrive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;startMinutesPicker.Name" xml:space="preserve">
+    <value>startMinutesPicker</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="depaturePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 106</value>
+  </data>
+  <data name="saveLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 36</value>
+  </data>
+  <data name="logOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="arriveHourPicker.Items11" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;materialTimeline2.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;startMinutesPicker.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;logOutput.Name" xml:space="preserve">
+    <value>logOutput</value>
+  </data>
+  <data name="startMinutesPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 215</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 59</value>
+  </data>
+  <data name="&gt;&gt;strategy2RadioButton.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="TabPageMgnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="saveLog.Text" xml:space="preserve">
+    <value>保存日志</value>
+  </data>
+  <data name="timeLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="startHourPicker.Items10" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="materialLabel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 260</value>
+  </data>
+  <data name="&gt;&gt;materialLabel3.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="timeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>814, 336</value>
+  </data>
+  <data name="arriveHourPicker.Items16" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="materialTabSelector1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 10</value>
+  </data>
+  <data name="depaturePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="&gt;&gt;materialLabel4.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="timeLine.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;materialLabel5.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="strategy2RadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="&gt;&gt;strategy2RadioButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;materialLabel6.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="materialLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;arriveHourPicker.Name" xml:space="preserve">
+    <value>arriveHourPicker</value>
+  </data>
+  <data name="&gt;&gt;strategy1RadioButton.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="materialLabel3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="arriveMinutesPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 259</value>
+  </data>
+  <data name="&gt;&gt;floatButton.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLoadingFloatingActionButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialLabel6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="manageCityButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 47</value>
+  </data>
+  <data name="&gt;&gt;destinationPicker.Name" xml:space="preserve">
+    <value>destinationPicker</value>
+  </data>
+  <data name="startHourPicker.Items20" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="cityManageCard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 133</value>
+  </data>
+  <data name="destinationPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 28</value>
+  </data>
+  <data name="cityManageCard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 51</value>
+  </data>
+  <data name="mamangeShiftButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="strategy2RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 212</value>
+  </data>
+  <data name="materialLabel4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="materialLabel6.Text" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="&gt;&gt;arriveHourPicker.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="strategy1RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 30</value>
+  </data>
+  <data name="mamangeShiftButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="manageCityButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 46</value>
+  </data>
+  <data name="materialTimeline2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="arriveHourPicker.Items6" xml:space="preserve">
+    <value>06</value>
+  </data>
+  <data name="logOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="addOneDayCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;arriveMinutesPicker.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="strategy2RadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 30</value>
+  </data>
+  <data name="materialLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 215</value>
+  </data>
+  <data name="arriveHourPicker.Items23" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;saveLog.Name" xml:space="preserve">
+    <value>saveLog</value>
+  </data>
+  <data name="&gt;&gt;cityManageCard.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialCard, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="arriveMinutesPicker.Items3" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="materialLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="materialFlatButton1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;materialLabel6.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="materialLabel3.Text" xml:space="preserve">
+    <value>请选择出发时间：</value>
+  </data>
+  <data name="materialTimeline1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 300</value>
+  </data>
+  <data name="&gt;&gt;cityManageCard.Name" xml:space="preserve">
+    <value>cityManageCard</value>
+  </data>
+  <data name="addOneDayCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;TabPageLog.Name" xml:space="preserve">
+    <value>TabPageLog</value>
+  </data>
+  <data name="startHourPicker.Items17" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="depaturePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="strategy1RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="TabPageLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="startHourPicker.Items2" xml:space="preserve">
+    <value>02</value>
+  </data>
+  <data name="queryRoutineTab.Text" xml:space="preserve">
+    <value>查询路线</value>
+  </data>
+  <data name="&gt;&gt;addOneDayCheckBox.Name" xml:space="preserve">
+    <value>addOneDayCheckBox</value>
+  </data>
+  <data name="materialFlatButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;queryRoutineTab.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="TabPageLog.Text" xml:space="preserve">
+    <value>历史记录</value>
+  </data>
+  <data name="arriveMinutesPicker.Items" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="mamangeShiftButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>103, 47</value>
+  </data>
+  <data name="materialTimeline1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="materialLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 109</value>
+  </data>
+  <data name="timeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.Name" xml:space="preserve">
+    <value>materialLabel1</value>
+  </data>
+  <data name="arriveMinutesPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="addOneDayCheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="floatButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1000, 326</value>
+  </data>
+  <data name="&gt;&gt;materialLabel4.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="addOneDayCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cityManageCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 12, 2, 2</value>
+  </data>
+  <data name="materialLabel1.Text" xml:space="preserve">
+    <value>请选择出发地：</value>
+  </data>
+  <data name="TabPageLog.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;start.Name" xml:space="preserve">
+    <value>start</value>
+  </data>
+  <data name="strategy2RadioButton.Text" xml:space="preserve">
+    <value>策略3：限时最优</value>
+  </data>
+  <data name="materialLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 25</value>
+  </data>
+  <data name="addOneDayCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;startHourPicker.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialLabel6.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="startHourPicker.Items7" xml:space="preserve">
+    <value>07</value>
+  </data>
+  <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="materialLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="arriveHourPicker.Items22" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="saveLog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="saveLog.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;strategy0RadioButton.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="materialFlatButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 36</value>
+  </data>
+  <data name="&gt;&gt;materialLabel3.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialTimeline2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 312</value>
+  </data>
+  <data name="arriveHourPicker.Items5" xml:space="preserve">
+    <value>05</value>
+  </data>
+  <data name="startHourPicker.Items18" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="materialTimeline1.Text" xml:space="preserve">
+    <value>Timeline</value>
+  </data>
   <data name="&gt;&gt;timeLabel.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="saveLog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialTimeline1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="materialLabel4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="strategy0RadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="startHourPicker.Items13" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;manageCityButton.Parent" xml:space="preserve">
+    <value>cityManageCard</value>
+  </data>
+  <data name="&gt;&gt;startHourPicker.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="destinationPicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="materialLabel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;logOutput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="startHourPicker.Items16" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="arriveHourPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 28</value>
+  </data>
+  <data name="materialFlatButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 5</value>
+  </data>
+  <data name="&gt;&gt;cityManageCard.Parent" xml:space="preserve">
+    <value>TabPageMgnt</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="manageCityButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="&gt;&gt;materialLabel1.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="mamangeShiftButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 46</value>
+  </data>
+  <data name="strategy2RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;materialTimeline1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;materialLabel2.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="addOneDayCheckBox.Text" xml:space="preserve">
+    <value>+1Day</value>
+  </data>
+  <data name="TabPageMgnt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>862, 371</value>
+  </data>
+  <data name="&gt;&gt;saveLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>form</value>
+  </data>
+  <data name="startHourPicker.Items23" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="arriveHourPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 263</value>
+  </data>
+  <data name="&gt;&gt;queryRoutineTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;arriveMinutesPicker.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialTimeline2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="timeLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 376</value>
+  </data>
+  <data name="materialLabel4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="manageCityButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="queryRoutineTab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="arriveHourPicker.Items17" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;startTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageMgnt.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="strategy1RadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialTimeline2.Text" xml:space="preserve">
+    <value>materialTimeline2</value>
+  </data>
+  <data name="materialTimeline2.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;TabPageLog.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;mamangeShiftButton.Name" xml:space="preserve">
+    <value>mamangeShiftButton</value>
+  </data>
+  <data name="materialLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 25</value>
+  </data>
+  <data name="arriveHourPicker.Items20" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="startMinutesPicker.Items1" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="startMinutesPicker.Items3" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="startMinutesPicker.Items2" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="arriveHourPicker.Items4" xml:space="preserve">
+    <value>04</value>
+  </data>
+  <data name="&gt;&gt;materialTimeline1.Name" xml:space="preserve">
+    <value>materialTimeline1</value>
+  </data>
+  <data name="arriveHourPicker.Items14" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="queryRoutineTab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;startHourPicker.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="materialLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="startHourPicker.Items12" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;TabPageLog.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;arrive.Name" xml:space="preserve">
+    <value>arrive</value>
+  </data>
+  <data name="&gt;&gt;start.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;manageCityButton.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialRaisedButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;floatButton.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="destinationPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="arriveHourPicker.Items15" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;cityManageCard.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialLabel5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="startMinutesPicker.Items" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="arriveHourPicker.Items" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="materialLabel4.Text" xml:space="preserve">
+    <value>请选择出发时间：</value>
+  </data>
+  <data name="&gt;&gt;shift.Name" xml:space="preserve">
+    <value>shift</value>
+  </data>
+  <data name="materialLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 160</value>
+  </data>
+  <data name="&gt;&gt;resultView.Name" xml:space="preserve">
+    <value>resultView</value>
   </data>
   <data name="&gt;&gt;timeLabel.Parent" xml:space="preserve">
     <value>queryRoutineTab</value>
   </data>
+  <data name="TabPageMgnt.Text" xml:space="preserve">
+    <value>城市管理</value>
+  </data>
+  <data name="&gt;&gt;shift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;materialFlatButton1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialFlatButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="arriveHourPicker.Items2" xml:space="preserve">
+    <value>02</value>
+  </data>
+  <data name="startHourPicker.Items3" xml:space="preserve">
+    <value>03</value>
+  </data>
+  <data name="logOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="startHourPicker.Items1" xml:space="preserve">
+    <value>01</value>
+  </data>
+  <data name="&gt;&gt;addOneDayCheckBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="startHourPicker.Items22" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="strategy0RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="startMinutesPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 28</value>
+  </data>
+  <data name="&gt;&gt;addOneDayCheckBox.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialCheckBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialTabSelector1.Text" xml:space="preserve">
+    <value>materialTabSelector1</value>
+  </data>
+  <data name="cityManageCard.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPageMgnt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="&gt;&gt;startTime.Name" xml:space="preserve">
+    <value>startTime</value>
+  </data>
   <data name="&gt;&gt;timeLabel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="arriveMinutesPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 28</value>
+  </data>
+  <data name="logOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 312</value>
+  </data>
+  <data name="materialLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 218</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabControl, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="saveLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>743, 345</value>
   </data>
   <data name="floatButton.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -234,38 +1189,182 @@
         DgAwgu9Lvf4c4fc/v/5aAGjIP//8P4/SuJgZT5TJAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="floatButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1000, 326</value>
+  <data name="arriveHourPicker.Items8" xml:space="preserve">
+    <value>08</value>
   </data>
-  <data name="floatButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 48</value>
+  <data name="&gt;&gt;materialFlatButton1.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
-  <data name="floatButton.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+  <data name="&gt;&gt;strategy0RadioButton.Name" xml:space="preserve">
+    <value>strategy0RadioButton</value>
+  </data>
+  <data name="materialLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;strategy1RadioButton.Name" xml:space="preserve">
+    <value>strategy1RadioButton</value>
+  </data>
+  <data name="&gt;&gt;resultView.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="arriveHourPicker.Items3" xml:space="preserve">
+    <value>03</value>
+  </data>
+  <data name="timeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 11pt</value>
+  </data>
+  <data name="startHourPicker.Items4" xml:space="preserve">
+    <value>04</value>
+  </data>
+  <data name="materialLabel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 25</value>
+  </data>
+  <data name="materialLabel5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;saveLog.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialFlatButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>870, 463</value>
+  </data>
+  <data name="&gt;&gt;materialFlatButton1.Name" xml:space="preserve">
+    <value>materialFlatButton1</value>
+  </data>
+  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="&gt;&gt;materialLabel2.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="resultView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>612, 102</value>
+  </data>
+  <data name="&gt;&gt;materialLabel3.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;TabPageMgnt.Name" xml:space="preserve">
+    <value>TabPageMgnt</value>
+  </data>
+  <data name="&gt;&gt;resultView.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialListView, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialLabel3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="strategy2RadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="materialFlatButton1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="startHourPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;materialLabel5.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;destinationPicker.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;materialTabSelector1.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTabSelector, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;floatButton.Name" xml:space="preserve">
     <value>floatButton</value>
   </data>
-  <data name="&gt;&gt;floatButton.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialLoadingFloatingActionButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="strategy1RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;floatButton.Parent" xml:space="preserve">
+  <data name="strategy1RadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 10pt</value>
+  </data>
+  <data name="startHourPicker.Items9" xml:space="preserve">
+    <value>09</value>
+  </data>
+  <data name="strategy0RadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;timeLine.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="materialTabSelector1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="materialLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 25</value>
+  </data>
+  <data name="&gt;&gt;timeLine.Parent" xml:space="preserve">
     <value>queryRoutineTab</value>
   </data>
-  <data name="&gt;&gt;floatButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;strategy0RadioButton.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialRadioButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="saveLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="floatButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 48</value>
+  </data>
+  <data name="materialLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;TabPageLog.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cost.Name" xml:space="preserve">
+    <value>cost</value>
+  </data>
+  <data name="&gt;&gt;logOutput.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTextBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;depaturePicker.Name" xml:space="preserve">
+    <value>depaturePicker</value>
+  </data>
+  <data name="&gt;&gt;mamangeShiftButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="materialLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="arriveMinutesPicker.Items1" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;addOneDayCheckBox.Parent" xml:space="preserve">
+    <value>queryRoutineTab</value>
+  </data>
+  <data name="&gt;&gt;arriveMinutesPicker.Name" xml:space="preserve">
+    <value>arriveMinutesPicker</value>
+  </data>
+  <data name="&gt;&gt;timeLine.Type" xml:space="preserve">
+    <value>MaterialWinforms.Controls.MaterialTimeline, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="materialLabel4.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;manageCityButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="materialTimeline2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 312</value>
+  <data name="&gt;&gt;arriveHourPicker.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
-  <data name="materialTimeline2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;mamangeShiftButton.Parent" xml:space="preserve">
+    <value>cityManageCard</value>
   </data>
-  <data name="materialTimeline2.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="arriveHourPicker.Items7" xml:space="preserve">
+    <value>07</value>
   </data>
-  <data name="materialTimeline2.Text" xml:space="preserve">
-    <value>materialTimeline2</value>
+  <data name="&gt;&gt;logOutput.Parent" xml:space="preserve">
+    <value>TabPageLog</value>
+  </data>
+  <data name="strategy1RadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 157</value>
   </data>
   <data name="&gt;&gt;materialTimeline2.Name" xml:space="preserve">
     <value>materialTimeline2</value>
@@ -273,1062 +1372,11 @@
   <data name="&gt;&gt;materialTimeline2.Type" xml:space="preserve">
     <value>MaterialWinforms.Controls.MaterialTimeline, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;materialTimeline2.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialTimeline2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="materialTimeline1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 300</value>
-  </data>
-  <data name="materialTimeline1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="materialTimeline1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="materialTimeline1.Text" xml:space="preserve">
-    <value>Timeline</value>
-  </data>
-  <data name="&gt;&gt;materialTimeline1.Name" xml:space="preserve">
-    <value>materialTimeline1</value>
-  </data>
-  <data name="&gt;&gt;materialTimeline1.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTimeline, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialTimeline1.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialTimeline1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="timeLine.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 376</value>
-  </data>
-  <data name="timeLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="timeLine.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;timeLine.Name" xml:space="preserve">
-    <value>timeLine</value>
-  </data>
-  <data name="&gt;&gt;timeLine.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTimeline, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;timeLine.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;timeLine.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="resultView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 24pt</value>
-  </data>
-  <data name="resultView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>612, 102</value>
-  </data>
-  <data name="resultView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 97</value>
-  </data>
-  <data name="resultView.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;resultView.Name" xml:space="preserve">
-    <value>resultView</value>
-  </data>
-  <data name="&gt;&gt;resultView.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialListView, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;resultView.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;resultView.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="arriveMinutesPicker.Items" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="arriveMinutesPicker.Items1" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="arriveMinutesPicker.Items2" xml:space="preserve">
-    <value>30</value>
-  </data>
-  <data name="arriveMinutesPicker.Items3" xml:space="preserve">
-    <value>45</value>
-  </data>
-  <data name="arriveMinutesPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 259</value>
-  </data>
-  <data name="arriveMinutesPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 28</value>
-  </data>
-  <data name="arriveMinutesPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;arriveMinutesPicker.Name" xml:space="preserve">
-    <value>arriveMinutesPicker</value>
-  </data>
-  <data name="&gt;&gt;arriveMinutesPicker.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;arriveMinutesPicker.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;arriveMinutesPicker.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="strategy2RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="strategy2RadioButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 10pt</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="strategy2RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="strategy2RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 212</value>
-  </data>
-  <data name="strategy2RadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="strategy2RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 30</value>
-  </data>
-  <data name="strategy2RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="strategy2RadioButton.Text" xml:space="preserve">
-    <value>策略3：限时最优</value>
-  </data>
-  <data name="&gt;&gt;strategy2RadioButton.Name" xml:space="preserve">
-    <value>strategy2RadioButton</value>
-  </data>
-  <data name="&gt;&gt;strategy2RadioButton.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialRadioButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;strategy2RadioButton.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;strategy2RadioButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="strategy1RadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="strategy1RadioButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 10pt</value>
-  </data>
-  <data name="strategy1RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="strategy1RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 157</value>
-  </data>
-  <data name="strategy1RadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="strategy1RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 30</value>
-  </data>
-  <data name="strategy1RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="strategy1RadioButton.Text" xml:space="preserve">
-    <value>策略2：时间最短</value>
-  </data>
-  <data name="&gt;&gt;strategy1RadioButton.Name" xml:space="preserve">
-    <value>strategy1RadioButton</value>
-  </data>
-  <data name="&gt;&gt;strategy1RadioButton.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialRadioButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;strategy1RadioButton.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;strategy1RadioButton.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="strategy0RadioButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 10pt</value>
-  </data>
-  <data name="strategy0RadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="strategy0RadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 104</value>
-  </data>
-  <data name="strategy0RadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="strategy0RadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 30</value>
-  </data>
-  <data name="strategy0RadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="strategy0RadioButton.Text" xml:space="preserve">
-    <value>策略1：花费最少</value>
-  </data>
-  <data name="&gt;&gt;strategy0RadioButton.Name" xml:space="preserve">
-    <value>strategy0RadioButton</value>
-  </data>
-  <data name="&gt;&gt;strategy0RadioButton.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialRadioButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;strategy0RadioButton.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;strategy0RadioButton.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="addOneDayCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="addOneDayCheckBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="addOneDayCheckBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 10pt</value>
-  </data>
-  <data name="addOneDayCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 261</value>
-  </data>
-  <data name="addOneDayCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="addOneDayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 30</value>
-  </data>
-  <data name="addOneDayCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="addOneDayCheckBox.Text" xml:space="preserve">
-    <value>+1Day</value>
-  </data>
-  <data name="&gt;&gt;addOneDayCheckBox.Name" xml:space="preserve">
-    <value>addOneDayCheckBox</value>
-  </data>
-  <data name="&gt;&gt;addOneDayCheckBox.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialCheckBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;addOneDayCheckBox.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;addOneDayCheckBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="materialLabel6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
-  </data>
-  <data name="materialLabel6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 260</value>
-  </data>
-  <data name="materialLabel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 25</value>
-  </data>
-  <data name="materialLabel6.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="materialLabel6.Text" xml:space="preserve">
-    <value>:</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.Name" xml:space="preserve">
-    <value>materialLabel6</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialLabel6.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="materialLabel5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
-  </data>
-  <data name="materialLabel5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 218</value>
-  </data>
-  <data name="materialLabel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 25</value>
-  </data>
-  <data name="materialLabel5.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="materialLabel5.Text" xml:space="preserve">
-    <value>:</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.Name" xml:space="preserve">
-    <value>materialLabel5</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialLabel5.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="startMinutesPicker.Items" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="startMinutesPicker.Items1" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="startMinutesPicker.Items2" xml:space="preserve">
-    <value>30</value>
-  </data>
-  <data name="startMinutesPicker.Items3" xml:space="preserve">
-    <value>45</value>
-  </data>
-  <data name="startMinutesPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 215</value>
-  </data>
-  <data name="startMinutesPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 28</value>
-  </data>
-  <data name="startMinutesPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;startMinutesPicker.Name" xml:space="preserve">
-    <value>startMinutesPicker</value>
-  </data>
-  <data name="&gt;&gt;startMinutesPicker.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startMinutesPicker.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;startMinutesPicker.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="arriveHourPicker.Items" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="arriveHourPicker.Items1" xml:space="preserve">
-    <value>01</value>
-  </data>
-  <data name="arriveHourPicker.Items2" xml:space="preserve">
-    <value>02</value>
-  </data>
-  <data name="arriveHourPicker.Items3" xml:space="preserve">
-    <value>03</value>
-  </data>
-  <data name="arriveHourPicker.Items4" xml:space="preserve">
-    <value>04</value>
-  </data>
-  <data name="arriveHourPicker.Items5" xml:space="preserve">
-    <value>05</value>
-  </data>
-  <data name="arriveHourPicker.Items6" xml:space="preserve">
-    <value>06</value>
-  </data>
-  <data name="arriveHourPicker.Items7" xml:space="preserve">
-    <value>07</value>
-  </data>
-  <data name="arriveHourPicker.Items8" xml:space="preserve">
-    <value>08</value>
-  </data>
-  <data name="arriveHourPicker.Items9" xml:space="preserve">
-    <value>09</value>
-  </data>
-  <data name="arriveHourPicker.Items10" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="arriveHourPicker.Items11" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="arriveHourPicker.Items12" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="arriveHourPicker.Items13" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="arriveHourPicker.Items14" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="arriveHourPicker.Items15" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="arriveHourPicker.Items16" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="arriveHourPicker.Items17" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="arriveHourPicker.Items18" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="arriveHourPicker.Items19" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="arriveHourPicker.Items20" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="arriveHourPicker.Items21" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="arriveHourPicker.Items22" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="arriveHourPicker.Items23" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="arriveHourPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 263</value>
-  </data>
-  <data name="arriveHourPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 28</value>
-  </data>
-  <data name="arriveHourPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;arriveHourPicker.Name" xml:space="preserve">
-    <value>arriveHourPicker</value>
-  </data>
-  <data name="&gt;&gt;arriveHourPicker.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;arriveHourPicker.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;arriveHourPicker.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="materialLabel4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
-  </data>
-  <data name="materialLabel4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 263</value>
-  </data>
-  <data name="materialLabel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="materialLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 25</value>
-  </data>
-  <data name="materialLabel4.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="materialLabel4.Text" xml:space="preserve">
-    <value>请选择出发时间：</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.Name" xml:space="preserve">
-    <value>materialLabel4</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialLabel4.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="startHourPicker.Items" xml:space="preserve">
-    <value>00</value>
-  </data>
-  <data name="startHourPicker.Items1" xml:space="preserve">
-    <value>01</value>
-  </data>
-  <data name="startHourPicker.Items2" xml:space="preserve">
-    <value>02</value>
-  </data>
-  <data name="startHourPicker.Items3" xml:space="preserve">
-    <value>03</value>
-  </data>
-  <data name="startHourPicker.Items4" xml:space="preserve">
-    <value>04</value>
-  </data>
-  <data name="startHourPicker.Items5" xml:space="preserve">
-    <value>05</value>
-  </data>
-  <data name="startHourPicker.Items6" xml:space="preserve">
-    <value>06</value>
-  </data>
-  <data name="startHourPicker.Items7" xml:space="preserve">
-    <value>07</value>
-  </data>
-  <data name="startHourPicker.Items8" xml:space="preserve">
-    <value>08</value>
-  </data>
-  <data name="startHourPicker.Items9" xml:space="preserve">
-    <value>09</value>
-  </data>
-  <data name="startHourPicker.Items10" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="startHourPicker.Items11" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="startHourPicker.Items12" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="startHourPicker.Items13" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="startHourPicker.Items14" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="startHourPicker.Items15" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="startHourPicker.Items16" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="startHourPicker.Items17" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="startHourPicker.Items18" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="startHourPicker.Items19" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="startHourPicker.Items20" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="startHourPicker.Items21" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="startHourPicker.Items22" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="startHourPicker.Items23" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="startHourPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 215</value>
-  </data>
-  <data name="startHourPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 28</value>
-  </data>
-  <data name="startHourPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;startHourPicker.Name" xml:space="preserve">
-    <value>startHourPicker</value>
-  </data>
-  <data name="&gt;&gt;startHourPicker.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;startHourPicker.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;startHourPicker.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="materialLabel3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
-  </data>
-  <data name="materialLabel3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 215</value>
-  </data>
-  <data name="materialLabel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="materialLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 25</value>
-  </data>
-  <data name="materialLabel3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="materialLabel3.Text" xml:space="preserve">
-    <value>请选择出发时间：</value>
-  </data>
-  <data name="&gt;&gt;materialLabel3.Name" xml:space="preserve">
-    <value>materialLabel3</value>
-  </data>
-  <data name="&gt;&gt;materialLabel3.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel3.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialLabel3.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="materialFlatButton1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialFlatButton1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="materialFlatButton1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialFlatButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>619, 307</value>
-  </data>
-  <data name="materialFlatButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="materialFlatButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 36</value>
-  </data>
-  <data name="materialFlatButton1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="materialFlatButton1.Text" xml:space="preserve">
-    <value>materialFlatButton1</value>
-  </data>
-  <data name="&gt;&gt;materialFlatButton1.Name" xml:space="preserve">
-    <value>materialFlatButton1</value>
-  </data>
-  <data name="&gt;&gt;materialFlatButton1.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialFlatButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialFlatButton1.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialFlatButton1.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="destinationPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 158</value>
-  </data>
-  <data name="destinationPicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="destinationPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 28</value>
-  </data>
-  <data name="destinationPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;destinationPicker.Name" xml:space="preserve">
-    <value>destinationPicker</value>
-  </data>
-  <data name="&gt;&gt;destinationPicker.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;destinationPicker.Parent" xml:space="preserve">
     <value>queryRoutineTab</value>
   </data>
-  <data name="&gt;&gt;destinationPicker.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="materialLabel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
-  </data>
-  <data name="materialLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 160</value>
-  </data>
-  <data name="materialLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="strategy0RadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="materialLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 25</value>
-  </data>
-  <data name="materialLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="materialLabel2.Text" xml:space="preserve">
-    <value>请选择目的地：</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.Name" xml:space="preserve">
-    <value>materialLabel2</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialLabel2.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="materialLabel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="materialLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 11pt</value>
-  </data>
-  <data name="materialLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="materialLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 109</value>
-  </data>
-  <data name="materialLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="materialLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 25</value>
-  </data>
-  <data name="materialLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="materialLabel1.Text" xml:space="preserve">
-    <value>请选择出发地：</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.Name" xml:space="preserve">
-    <value>materialLabel1</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialLabel, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="depaturePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 106</value>
-  </data>
-  <data name="depaturePicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="depaturePicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 28</value>
-  </data>
-  <data name="depaturePicker.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;depaturePicker.Name" xml:space="preserve">
-    <value>depaturePicker</value>
-  </data>
-  <data name="&gt;&gt;depaturePicker.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialComboBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;depaturePicker.Parent" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;depaturePicker.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="queryRoutineTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="queryRoutineTab.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="queryRoutineTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>862, 371</value>
-  </data>
-  <data name="queryRoutineTab.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="queryRoutineTab.Text" xml:space="preserve">
-    <value>查询路线</value>
-  </data>
-  <data name="&gt;&gt;queryRoutineTab.Name" xml:space="preserve">
-    <value>queryRoutineTab</value>
-  </data>
-  <data name="&gt;&gt;queryRoutineTab.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;queryRoutineTab.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;queryRoutineTab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="materialTabSelector1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="mamangeShiftButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="mamangeShiftButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 47</value>
-  </data>
-  <data name="mamangeShiftButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="mamangeShiftButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 46</value>
-  </data>
-  <data name="mamangeShiftButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="mamangeShiftButton.Text" xml:space="preserve">
-    <value>管理</value>
-  </data>
-  <data name="&gt;&gt;mamangeShiftButton.Name" xml:space="preserve">
-    <value>mamangeShiftButton</value>
-  </data>
-  <data name="&gt;&gt;mamangeShiftButton.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialRaisedButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;mamangeShiftButton.Parent" xml:space="preserve">
-    <value>cityManageCard</value>
-  </data>
-  <data name="&gt;&gt;mamangeShiftButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="manageCityButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="manageCityButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 47</value>
-  </data>
-  <data name="manageCityButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="manageCityButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 46</value>
-  </data>
-  <data name="manageCityButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="manageCityButton.Text" xml:space="preserve">
-    <value>管理</value>
-  </data>
-  <data name="&gt;&gt;manageCityButton.Name" xml:space="preserve">
-    <value>manageCityButton</value>
-  </data>
-  <data name="&gt;&gt;manageCityButton.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialRaisedButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;manageCityButton.Parent" xml:space="preserve">
-    <value>cityManageCard</value>
-  </data>
-  <data name="&gt;&gt;manageCityButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cityManageCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 51</value>
-  </data>
-  <data name="cityManageCard.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="cityManageCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 12, 2, 2</value>
-  </data>
-  <data name="cityManageCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 133</value>
-  </data>
-  <data name="cityManageCard.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cityManageCard.Name" xml:space="preserve">
-    <value>cityManageCard</value>
-  </data>
-  <data name="&gt;&gt;cityManageCard.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialCard, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;cityManageCard.Parent" xml:space="preserve">
-    <value>TabPageMgnt</value>
-  </data>
-  <data name="&gt;&gt;cityManageCard.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TabPageMgnt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="TabPageMgnt.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="TabPageMgnt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>862, 371</value>
-  </data>
-  <data name="TabPageMgnt.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="TabPageMgnt.Text" xml:space="preserve">
-    <value>城市管理</value>
-  </data>
-  <data name="&gt;&gt;TabPageMgnt.Name" xml:space="preserve">
-    <value>TabPageMgnt</value>
-  </data>
-  <data name="&gt;&gt;TabPageMgnt.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;TabPageMgnt.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;TabPageMgnt.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="saveLog.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="saveLog.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="saveLog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="saveLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>743, 345</value>
-  </data>
-  <data name="saveLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 6, 3, 6</value>
-  </data>
-  <data name="saveLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="saveLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 36</value>
-  </data>
-  <data name="saveLog.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="saveLog.Text" xml:space="preserve">
-    <value>保存日志</value>
-  </data>
-  <data name="&gt;&gt;saveLog.Name" xml:space="preserve">
-    <value>saveLog</value>
-  </data>
-  <data name="&gt;&gt;saveLog.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialFlatButton, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;saveLog.Parent" xml:space="preserve">
-    <value>TabPageLog</value>
-  </data>
-  <data name="&gt;&gt;saveLog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="logOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="logOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="logOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 312</value>
-  </data>
-  <data name="logOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;logOutput.Name" xml:space="preserve">
-    <value>logOutput</value>
-  </data>
-  <data name="&gt;&gt;logOutput.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTextBox, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;logOutput.Parent" xml:space="preserve">
-    <value>TabPageLog</value>
-  </data>
-  <data name="&gt;&gt;logOutput.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TabPageLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 29</value>
-  </data>
-  <data name="TabPageLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="TabPageLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>862, 371</value>
-  </data>
-  <data name="TabPageLog.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TabPageLog.Text" xml:space="preserve">
-    <value>历史记录</value>
-  </data>
-  <data name="&gt;&gt;TabPageLog.Name" xml:space="preserve">
-    <value>TabPageLog</value>
-  </data>
-  <data name="&gt;&gt;TabPageLog.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTabPage, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;TabPageLog.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;TabPageLog.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 59</value>
-  </data>
-  <data name="tabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 404</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTabControl, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="materialTabSelector1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="materialTabSelector1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="materialTabSelector1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 10</value>
-  </data>
-  <data name="materialTabSelector1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 35</value>
-  </data>
-  <data name="materialTabSelector1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="materialTabSelector1.Text" xml:space="preserve">
-    <value>materialTabSelector1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Name" xml:space="preserve">
-    <value>materialTabSelector1</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialTabSelector, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;materialTabSelector1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>zh</value>
@@ -1336,58 +1384,10 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 15</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>870, 463</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>旅行模拟系统</value>
-  </data>
-  <data name="&gt;&gt;shift.Name" xml:space="preserve">
-    <value>shift</value>
-  </data>
-  <data name="&gt;&gt;shift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;start.Name" xml:space="preserve">
-    <value>start</value>
-  </data>
-  <data name="&gt;&gt;start.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;arrive.Name" xml:space="preserve">
-    <value>arrive</value>
-  </data>
-  <data name="&gt;&gt;arrive.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startTime.Name" xml:space="preserve">
-    <value>startTime</value>
-  </data>
-  <data name="&gt;&gt;startTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;arriveTime.Name" xml:space="preserve">
-    <value>arriveTime</value>
-  </data>
-  <data name="&gt;&gt;arriveTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cost.Name" xml:space="preserve">
-    <value>cost</value>
-  </data>
-  <data name="&gt;&gt;cost.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>form</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MaterialWinforms.Controls.MaterialForm, MaterialWinforms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
+  <metadata name="queryRoutineTab.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="materialTabSelector1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

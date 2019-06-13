@@ -1033,6 +1033,42 @@
   <data name="timeLine.Location" type="System.Drawing.Point, System.Drawing">
     <value>779, 24</value>
   </data>
+  <data name="shift.Text" xml:space="preserve">
+    <value>班次</value>
+  </data>
+  <data name="shift.Width" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="start.Text" xml:space="preserve">
+    <value>起点</value>
+  </data>
+  <data name="start.Width" type="System.Int32, mscorlib">
+    <value>93</value>
+  </data>
+  <data name="arrive.Text" xml:space="preserve">
+    <value>终点</value>
+  </data>
+  <data name="arrive.Width" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="startTime.Text" xml:space="preserve">
+    <value>出发时间</value>
+  </data>
+  <data name="startTime.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="arriveTime.Text" xml:space="preserve">
+    <value>抵达时间</value>
+  </data>
+  <data name="arriveTime.Width" type="System.Int32, mscorlib">
+    <value>126</value>
+  </data>
+  <data name="cost.Text" xml:space="preserve">
+    <value>花费</value>
+  </data>
+  <data name="cost.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
   <data name="resultView.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 24pt</value>
   </data>
@@ -1040,7 +1076,7 @@
     <value>56, 177</value>
   </data>
   <data name="resultView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>645, 184</value>
+    <value>643, 184</value>
   </data>
   <data name="arriveMinutesPicker.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
