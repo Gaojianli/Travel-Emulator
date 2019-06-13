@@ -12,7 +12,6 @@ inline TravelEmulator::form::form(void) {
 	auto formManager = MaterialWinforms::MaterialSkinManager::Instance;
 	formManager->AddFormToManage(this);
 	formManager->Theme = MaterialWinforms::MaterialSkinManager::Themes::DARK;
-	cityManageCard->Title = System::Text::Encoding::UTF8->GetString(System::Text::Encoding::Default->GetBytes(L"城市管理"));
 	log = gcnew Logger(logOutput);  //initialize log output
 	log->writeLog("程序启动成功", logLevel::Info);
 	log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
@@ -37,18 +36,19 @@ inline TravelEmulator::form::form(void) {
 	startMinutesPicker->SelectedIndex = 0;
 	arriveMinutesPicker->SelectedIndex = 0;
 	resultView->Hide();
+	floatButton->Hide();
 }
 
 inline void TravelEmulator::form::SetGCTimer()
 {
 	System::Timers::Timer^ aTimer = gcnew System::Timers::Timer();
 	aTimer->Interval = 6000;
-	aTimer->Elapsed += gcnew System::Timers::ElapsedEventHandler(this, &form::OnTimedEvent);
+	aTimer->Elapsed += gcnew System::Timers::ElapsedEventHandler(this, &form::OnTimedEvent_GC);
 	aTimer->AutoReset = true;
 	aTimer->Enabled = true;
 }
 
-inline void TravelEmulator::form::OnTimedEvent(Object^ source, System::Timers::ElapsedEventArgs^ e)
+inline void TravelEmulator::form::OnTimedEvent_GC(Object^ source, System::Timers::ElapsedEventArgs^ e)
 {
 	GC::Collect();
 	GC::WaitForPendingFinalizers();
@@ -67,10 +67,16 @@ inline TravelEmulator::form::~form() {
 inline void TravelEmulator::form::InitializeComponent(void) {
 	MaterialWinforms::Controls::MaterialTabPage^ queryRoutineTab;
 	System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(form::typeid));
-	System::Drawing::Drawing2D::GraphicsPath^ graphicsPath4 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
-	System::Drawing::Drawing2D::GraphicsPath^ graphicsPath3 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 	System::Drawing::Drawing2D::GraphicsPath^ graphicsPath1 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
+	System::Drawing::Drawing2D::GraphicsPath^ graphicsPath5 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
+	System::Drawing::Drawing2D::GraphicsPath^ graphicsPath4 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
 	System::Drawing::Drawing2D::GraphicsPath^ graphicsPath2 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
+	System::Drawing::Drawing2D::GraphicsPath^ graphicsPath3 = (gcnew System::Drawing::Drawing2D::GraphicsPath());
+	this->timeLabel = (gcnew MaterialWinforms::Controls::MaterialLabel());
+	this->floatButton = (gcnew MaterialWinforms::Controls::MaterialLoadingFloatingActionButton());
+	this->materialTimeline2 = (gcnew MaterialWinforms::Controls::MaterialTimeline());
+	this->materialTimeline1 = (gcnew MaterialWinforms::Controls::MaterialTimeline());
+	this->timeLine = (gcnew MaterialWinforms::Controls::MaterialTimeline());
 	this->resultView = (gcnew MaterialWinforms::Controls::MaterialListView());
 	this->shift = (gcnew System::Windows::Forms::ColumnHeader());
 	this->start = (gcnew System::Windows::Forms::ColumnHeader());
@@ -116,6 +122,11 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	// 
 	resources->ApplyResources(queryRoutineTab, L"queryRoutineTab");
 	queryRoutineTab->Closable = false;
+	queryRoutineTab->Controls->Add(this->timeLabel);
+	queryRoutineTab->Controls->Add(this->floatButton);
+	queryRoutineTab->Controls->Add(this->materialTimeline2);
+	queryRoutineTab->Controls->Add(this->materialTimeline1);
+	queryRoutineTab->Controls->Add(this->timeLine);
 	queryRoutineTab->Controls->Add(this->resultView);
 	queryRoutineTab->Controls->Add(this->arriveMinutesPicker);
 	queryRoutineTab->Controls->Add(this->strategy2RadioButton);
@@ -138,6 +149,54 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	queryRoutineTab->MouseState = MaterialWinforms::MouseState::HOVER;
 	queryRoutineTab->Name = L"queryRoutineTab";
 	// 
+	// timeLabel
+	// 
+	resources->ApplyResources(this->timeLabel, L"timeLabel");
+	this->timeLabel->Depth = 0;
+	this->timeLabel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+		static_cast<System::Int32>(static_cast<System::Byte>(255)));
+	this->timeLabel->MouseState = MaterialWinforms::MouseState::HOVER;
+	this->timeLabel->Name = L"timeLabel";
+	// 
+	// floatButton
+	// 
+	resources->ApplyResources(this->floatButton, L"floatButton");
+	this->floatButton->Breite = 74;
+	this->floatButton->Depth = 0;
+	this->floatButton->Elevation = 5;
+	this->floatButton->Hoehe = 74;
+	this->floatButton->Icon = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"floatButton.Icon")));
+	this->floatButton->MouseState = MaterialWinforms::MouseState::HOVER;
+	this->floatButton->Name = L"floatButton";
+	graphicsPath1->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
+	this->floatButton->ShadowBorder = graphicsPath1;
+	this->floatButton->UseVisualStyleBackColor = true;
+	this->floatButton->Click += gcnew System::EventHandler(this, &form::FloatButton_Click);
+	// 
+	// materialTimeline2
+	// 
+	resources->ApplyResources(this->materialTimeline2, L"materialTimeline2");
+	this->materialTimeline2->AufsteigendSortieren = false;
+	this->materialTimeline2->Depth = 0;
+	this->materialTimeline2->MouseState = MaterialWinforms::MouseState::HOVER;
+	this->materialTimeline2->Name = L"materialTimeline2";
+	// 
+	// materialTimeline1
+	// 
+	resources->ApplyResources(this->materialTimeline1, L"materialTimeline1");
+	this->materialTimeline1->AufsteigendSortieren = false;
+	this->materialTimeline1->Depth = 0;
+	this->materialTimeline1->MouseState = MaterialWinforms::MouseState::HOVER;
+	this->materialTimeline1->Name = L"materialTimeline1";
+	// 
+	// timeLine
+	// 
+	resources->ApplyResources(this->timeLine, L"timeLine");
+	this->timeLine->AufsteigendSortieren = false;
+	this->timeLine->Depth = 0;
+	this->timeLine->MouseState = MaterialWinforms::MouseState::HOVER;
+	this->timeLine->Name = L"timeLine";
+	// 
 	// resultView
 	// 
 	resources->ApplyResources(this->resultView, L"resultView");
@@ -159,7 +218,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->resultView->OwnerDraw = true;
 	this->resultView->UseCompatibleStateImageBehavior = false;
 	this->resultView->View = System::Windows::Forms::View::Details;
-	this->resultView->SelectedIndexChanged += gcnew System::EventHandler(this, &form::ResultView_SelectedIndexChanged);
 	// 
 	// shift
 	// 
@@ -198,7 +256,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	});
 	this->arriveMinutesPicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->arriveMinutesPicker->Name = L"arriveMinutesPicker";
-	this->arriveMinutesPicker->TextChanged += gcnew System::EventHandler(this, &form::ArriveMinutesPicker_TextChanged);
 	// 
 	// strategy2RadioButton
 	// 
@@ -221,7 +278,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->strategy1RadioButton->Name = L"strategy1RadioButton";
 	this->strategy1RadioButton->Ripple = true;
 	this->strategy1RadioButton->UseVisualStyleBackColor = true;
-	this->strategy1RadioButton->CheckedChanged += gcnew System::EventHandler(this, &form::Strategy1RadioButton_CheckedChanged);
 	// 
 	// strategy0RadioButton
 	// 
@@ -254,7 +310,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 		static_cast<System::Int32>(static_cast<System::Byte>(255)));
 	this->materialLabel6->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->materialLabel6->Name = L"materialLabel6";
-	this->materialLabel6->Click += gcnew System::EventHandler(this, &form::MaterialLabel6_Click);
 	// 
 	// materialLabel5
 	// 
@@ -300,7 +355,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->arriveHourPicker->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->arriveHourPicker->Name = L"arriveHourPicker";
 	this->arriveHourPicker->SelectedValueChanged += gcnew System::EventHandler(this, &form::ArriveHourPicker_SelectedValueChanged);
-	this->arriveHourPicker->TextChanged += gcnew System::EventHandler(this, &form::ArriveHourPicker_TextChanged);
 	// 
 	// materialLabel4
 	// 
@@ -354,7 +408,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->materialFlatButton1->Primary = false;
 	this->materialFlatButton1->Selected = false;
 	this->materialFlatButton1->UseVisualStyleBackColor = true;
-	this->materialFlatButton1->Click += gcnew System::EventHandler(this, &form::MaterialFlatButton1_Click_1);
+	this->materialFlatButton1->Click += gcnew System::EventHandler(this, &form::getPathButton_Click);
 	// 
 	// destinationPicker
 	// 
@@ -406,8 +460,8 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->materialTabSelector1->MaxTabWidht = -1;
 	this->materialTabSelector1->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->materialTabSelector1->Name = L"materialTabSelector1";
-	graphicsPath4->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-	this->materialTabSelector1->ShadowBorder = graphicsPath4;
+	graphicsPath5->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
+	this->materialTabSelector1->ShadowBorder = graphicsPath5;
 	this->materialTabSelector1->TabPadding = 24;
 	// 
 	// tabControl
@@ -419,7 +473,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->tabControl->Depth = 0;
 	this->tabControl->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->tabControl->Name = L"tabControl";
-	this->tabControl->SelectedIndex = 0;
+	this->tabControl->SelectedIndex = 2;
 	this->tabControl->TabsAreClosable = true;
 	// 
 	// TabPageMgnt
@@ -441,8 +495,8 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->cityManageCard->LargeTitle = false;
 	this->cityManageCard->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->cityManageCard->Name = L"cityManageCard";
-	graphicsPath3->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-	this->cityManageCard->ShadowBorder = graphicsPath3;
+	graphicsPath4->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
+	this->cityManageCard->ShadowBorder = graphicsPath4;
 	this->cityManageCard->Title = L"管理";
 	// 
 	// mamangeShiftButton
@@ -453,8 +507,8 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->mamangeShiftButton->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->mamangeShiftButton->Name = L"mamangeShiftButton";
 	this->mamangeShiftButton->Primary = true;
-	graphicsPath1->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-	this->mamangeShiftButton->ShadowBorder = graphicsPath1;
+	graphicsPath2->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
+	this->mamangeShiftButton->ShadowBorder = graphicsPath2;
 	this->mamangeShiftButton->UseVisualStyleBackColor = true;
 	this->mamangeShiftButton->Click += gcnew System::EventHandler(this, &form::mamangeShiftButton_Click);
 	// 
@@ -466,8 +520,8 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->manageCityButton->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->manageCityButton->Name = L"manageCityButton";
 	this->manageCityButton->Primary = true;
-	graphicsPath2->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
-	this->manageCityButton->ShadowBorder = graphicsPath2;
+	graphicsPath3->FillMode = System::Drawing::Drawing2D::FillMode::Alternate;
+	this->manageCityButton->ShadowBorder = graphicsPath3;
 	this->manageCityButton->UseVisualStyleBackColor = false;
 	this->manageCityButton->Click += gcnew System::EventHandler(this, &form::manageCityButton_Click);
 	// 
@@ -530,18 +584,18 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 
 inline System::Void TravelEmulator::form::saveLogButton_Clicked(System::Object^ sender, System::EventArgs^ e) {
 	auto dialog = gcnew SaveFileDialog();
-	dialog->Title = convertToUtf8("请选择要保存的文件");
-	dialog->Filter = convertToUtf8("日志文件(*.log)|*.log");
+	dialog->Title = "请选择要保存的文件";
+	dialog->Filter = "日志文件(*.log)|*.log";
 	if (dialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		auto file = dialog->FileName;
 		auto sw = gcnew StreamWriter(file, false);
 		if (sw) {
 			sw->WriteLine(logOutput->Text);
 			sw->Close();
-			showHeadupMessage(convertToUtf8(L"成功"), convertToUtf8(L"日志保存成功"));
+			showHeadupMessage(L"成功", L"日志保存成功");
 		}
 		else {
-			showHeadupMessage(convertToUtf8(L"错误"), convertToUtf8("打开文件失败，请重试"));
+			showHeadupMessage(L"错误", "打开文件失败，请重试");
 		}
 	}
 }
@@ -595,7 +649,7 @@ inline System::Void TravelEmulator::form::mamangeShiftButton_Click(System::Objec
 	manageForm->Show();
 }
 
-inline System::Void TravelEmulator::form::MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+inline System::Void TravelEmulator::form::getPathButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	auto startHour = Convert::ToInt16(startHourPicker->SelectedItem->ToString());
 	auto startMinute = Convert::ToInt16(startMinutesPicker->SelectedItem->ToString());
 	auto startCity = cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<String^>(depaturePicker->SelectedItem->ToString()), &FindCityPredic<String^>::IsMatch));
@@ -626,15 +680,6 @@ inline System::Void TravelEmulator::form::ArriveHourPicker_SelectedValueChanged(
 		else
 			addOneDayCheckBox->Checked = false;
 	}
-}
-
-inline System::Void TravelEmulator::form::MaterialCheckBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-
-inline System::Void TravelEmulator::form::MaterialRadioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-
-inline System::Void TravelEmulator::form::Strategy1RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 
 inline System::Void TravelEmulator::form::Strategy2RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -683,6 +728,7 @@ void TravelEmulator::form::fetchResult(Object^ param)
 
 void TravelEmulator::form::fetchResultFinished(List<Transport^>^ result)
 {
+	resultView->Tag = result;
 	if (browser->Tag == nullptr) {
 		auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
 		mapTable->Text = L"地图";
@@ -718,6 +764,66 @@ void TravelEmulator::form::fetchResultFinished(List<Transport^>^ result)
 	}
 	resultView->EndUpdate();
 	resultView->Show();
+	floatButton->Show();
+
+	if (timeMagic)
+		delete timeMagic;
+	timeMagic = gcnew System::Timers::Timer();
+	timeMagic->Elapsed += gcnew System::Timers::ElapsedEventHandler(this, &form::timeMagicHandler);
+	timeMagic->Interval = 10000;
+	timeMagic->AutoReset = true;
+	timeMagic->Enabled = false;
+	floatButton->Icon = Drawing::Image::FromFile("play-solid.png");
+	timeLabel->Text = String::Empty;
+}
+
+System::Void TravelEmulator::form::FloatButton_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	if (timeMagic->Enabled) {
+		timeMagic->Enabled = false;
+		floatButton->Icon = Drawing::Image::FromFile("play-solid.png");
+	}
+	else {
+		timeMagic->Enabled = true;
+		timeLabel->Text = DateTime(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, Convert::ToInt16(startHourPicker->SelectedItem->ToString()), Convert::ToInt16(startMinutesPicker->SelectedItem->ToString()), 0).AddHours(-1).ToString();
+		floatButton->Icon = Drawing::Image::FromFile("pause-solid.png");
+	}
+
+}
+
+void TravelEmulator::form::timeMagicHandler(System::Object^ sender, System::Timers::ElapsedEventArgs^ e)
+{
+	this->Invoke(gcnew timerdelegate(this, &form::timeMagicCallback));
+}
+
+void TravelEmulator::form::timeMagicCallback()
+{
+	timeLabel->Text = DateTime::Parse(timeLabel->Text).AddHours(1).ToString();
+	auto result = safe_cast<List<Transport^>^>(resultView->Tag);
+	auto currentShift = result[currentShiftID];
+	if (result->Count > currentShiftID && result[currentShiftID]->start < DateTime::Parse(timeLabel->Text)) {
+		log->writeLog(result[currentShiftID]->start.ToShortTimeString() + "，乘客登上" + result[currentShiftID]->shift, logLevel::Info);
+		auto entry = gcnew MaterialTimeLineEntry();
+		entry->Title = result[0]->shift;
+		if (result[currentShiftID]->type == plane) {
+			entry->User = Drawing::Image::FromFile("plane-departure-solid.png");
+		}
+		else {
+			entry->User = Drawing::Image::FromFile("train-solid.png");
+		}
+		entry->Time = result[currentShiftID]->start;
+		entry->Text = result[currentShiftID]->arrive.ToString("HH:mm") + "到达";
+		timeLine->Entrys->Add(entry);
+		currentShiftID++;
+	}
+	else if (result->Count <= currentShiftID) {
+		log->writeLog(result[currentShiftID-1]->arrive.ToShortTimeString() + "，乘客到达终点" , logLevel::Info);
+		timeMagic->Enabled = false;
+		floatButton->Enabled = false;
+		floatButton->Icon = Drawing::Image::FromFile("play-solid.png");
+	}
+	else
+		return;
 }
 
 inline System::Void TravelEmulator::form::Strategy0RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {

@@ -25,40 +25,19 @@ namespace TravelEmulator {
 	private:
 		Logger^ log;
 		ChromiumWebBrowser^ browser;
-	private:
-
-
-	private:
-	private:
-	private:
-
-
-
-
-
-
+	private: System::Timers::Timer^ timeMagic;
+	private: int currentShiftID = 0;//current shift in path List
 	public:
 		SqlManager^ sql;
 		List<cities^>^ cityData;
 		Core^ core;
 		BindingList<String^>^ departureData;
 	private: MaterialWinforms::Controls::MaterialTabControl^ tabControl;
-
-
-	public:
-
-	public:
-
 	private: MaterialWinforms::Controls::MaterialFlatButton^ materialFlatButton1;
-
-
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel1;
 	private: MaterialWinforms::Controls::MaterialComboBox^ depaturePicker;
 	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageMgnt;
-
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ mamangeShiftButton;
-
-
 	private: MaterialWinforms::Controls::MaterialCard^ cityManageCard;
 	private: MaterialWinforms::Controls::MaterialRaisedButton^ manageCityButton;
 	private: MaterialWinforms::Controls::MaterialTabPage^ TabPageLog;
@@ -66,31 +45,14 @@ namespace TravelEmulator {
 	private: MaterialWinforms::Controls::MaterialTextBox^ logOutput;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel6;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel5;
-
-
-
-
 	private: MaterialWinforms::Controls::MaterialComboBox^ startMinutesPicker;
 	private: MaterialWinforms::Controls::MaterialComboBox^ arriveHourPicker;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel4;
 	private: MaterialWinforms::Controls::MaterialComboBox^ startHourPicker;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel3;
 	private: MaterialWinforms::Controls::MaterialCheckBox^ addOneDayCheckBox;
-
-
-
-
-
-
-
-
-
 	private: MaterialWinforms::Controls::MaterialComboBox^ destinationPicker;
 	private: MaterialWinforms::Controls::MaterialLabel^ materialLabel2;
-
-
-
-
 	private: MaterialWinforms::Controls::MaterialRadioButton^ strategy1RadioButton;
 	private: MaterialWinforms::Controls::MaterialRadioButton^ strategy0RadioButton;
 	private: MaterialWinforms::Controls::MaterialRadioButton^ strategy2RadioButton;
@@ -102,42 +64,18 @@ namespace TravelEmulator {
 	private: System::Windows::Forms::ColumnHeader^ startTime;
 	private: System::Windows::Forms::ColumnHeader^ arriveTime;
 	private: System::Windows::Forms::ColumnHeader^ cost;
+	private: MaterialWinforms::Controls::MaterialTimeline^ timeLine;
+	private: MaterialWinforms::Controls::MaterialTimeline^ materialTimeline1;
+	private: MaterialWinforms::Controls::MaterialTimeline^ materialTimeline2;
+	private: MaterialWinforms::Controls::MaterialLoadingFloatingActionButton^ floatButton;
+	private: MaterialWinforms::Controls::MaterialLabel^ timeLabel;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	public:
-
-
-
-
-		BindingList<String^>^ destinationData;
+	public:  BindingList<String^>^ destinationData;
 	public:
 		form(void);
 		//timer to collection garbage
 	private: void SetGCTimer();
-	private: void OnTimedEvent(Object^ source, System::Timers::ElapsedEventArgs^ e);
+	private: void OnTimedEvent_GC(Object^ source, System::Timers::ElapsedEventArgs^ e);
 	protected:
 		/// <summary>
 		/// 清理所有正在使用的资源。
@@ -146,37 +84,6 @@ namespace TravelEmulator {
 
 	private:
 		MaterialWinforms::Controls::MaterialTabSelector^ materialTabSelector1;
-
-
-
-	private:
-
-
-
-	protected:
-	private:
-
-
-
-	private:
-
-
-
-	private:
-
-
-	private:
-
-
-	private:
-
-
-	private:
-
-
-
-	private:
-
 
 	private:
 	protected:
@@ -206,25 +113,17 @@ namespace TravelEmulator {
 	private: System::Void mamangeShiftButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MaterialTabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void getPathButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ArriveHourPicker_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void MaterialCheckBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-
-	private: System::Void MaterialRadioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Strategy0RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void Strategy1RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Strategy2RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void DestinationPicker_TextChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void ResultView_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void ArriveHourPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void MaterialLabel6_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void ArriveMinutesPicker_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: void fetchResult(Object^ param);
 	private: delegate void fetchResultDelegate(List<Transport^>^);
 	private:void fetchResultFinished(List<Transport^>^);
+	private: System::Void FloatButton_Click(System::Object^ sender, System::EventArgs^ e);
+	private:void timeMagicHandler(System::Object^ sender, System::Timers::ElapsedEventArgs^ e);
+	private: delegate void timerdelegate();
+	private: void timeMagicCallback();
 	};
 }// namespace TravelEmulator
