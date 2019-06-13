@@ -669,6 +669,7 @@ inline System::Void TravelEmulator::form::getPathButton_Click(System::Object^ se
 		if (addOneDayCheckBox->Checked)
 			arriveTime = arriveTime.AddDays(1);
 	}
+	timeLine->Entrys->Clear();
 	auto thread = gcnew Threading::Thread(gcnew Threading::ParameterizedThreadStart(this, &form::fetchResult));
 	thread->Start(Tuple::Create(startTime, strategy, cityData->Count, startCity->id, arriveCity->id, arriveTime, Tuple::Create(startCity, arriveCity)));
 }
