@@ -27,7 +27,7 @@ public:
 	List<Transport^>^ timeTables;
 private:
 	void makePath(int presentCity, List<Transport^>^ path, List<Transport^>^ ultimatePath, int departure, int destination);
-	void Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<Transport^>^ path, int strategy);
+	void Update(int presentCity, List<bool>^ known, List<double>^ value, List<DateTime>^ time, List<Transport^>^ path, int strategy, DateTime startTime);
 	void DFS(int prensentCity, int destination, List<Transport^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<Transport^>^ DFSPath);
 	int currentCount = 0;
 	static graph^ _instance;
