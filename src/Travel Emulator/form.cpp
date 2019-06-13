@@ -18,7 +18,11 @@ inline TravelEmulator::form::form(void) {
 	log->writeLog("数据库连接成功，尝试导入数据...", logLevel::Info);
 	core = gcnew Core(log);
 	sql = core->getSql();// initialize sql manager
-						 //----------Binding data--------
+	//initialize browser
+	auto settings = gcnew CefSettings();
+	settings->RemoteDebuggingPort = 9229;
+	Cef::Initialize(settings);
+	//----------Binding data--------
 	cityData = core->getCityData();
 	departureData = gcnew BindingList<String^>();
 	for (int i = 0; i < cityData->Count; i++) {
@@ -592,26 +596,6 @@ inline System::Void TravelEmulator::form::mamangeShiftButton_Click(System::Objec
 }
 
 inline System::Void TravelEmulator::form::MaterialFlatButton1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	if (browser==nullptr) {
-		auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
-		mapTable->Text = L"地图";
-		auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
-		panel->Dock = DockStyle::Fill;
-		mapTable->Controls->Add(panel);
-		auto settings = gcnew CefSettings();
-		settings->RemoteDebuggingPort = 9229;
-		Cef::Initialize(settings);
-		browser = gcnew ChromiumWebBrowser(Environment::CurrentDirectory + "\\index.html", nullptr);
-		browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
-		panel->Controls->Add(browser);
-		browser->Dock = DockStyle::Fill;
-		tabControl->TabPages->Add(mapTable);
-	}
-	else {
-		browser->JavascriptObjectRepository->UnRegisterAll();
-		browser->Location = browser->Location;
-	}
-	//
 	auto startHour = Convert::ToInt16(startHourPicker->SelectedItem->ToString());
 	auto startMinute = Convert::ToInt16(startMinutesPicker->SelectedItem->ToString());
 	auto startCity = cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<String^>(depaturePicker->SelectedItem->ToString()), &FindCityPredic<String^>::IsMatch));
@@ -631,36 +615,8 @@ inline System::Void TravelEmulator::form::MaterialFlatButton1_Click_1(System::Ob
 		if (addOneDayCheckBox->Checked)
 			arriveTime = arriveTime.AddDays(1);
 	}
-	//
-	auto graph = graph::getInstance(cityData, core->timeTable);
-	auto result = graph->getPath(startTime, strategy, cityData->Count, startCity->id, arriveCity->id, arriveTime);
-	RemoveNull(result);
-	browser->JavascriptObjectRepository->Register("shiftDataList", core->getTimeTable(), true, BindingOptions::DefaultBinder);
-	browser->JavascriptObjectRepository->Register("pathList", result, true, BindingOptions::DefaultBinder);
-	browser->JavascriptObjectRepository->Register("departure", startCity, true, BindingOptions::DefaultBinder);
-	browser->JavascriptObjectRepository->Register("destination", arriveCity, true, BindingOptions::DefaultBinder);
-	//
-	resultView->BeginUpdate();
-	resultView->Items->Clear();
-	for each (auto item in result) {
-		//auto tmpShift = graph->timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(item->ToString()), &FindShiftPredic::IsMatch));
-		ListViewItem^ ltv = gcnew ListViewItem();
-		ltv->Text = item->shift;
-		try {
-			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(item->departureID), &FindCityPredic<int>::IsMatch))->name);
-			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(item->destinationID), &FindCityPredic<int>::IsMatch))->name);
-		}
-		catch (KeyNotFoundException^ e) {
-			log->writeLog(e->ToString() + ", ingored", logLevel::Error);
-			continue;
-		}
-		ltv->SubItems->Add(item->start.ToString("t"));
-		ltv->SubItems->Add(item->arrive.ToString("t"));
-		ltv->SubItems->Add(item->cost.ToString("f2"));
-		resultView->Items->Add(ltv);
-	}
-	resultView->EndUpdate();
-	resultView->Show();
+	auto thread= gcnew Threading::Thread(gcnew Threading::ParameterizedThreadStart(this, &form::fetchResult));
+	thread->Start(Tuple::Create(startTime, strategy, cityData->Count, startCity->id, arriveCity->id, arriveTime, Tuple::Create(startCity, arriveCity)));
 }
 
 inline System::Void TravelEmulator::form::ArriveHourPicker_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -701,6 +657,62 @@ inline System::Void TravelEmulator::form::DestinationPicker_TextChanged(System::
 		else
 			materialFlatButton1->Enabled = true;
 	}
+}
+
+void TravelEmulator::form::fetchResult(Object^ param)
+{
+	auto args = safe_cast<Tuple<DateTime,int,int,int,int,DateTime,Tuple<cities^,cities^>^>^>(param);
+	auto finishCallback = gcnew fetchResultDelegate(this, &form::fetchResultFinished);
+	if (browser == nullptr) {
+		browser = gcnew ChromiumWebBrowser(Environment::CurrentDirectory + "\\index.html", nullptr);
+		browser->JavascriptObjectRepository->Register("cityDataList", cityData, true, BindingOptions::DefaultBinder);
+	}
+	else {
+		browser->JavascriptObjectRepository->UnRegisterAll();
+		browser->Location = browser->Location;
+	}
+	//
+	auto graph = graph::getInstance(cityData, core->timeTable);
+	auto result = graph->getPath(args->Item1, args->Item2, args->Item3, args->Item4, args->Item5, args->Item6);
+	RemoveNull(result);
+	browser->JavascriptObjectRepository->Register("shiftDataList", core->getTimeTable(), true, BindingOptions::DefaultBinder);
+	browser->JavascriptObjectRepository->Register("pathList", result, true, BindingOptions::DefaultBinder);
+	browser->JavascriptObjectRepository->Register("departure", args->Item7->Item1, true, BindingOptions::DefaultBinder);
+	browser->JavascriptObjectRepository->Register("destination", args->Item7->Item2, true, BindingOptions::DefaultBinder);
+	this->Invoke(finishCallback, result);
+}
+
+void TravelEmulator::form::fetchResultFinished(List<Transport^>^ result)
+{
+	auto mapTable = gcnew MaterialWinforms::Controls::MaterialTabPage();
+	mapTable->Text = L"地图";
+	auto panel = gcnew MaterialWinforms::Controls::MaterialPanel();
+	panel->Dock = DockStyle::Fill;
+	mapTable->Controls->Add(panel);
+	panel->Controls->Add(browser);
+	browser->Dock = DockStyle::Fill;
+	tabControl->TabPages->Add(mapTable);
+	resultView->BeginUpdate();
+	resultView->Items->Clear();
+	for each (auto item in result) {
+		//auto tmpShift = graph->timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(item->ToString()), &FindShiftPredic::IsMatch));
+		ListViewItem^ ltv = gcnew ListViewItem();
+		ltv->Text = item->shift;
+		try {
+			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(item->departureID), &FindCityPredic<int>::IsMatch))->name);
+			ltv->SubItems->Add(cityData->Find(gcnew System::Predicate<cities^>(gcnew FindCityPredic<int>(item->destinationID), &FindCityPredic<int>::IsMatch))->name);
+		}
+		catch (KeyNotFoundException^ e) {
+			log->writeLog(e->ToString() + ", ingored", logLevel::Error);
+			continue;
+		}
+		ltv->SubItems->Add(item->start.ToString("t"));
+		ltv->SubItems->Add(item->arrive.ToString("t"));
+		ltv->SubItems->Add(item->cost.ToString("f2"));
+		resultView->Items->Add(ltv);
+	}
+	resultView->EndUpdate();
+	resultView->Show();
 }
 
 inline System::Void TravelEmulator::form::Strategy0RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
