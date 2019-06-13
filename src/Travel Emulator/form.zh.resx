@@ -1221,7 +1221,7 @@
     <value>城市管理</value>
   </data>
   <data name="cityManageCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 60</value>
+    <value>238, 62</value>
   </data>
   <data name="cityManageCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 25, 5, 5</value>
@@ -1242,7 +1242,7 @@
     <value>管理</value>
   </data>
   <data name="saveLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>745, 329</value>
+    <value>982, 343</value>
   </data>
   <data name="saveLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 6, 4, 6</value>
@@ -1251,7 +1251,7 @@
     <value>5, 6, 5, 6</value>
   </data>
   <data name="logOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>869, 320</value>
+    <value>1092, 320</value>
   </data>
   <data name="TabPageLog.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>

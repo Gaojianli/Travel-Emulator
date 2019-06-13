@@ -115,11 +115,7 @@ namespace TravelEmulator {
 	}
 	private: System::Void getPathButton_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ArriveHourPicker_SelectedValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void MaterialCheckBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-
-	private: System::Void MaterialRadioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Strategy0RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void Strategy1RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Strategy2RadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void DestinationPicker_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	private: void fetchResult(Object^ param);

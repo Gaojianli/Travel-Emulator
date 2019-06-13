@@ -278,7 +278,6 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->strategy1RadioButton->Name = L"strategy1RadioButton";
 	this->strategy1RadioButton->Ripple = true;
 	this->strategy1RadioButton->UseVisualStyleBackColor = true;
-	this->strategy1RadioButton->CheckedChanged += gcnew System::EventHandler(this, &form::Strategy1RadioButton_CheckedChanged);
 	// 
 	// strategy0RadioButton
 	// 
@@ -474,7 +473,7 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 	this->tabControl->Depth = 0;
 	this->tabControl->MouseState = MaterialWinforms::MouseState::HOVER;
 	this->tabControl->Name = L"tabControl";
-	this->tabControl->SelectedIndex = 0;
+	this->tabControl->SelectedIndex = 2;
 	this->tabControl->TabsAreClosable = true;
 	// 
 	// TabPageMgnt
@@ -585,18 +584,18 @@ inline void TravelEmulator::form::InitializeComponent(void) {
 
 inline System::Void TravelEmulator::form::saveLogButton_Clicked(System::Object^ sender, System::EventArgs^ e) {
 	auto dialog = gcnew SaveFileDialog();
-	dialog->Title = convertToUtf8("请选择要保存的文件");
-	dialog->Filter = convertToUtf8("日志文件(*.log)|*.log");
+	dialog->Title = "请选择要保存的文件";
+	dialog->Filter = "日志文件(*.log)|*.log";
 	if (dialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		auto file = dialog->FileName;
 		auto sw = gcnew StreamWriter(file, false);
 		if (sw) {
 			sw->WriteLine(logOutput->Text);
 			sw->Close();
-			showHeadupMessage(convertToUtf8(L"成功"), convertToUtf8(L"日志保存成功"));
+			showHeadupMessage(L"成功", L"日志保存成功");
 		}
 		else {
-			showHeadupMessage(convertToUtf8(L"错误"), convertToUtf8("打开文件失败，请重试"));
+			showHeadupMessage(L"错误", "打开文件失败，请重试");
 		}
 	}
 }
