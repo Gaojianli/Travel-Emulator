@@ -13,6 +13,7 @@ graph^ graph::getInstance(List<cities^>^ cityList, List<Transport^>^ timeTables)
 
 List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum, int departure, int destination, DateTime deadlineTime)
 {
+	//初始化参数
 	double min = 10000;
 	auto path = gcnew List<Transport^>();
 	for (int i = 0; i < vertexNum; i++) {
@@ -27,6 +28,7 @@ List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum
 	}
 	int presentCity = departure;
 	if (strategy == 2) {
+		//策略三使用回溯法
 		time[departure] = startTime;
 		for (int i = 0; i < vertexNum; i++) {
 			value->Add(0);
@@ -34,6 +36,7 @@ List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum
 		DFS(presentCity, destination, nullptr, known, value, time, deadlineTime, min, path);
 	}
 	else {
+		//策略一和策略二使用迪杰斯特拉算法
 		for (int i = 0; i < vertexNum; i++) {
 			value->Add(intMax);
 			time[i] = time[i].AddHours(startTime.Hour).AddMinutes(startTime.Minute).AddSeconds(startTime.Second);
@@ -42,8 +45,10 @@ List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum
 		time[departure] = startTime;
 		value[departure] = 0;
 		while (true) {
+			//更新相邻节点的值
 			Update(presentCity, known, value, time, path, strategy, startTime);
 			presentCity = -1;
+			//寻找最小权值的未访问点
 			if (strategy == 0) {
 				double minn = intMax;
 				for (auto ix = 0; ix < known->Count; ix++) {
@@ -54,6 +59,7 @@ List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum
 					}
 				}
 			}
+			//寻找最小权值的未访问点
 			else if (strategy == 1) {
 				DateTime mini(DateTime::Today.Year, DateTime::Today.Month, DateTime::Today.Day, 0, 0, 0);
 				for (auto ix = 0; ix < time->Count; ix++) {
@@ -67,6 +73,7 @@ List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum
 				break;
 			known[presentCity] = true;
 		}
+		//逆向生成最终路径
 		auto ultimatePath = gcnew List<Transport^>;
 		makePath(destination, path, ultimatePath, departure, destination);
 		path = ultimatePath;
@@ -76,7 +83,7 @@ List<Transport^>^ graph::getPath(DateTime startTime, int strategy, int vertexNum
 
 void graph::makePath(int presentCity, List<Transport^>^ path, List<Transport^>^ ultimatePath, int departure, int destination)
 {
-	//auto tmp = timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(path[presentCity]), &FindShiftPredic::IsMatch));
+	//逆向生成路径
 	if (!path[presentCity])
 		return;
 	if (presentCity != departure) {
@@ -99,20 +106,20 @@ void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List
 		bool span = false;
 		if (item->start > item->arrive)
 			span = true;
+		//策略一：花费最少
 		if (strategy == 0) {
 			if (!known[item->destinationID] && value[item->destinationID] > value[presentCity] + item->cost) {
 				value[item->destinationID] = value[presentCity] + item->cost;
 				path[item->destinationID] = item;
 			}
 		}
+		//策略二：时间最短
 		if (strategy == 1) {
 			if (!known[item->destinationID]) {
-				/*判断条件有四种情况：
-					第一种：行程不跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的当天日期+行程到达时间与time[到达城市]比较
-					第二种：行程不跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
-					第三钟：行程跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
-					第四钟：行程跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的后天日期+行程到达时间与time[到达城市]比较
-					若time[到底城市]，则更新值*/
+				/*	行程不跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的当天日期+行程到达时间与time[到达城市]比较
+					行程不跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
+					行程跨天，time[出发城市]的时间在行程出发时间之前，则用time[出发城市]的下一天日期+行程到达时间与time[到达城市]比较
+					行程跨天，time[出发城市]的时间在行程出发时间之后，则用time[出发城市]的后天日期+行程到达时间与time[到达城市]比较*/
 				if (!span && time[item->departureID] <= item->start && (time[item->destinationID] == startTime ||time[item->destinationID] > item->arrive)) {
 					time[item->destinationID] = DateTime(time[item->destinationID].Year, time[item->destinationID].Month, time[item->destinationID].Day, item->arrive.Hour, item->arrive.Minute,0);
 					path[item->destinationID] = item;
@@ -136,25 +143,24 @@ void graph::Update(int presentCity, List<bool>^ known, List<double>^ value, List
 
 void graph::DFS(int presentCity, int destination, List<Transport^>^ tmppath, List<bool>^ known, List<double>^ value, List<DateTime>^ time, DateTime deadlineTime, double& min, List<Transport^>^ DFSPath)
 {
+	//初始化临时路径
 	if (tmppath == nullptr)
 		tmppath = gcnew List<Transport^>();
+	//对不满足约束条件的分支进行剪枝
 	if (time[presentCity] > deadlineTime || value[presentCity] > min)
 		return;
 	known[presentCity] = true;
+	//分支末端检测
 	if (presentCity == destination) {
 		min = value[presentCity];
 		DFSPath->Clear();
 		for each (auto item in tmppath) {
 			DFSPath->Add(item);
 		}
-		/*auto mark = gcnew List<bool>(path->Count);
-		for each (auto item in path) {
-			auto tmp = timeTables->Find(gcnew System::Predicate<Transport^>(gcnew FindShiftPredic(item),&FindShiftPredic::IsMatch));
-			mark[tmp->destinationID] = false;
-		}
-		mark[presentCity] = false;*/
 	}
+	//未到达分支末端，继续向下递归
 	else {
+		//搜索目标节点
 		auto targetTable = gcnew List<Transport^>();
 		for each (auto item in timeTables) {
 			if (item->departureID == presentCity) {
@@ -163,6 +169,7 @@ void graph::DFS(int presentCity, int destination, List<Transport^>^ tmppath, Lis
 					item->arrive = item->arrive.AddDays(1);
 			}
 		}
+		//更新时间和花费
 		for each (auto item in targetTable) {
 			if (known[item->destinationID] == true)
 				continue;
