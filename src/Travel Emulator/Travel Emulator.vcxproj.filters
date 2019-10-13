@@ -13,17 +13,63 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{52ddd84c-cc81-48f8-90f1-b0b1cc140354}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{67dbb4a7-ebd3-409d-b0c7-a99eeb28a81a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data">
+      <UniqueIdentifier>{ed3ced93-06c3-4d68-8a1d-dd9a87dbc70e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\data">
+      <UniqueIdentifier>{0cc5b8b8-5381-4fa6-9d78-faf23268d4b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{6876d58c-8dbe-4114-93bd-2b9c64e396c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\contorls">
+      <UniqueIdentifier>{aa52751a-ecb7-4d4c-b04a-e47ed251ad33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\controls">
+      <UniqueIdentifier>{059b74fd-a4ee-44f9-8b7a-fd7b91aa5f7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="form.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="utils.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="cities.h">
+      <Filter>Header Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="sql.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="cityAdd.h">
+      <Filter>Header Files\contorls</Filter>
+    </ClInclude>
+    <ClInclude Include="manageCity.h">
+      <Filter>Header Files\contorls</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timeTable.h">
+      <Filter>Header Files\data</Filter>
+    </ClInclude>
+    <ClInclude Include="routineManage.h">
+      <Filter>Header Files\contorls</Filter>
+    </ClInclude>
+    <ClInclude Include="graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -31,5 +77,826 @@
     <ResourceCompile Include="Travel Emulator.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MaterialWinforms.dll">
+      <Filter>Library</Filter>
+    </None>
+    <None Include="SQLite.Interop.dll">
+      <Filter>Library</Filter>
+    </None>
+    <None Include="System.Data.SQLite.dll">
+      <Filter>Library</Filter>
+    </None>
+    <None Include="db.db" />
+    <None Include="packages.config" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="index.html">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefSharpWinFormsBinaries64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefRedist64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+    <None Include="@(CefSharpCommonBinaries64)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="cities.cpp">
+      <Filter>Source Files\data</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="sql.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timeTable.cpp">
+      <Filter>Source Files\data</Filter>
+    </ClCompile>
+    <ClCompile Include="graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cityAdd.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="manageCity.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="routineManage.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="plane-departure-solid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="train-solid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="play-solid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pause-solid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
